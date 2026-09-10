@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เพชรนาะเรือ | สูบส้วมฉุกเฉิน 24 ชม.</title>
+<meta name="description" content="เพชรนาะเรือ บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ทีมช่างและรถสูบพร้อมออกปฏิบัติการทันทีทั่วกรุงเทพฯและปริมณฑล">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+  :root{
+    --background:#0A0C0B;
+    --card:#121613;
+    --bg-accent:#0F1613;
+    --foreground:#EDEFEC;
+    --muted:#83938B;
+    --border:#232B27;
+    --primary:#00F0A0;
+    --secondary:#1B2320;
+    --accent:#00B37D;
+    --font-heading:'Kanit', sans-serif;
+    --font-body:'IBM Plex Sans Thai', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;background:var(--background);}
+  body{
+    font-family:var(--font-body);
+    background:var(--background);
+    color:var(--foreground);
+    line-height:1.8;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.5;font-weight:700;}
+  .num{font-variant-numeric:tabular-nums;}
+  .en-tag{font-family:var(--font-body);letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;color:var(--muted);}
+  section{position:relative;scroll-margin-top:82px;}
+  .container{max-width:1280px;margin:0 auto;padding:0 20px;}
+  ::selection{background:var(--primary);color:#04140F;}
+
+  /* ============ HEADER ============ */
+  #siteHeader{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(10,12,11,0.55);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:background .35s ease, border-color .35s ease, padding .35s ease;
+  }
+  #siteHeader.scrolled{
+    background:rgba(10,12,11,0.92);
+    border-bottom-color:var(--border);
+  }
+  #siteHeader .header-inner{
+    max-width:1280px;margin:0 auto;padding:16px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  #siteHeader.scrolled .header-inner{padding:11px 20px;}
+  #siteHeader .logo{
+    font-family:var(--font-heading);
+    font-weight:800;
+    font-size:clamp(1.05rem,4.2vw,1.4rem);
+    color:var(--foreground);
+    white-space:nowrap;
+    flex-shrink:0;
+    letter-spacing:0;
+  }
+  #siteHeader .logo em{color:var(--primary);font-style:normal;}
+  #siteHeader .header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  #siteHeader .nav-links{
+    position:fixed;top:0;right:0;bottom:0;
+    width:min(78vw,320px);
+    background:#0D110F;
+    border-left:1px solid var(--border);
+    display:flex;flex-direction:column;
+    padding:90px 28px 28px;
+    gap:4px;
+    transform:translateX(100%);
+    transition:transform .4s ease;
+    overflow-y:auto;
+    z-index:999;
+  }
+  #siteHeader .nav-links.open{transform:translateX(0);}
+  #siteHeader .nav-links a{
+    font-family:var(--font-body);
+    font-size:1rem;
+    color:var(--foreground);
+    padding:14px 4px;
+    border-bottom:1px solid var(--border);
+    min-height:44px;display:flex;align-items:center;
+  }
+  #siteHeader .nav-cta-mobile{margin-top:18px;}
+  #siteHeader .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--primary);color:#04140F;
+    font-family:var(--font-body);font-weight:600;
+    font-size:0.92rem;
+    padding:0.85em 1.3em;
+    border-radius:6px;
+    min-height:44px;
+    white-space:nowrap;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 0 0 rgba(0,240,160,0);
+  }
+  #siteHeader .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,240,160,0.25);}
+  #siteHeader .hamburger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:44px;height:44px;background:transparent;border:1px solid var(--border);
+    border-radius:6px;cursor:pointer;flex-shrink:0;
+  }
+  #siteHeader .hamburger span{display:block;height:2px;width:20px;background:var(--foreground);margin:0 auto;transition:.3s;}
+  #siteHeader .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  #siteHeader .hamburger.open span:nth-child(2){opacity:0;}
+  #siteHeader .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  #siteHeader .nav-cta-desktop{display:none;}
+  .lang-sw{display:flex;align-items:center;gap:4px;font-size:0.78em;color:var(--muted);padding:8px 6px;min-height:44px;}
+  .lang-sw:hover{color:var(--foreground);}
+  .lang-sw svg{flex-shrink:0;}
+
+  @media (min-width:768px){
+    #siteHeader .nav-links{
+      position:static;width:auto;background:none;border-left:none;flex-direction:row;
+      transform:none;padding:0;gap:28px;overflow:visible;
+    }
+    #siteHeader .nav-links a{padding:8px 0;border-bottom:none;min-height:auto;font-size:0.95rem;}
+    #siteHeader .hamburger{display:none;}
+    #siteHeader .nav-cta-mobile{display:none;}
+    #siteHeader .nav-cta-desktop{display:inline-flex;}
+    #siteHeader .header-inner{gap:32px;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;align-items:flex-end;
+    background:var(--background);
+    overflow:hidden;
+    padding-top:90px;
+  }
+  .hero-img-wrap{
+    position:absolute;inset:0;
+    clip-path:polygon(38% 0,100% 0,100% 100%,10% 100%);
+  }
+  @media (max-width:767px){
+    .hero-img-wrap{clip-path:polygon(0 62%,100% 42%,100% 100%,0 100%);}
+  }
+  .hero-img-wrap img{
+    width:100%;height:100%;object-fit:cover;
+    animation:heroZoom 18s ease-in-out infinite alternate;
+    filter:grayscale(35%) contrast(1.15) brightness(0.55);
+  }
+  @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
+  .hero-img-wrap::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,12,11,0.15),rgba(10,12,11,0.95) 92%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    width:100%;
+    padding:0 20px 64px;
+    max-width:1280px;margin:0 auto;
+  }
+  .hero-ghost{
+    position:absolute;
+    top:8%;left:-4vw;
+    font-family:var(--font-heading);
+    font-weight:900;
+    font-size:clamp(4rem,22vw,15rem);
+    color:var(--foreground);
+    opacity:0.05;
+    white-space:nowrap;
+    transform:scaleX(0.8);
+    transform-origin:left top;
+    pointer-events:none;
+    z-index:1;
+    line-height:1;
+  }
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(0,240,160,0.08);
+    border:1px solid var(--primary);
+    color:var(--primary);
+    padding:0.6em 1em;
+    border-radius:100px;
+    font-size:0.78rem;
+    font-family:var(--font-body);
+    margin-bottom:20px;
+  }
+  .status-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);animation:pulse 1.6s ease-in-out infinite;flex-shrink:0;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,240,160,0.55);}50%{box-shadow:0 0 0 6px rgba(0,240,160,0);}}
+  .hero h1{
+    font-size:clamp(2.5rem,9vw,6.2rem);
+    font-weight:800;
+    transform:scaleX(0.88);
+    transform-origin:left;
+    width:112%;
+    padding-top:0.2em;
+    color:var(--foreground);
+  }
+  .hero h1 span{color:var(--primary);}
+  .hero p.lead{
+    font-size:clamp(1rem,2vw,1.2rem);
+    color:var(--muted);
+    max-width:520px;
+    margin-top:20px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:0.95em 1.6em;border-radius:6px;font-weight:600;font-size:1rem;
+    min-height:48px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-primary{background:var(--primary);color:#04140F;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,240,160,0.28);}
+  .btn-secondary{background:var(--secondary);color:var(--foreground);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--primary);color:var(--primary);}
+  .hero-specs{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:0;margin-top:44px;
+    border-top:1px solid var(--border);
+    max-width:640px;
+  }
+  .hero-specs div{padding:16px 16px 4px 0;border-right:1px solid var(--border);}
+  .hero-specs div:last-child{border-right:none;}
+  .hero-specs .num{display:block;font-size:clamp(1.4rem,4vw,2.1rem);font-weight:700;color:var(--primary);font-family:var(--font-heading);}
+  .hero-specs .label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+
+  /* ============ TICKER ============ */
+  .ticker-bar{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0;}
+  .ticker-track{display:flex;gap:48px;white-space:nowrap;animation:ticker 26s linear infinite;width:max-content;}
+  .ticker-track span{font-size:0.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;}
+  .ticker-track span strong{color:var(--primary);font-family:var(--font-heading);}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  /* ============ SECTION HEAD ============ */
+  .section-tag{display:flex;align-items:center;gap:10px;color:var(--primary);font-size:0.78rem;margin-bottom:14px;}
+  .section-tag::before{content:'';width:26px;height:1px;background:var(--primary);}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.8rem,5vw,3rem);transform:scaleX(0.92);transform-origin:left;width:108%;padding-top:0.15em;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:1.02rem;}
+
+  section.alt{background:var(--bg-accent);}
+  .py{padding:88px 0;}
+
+  /* ============ SERVICES ACCORDION ============ */
+  .acc-list{border-top:1px solid var(--border);}
+  .acc-item{border-bottom:1px solid var(--border);}
+  .acc-head{
+    display:grid;grid-template-columns:70px minmax(0,1fr) 24px;
+    align-items:center;gap:20px;
+    padding:26px 0;cursor:pointer;
+  }
+  .acc-head .code{grid-column:1;font-family:var(--font-heading);color:var(--primary);font-size:1rem;font-variant-numeric:tabular-nums;}
+  .acc-head .title{grid-column:2;min-width:0;font-family:var(--font-heading);font-size:clamp(1.05rem,2.6vw,1.5rem);font-weight:600;}
+  .acc-head .chev{grid-column:3;color:var(--muted);transition:transform .3s ease;flex-shrink:0;}
+  .acc-item.open .acc-head .chev{transform:rotate(45deg);color:var(--primary);}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease, padding .4s ease;}
+  .acc-item.open .acc-body{max-height:260px;padding-bottom:28px;}
+  .acc-body-inner{display:grid;grid-template-columns:70px minmax(0,1fr);gap:20px;}
+  .acc-body-inner p{grid-column:2;min-width:0;color:var(--muted);}
+  @media (min-width:768px){
+    .acc-head{grid-template-columns:90px minmax(0,1fr) 24px;}
+    .acc-body-inner{grid-template-columns:90px minmax(0,1fr);}
+  }
+
+  /* ============ PROCESS TIMELINE ============ */
+  .process-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:0;}
+  .process-row{
+    display:grid;grid-template-columns:60px minmax(0,1fr);
+    gap:22px;padding:28px 0;border-top:1px solid var(--border);
+  }
+  .process-row:last-child{border-bottom:1px solid var(--border);}
+  .process-row .pnum{grid-column:1;font-family:var(--font-heading);font-size:1.6rem;color:var(--primary);font-variant-numeric:tabular-nums;}
+  .process-row .pbody{grid-column:2;min-width:0;}
+  .process-row h3{font-size:1.15rem;margin-bottom:6px;}
+  .process-row p{color:var(--muted);font-size:0.95rem;}
+  .process-media{border-radius:12px;overflow:visible;margin-top:36px;position:relative;}
+  .process-media img{border-radius:12px;width:100%;height:auto;}
+  @media (min-width:900px){
+    .process-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:56px;align-items:start;}
+    .process-media{margin-top:0;}
+  }
+
+  /* ============ COVERAGE ============ */
+  .coverage{position:relative;background:#0B0F0D;}
+  .coverage-bg{position:absolute;inset:0;}
+  .coverage-bg img{width:100%;height:100%;object-fit:cover;opacity:0.22;filter:grayscale(60%);}
+  .coverage-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,0.7),var(--background) 90%);}
+  .coverage-content{position:relative;z-index:2;}
+  .zone-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:40px;}
+  @media (min-width:640px){.zone-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+  @media (min-width:1000px){.zone-grid{grid-template-columns:repeat(4,minmax(0,1fr));}}
+  .zone-card{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:18px 16px;transition:transform .3s ease, border-color .3s ease;
+  }
+  .zone-card:hover{transform:translateY(-4px);border-color:var(--primary);}
+  .zone-card .zc-code{color:var(--primary);font-family:var(--font-heading);font-size:0.85rem;display:block;margin-bottom:6px;}
+  .zone-card .zc-name{font-weight:600;font-size:1rem;}
+
+  /* ============ TRUST STATS ============ */
+  .trust-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center;}
+  @media (min-width:900px){.trust-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}
+  .trust-img{border-radius:14px;overflow:hidden;position:relative;}
+  .trust-img img{width:100%;height:100%;object-fit:cover;min-height:280px;transition:transform .6s ease;}
+  .trust-img:hover img{transform:scale(1.06);}
+  .stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:32px;}
+  .stat-card{background:var(--card);padding:24px 20px;}
+  .stat-card .num{display:block;font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--primary);}
+  .stat-card .label{font-size:0.8rem;color:var(--muted);margin-top:4px;}
+
+  /* ============ LOG / TESTIMONIALS ============ */
+  .log-list{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;}
+  @media (min-width:768px){.log-list{grid-template-columns:repeat(3,minmax(0,1fr));}}
+  .log-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:26px;transition:border-color .3s ease, transform .3s ease;}
+  .log-card:hover{border-color:var(--primary);transform:translateY(-4px);}
+  .log-time{font-size:0.72rem;color:var(--primary);display:block;margin-bottom:12px;font-variant-numeric:tabular-nums;}
+  .log-card p{color:var(--foreground);font-size:0.98rem;margin-bottom:16px;}
+  .log-who{font-size:0.85rem;color:var(--muted);}
+
+  /* ============ CTA BANNER ============ */
+  .cta-banner{position:relative;overflow:hidden;}
+  .cta-banner-bg{position:absolute;inset:0;}
+  .cta-banner-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(50%) brightness(0.4);}
+  .cta-banner-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,12,11,0.95),rgba(10,12,11,0.55));}
+  .cta-banner-content{position:relative;z-index:2;text-align:left;padding:90px 0;}
+  .cta-banner h2{font-size:clamp(2rem,6vw,3.6rem);transform:scaleX(0.9);transform-origin:left;width:110%;padding-top:0.15em;}
+  .cta-banner p{color:var(--muted);max-width:480px;margin-top:16px;font-size:1.05rem;}
+  .cta-phone{
+    font-family:var(--font-heading);color:var(--primary);
+    font-size:clamp(2rem,6vw,3.2rem);
+    display:inline-block;margin-top:24px;font-variant-numeric:tabular-nums;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{background:#080A09;border-top:1px solid var(--border);padding:64px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;}
+  @media (min-width:768px){.footer-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);}}
+  footer .flogo{font-family:var(--font-heading);font-weight:800;font-size:1.4rem;margin-bottom:12px;}
+  footer .flogo em{color:var(--primary);font-style:normal;}
+  footer p{color:var(--muted);font-size:0.92rem;}
+  footer h4{font-size:0.85rem;color:var(--foreground);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer a.flink{color:var(--muted);font-size:0.92rem;}
+  footer a.flink:hover{color:var(--primary);}
+  .foot-bottom{border-top:1px solid var(--border);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;}
+  .foot-bottom p{font-size:0.78rem;}
+  .credits{font-size:0.72rem;color:var(--muted);margin-top:8px;line-height:1.7;}
+  .credits a{color:var(--muted);text-decoration:underline;}
+  .credits a:hover{color:var(--primary);}
+  .deelabs-badge{font-size:0.75rem;color:var(--muted);font-weight:400;}
+  .deelabs-badge:hover{color:var(--primary);}
+
+  .icon-wrap{width:44px;height:44px;border-radius:8px;background:var(--secondary);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo">เพชร<em>นาะเรือ</em></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+      <a href="#process" data-lang-th="ขั้นตอนทำงาน" data-lang-en="Process">ขั้นตอนทำงาน</a>
+      <a href="#coverage" data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</a>
+      <a href="#trust" data-lang-th="ทำไมต้องเรา" data-lang-en="Why Us">ทำไมต้องเรา</a>
+      <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+      <a href="tel:0812345678" class="btn btn-primary nav-cta-mobile" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-sw"><i data-lucide="globe" width="14" height="14"></i><span class="lang-sw__label">TH</span></div>
+      <a href="tel:0812345678" class="cta nav-cta-desktop" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1602607771743-9f829d8419e9?w=1400&h=1400&fit=crop" alt="รถสูบส้วมวิ่งบนถนนตอนกลางคืน">
+    </div>
+    <div class="hero-ghost" aria-hidden="true" data-lang-th="ฉุกเฉิน 24 ชม." data-lang-en="24/7 EMERGENCY">ฉุกเฉิน 24 ชม.</div>
+    <div class="hero-inner">
+      <div class="status-pill"><span class="status-dot"></span><span data-lang-th="ระบบพร้อม — รับสายตลอด 24 ชั่วโมง" data-lang-en="SYS: ONLINE — DISPATCH READY 24/7">ระบบพร้อม — รับสายตลอด 24 ชั่วโมง</span></div>
+      <h1 data-lang-th="สูบส้วม<br>ฉุกเฉิน<span>.</span>" data-lang-en="EMERGENCY<br>SEPTIC<span>.</span>">สูบส้วม<br>ฉุกเฉิน<span>.</span></h1>
+      <p class="lead" data-lang-th="เพชรนาะเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด" data-lang-en="Phet Na Ruea dispatch control — septic and waste pumping crews mobilize the moment you call. Bangkok metro coverage, every day, every hour.">เพชรนาะเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด</p>
+      <div class="hero-actions">
+        <a href="tel:0812345678" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรสายด่วน 081-234-5678" data-lang-en="Call Hotline 081-234-5678">โทรสายด่วน 081-234-5678</span></a>
+        <a href="#services" class="btn btn-secondary"><span data-lang-th="ดูบริการทั้งหมด" data-lang-en="View Services">ดูบริการทั้งหมด</span><i data-lucide="arrow-down-right"></i></a>
+      </div>
+      <div class="hero-specs">
+        <div><span class="num">&lt;45<span style="font-size:0.9rem;">min</span></span><span class="label" data-lang-th="เวลาตอบสนองเฉลี่ย" data-lang-en="AVG RESPONSE TIME">เวลาตอบสนองเฉลี่ย</span></div>
+        <div><span class="num">12</span><span class="label" data-lang-th="รถสูบพร้อมปฏิบัติการ" data-lang-en="TRUCKS ON STANDBY">รถสูบพร้อมปฏิบัติการ</span></div>
+        <div><span class="num">24/7</span><span class="label" data-lang-th="ศูนย์รับแจ้งเหตุ" data-lang-en="DISPATCH LINE">ศูนย์รับแจ้งเหตุ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span><strong>18,400+</strong><span data-lang-th="งานที่ปฏิบัติแล้ว" data-lang-en="jobs completed">งานที่ปฏิบัติแล้ว</span></span>
+      <span><strong>45 นาที</strong><span data-lang-th="เวลาตอบสนองเฉลี่ย" data-lang-en="average response">เวลาตอบสนองเฉลี่ย</span></span>
+      <span><strong>12 คัน</strong><span data-lang-th="รถสูบในระบบ" data-lang-en="trucks in fleet">รถสูบในระบบ</span></span>
+      <span><strong>24/7</strong><span data-lang-th="ศูนย์ควบคุมเปิดตลอดปี" data-lang-en="control room always open">ศูนย์ควบคุมเปิดตลอดปี</span></span>
+      <span><strong>98%</strong><span data-lang-th="ลูกค้าเรียกซ้ำ" data-lang-en="repeat customers">ลูกค้าเรียกซ้ำ</span></span>
+      <span><strong>18,400+</strong><span data-lang-th="งานที่ปฏิบัติแล้ว" data-lang-en="jobs completed">งานที่ปฏิบัติแล้ว</span></span>
+      <span><strong>45 นาที</strong><span data-lang-th="เวลาตอบสนองเฉลี่ย" data-lang-en="average response">เวลาตอบสนองเฉลี่ย</span></span>
+      <span><strong>12 คัน</strong><span data-lang-th="รถสูบในระบบ" data-lang-en="trucks in fleet">รถสูบในระบบ</span></span>
+      <span><strong>24/7</strong><span data-lang-th="ศูนย์ควบคุมเปิดตลอดปี" data-lang-en="control room always open">ศูนย์ควบคุมเปิดตลอดปี</span></span>
+      <span><strong>98%</strong><span data-lang-th="ลูกค้าเรียกซ้ำ" data-lang-en="repeat customers">ลูกค้าเรียกซ้ำ</span></span>
+    </div>
+  </div>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="py">
+    <div class="container">
+      <div class="section-tag en-tag">SW / SERVICE MODULES</div>
+      <div class="section-head reveal">
+        <h2 data-lang-th="สลับใช้งานได้ทุกระบบ" data-lang-en="Every Module Ready">สลับใช้งานได้ทุกระบบ</h2>
+        <p data-lang-th="เลือกบริการที่ต้องการ ทีมของเราครอบคลุมตั้งแต่บ้านพักอาศัยไปจนถึงโรงงานอุตสาหกรรม" data-lang-en="Pick the module you need — from residential septic tanks to full industrial treatment plants.">เลือกบริการที่ต้องการ ทีมของเราครอบคลุมตั้งแต่บ้านพักอาศัยไปจนถึงโรงงานอุตสาหกรรม</p>
+      </div>
+
+      <div class="acc-list reveal">
+        <div class="acc-item open">
+          <div class="acc-head">
+            <span class="code num">SW-01</span>
+            <h3 class="title" data-lang-th="สูบส้วม / บ่อเกรอะฉุกเฉิน" data-lang-en="Emergency Septic Pumping">สูบส้วม / บ่อเกรอะฉุกเฉิน</h3>
+            <i data-lucide="plus" class="chev"></i>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">
+            <p data-lang-th="บริการด่วนสำหรับบ่อเกรอะเต็ม ล้น หรือส้วมตัน ทีมช่างพร้อมรถสูบแรงดันสูงถึงหน้างานภายใน 45 นาทีโดยเฉลี่ย" data-lang-en="Rapid response for overflowing or blocked septic tanks. High-pressure pump trucks on-site in an average of 45 minutes.">บริการด่วนสำหรับบ่อเกรอะเต็ม ล้น หรือส้วมตัน ทีมช่างพร้อมรถสูบแรงดันสูงถึงหน้างานภายใน 45 นาทีโดยเฉลี่ย</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head">
+            <span class="code num">SW-02</span>
+            <h3 class="title" data-lang-th="ล้างท่อ-แก้ท่ออุดตันแรงดันสูง" data-lang-en="High-Pressure Pipe Jetting">ล้างท่อ-แก้ท่ออุดตันแรงดันสูง</h3>
+            <i data-lucide="plus" class="chev"></i>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">
+            <p data-lang-th="เครื่องฉีดน้ำแรงดันสูงเจาะทะลุคราบไขมันและสิ่งอุดตันในท่อระบายทุกขนาด ทั้งท่อบ้านและท่อเมนอาคาร" data-lang-en="High-pressure jetting cuts through grease and blockages in drainage lines of any size, from homes to building mains.">เครื่องฉีดน้ำแรงดันสูงเจาะทะลุคราบไขมันและสิ่งอุดตันในท่อระบายทุกขนาด ทั้งท่อบ้านและท่อเมนอาคาร</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head">
+            <span class="code num">SW-03</span>
+            <h3 class="title" data-lang-th="ดูดสิ่งปฏิกูลโรงงาน / บ่อบำบัด" data-lang-en="Industrial Waste Extraction">ดูดสิ่งปฏิกูลโรงงาน / บ่อบำบัด</h3>
+            <i data-lucide="plus" class="chev"></i>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">
+            <p data-lang-th="รถสูบขนาดใหญ่และทีมช่างเฉพาะทางสำหรับบ่อบำบัดน้ำเสียโรงงาน อาคารสูง และนิคมอุตสาหกรรม พร้อมใบรับรองการกำจัดถูกต้องตามกฎหมาย" data-lang-en="Heavy-duty trucks and specialist crews for factory treatment ponds, high-rises and industrial estates, with legally compliant disposal certificates.">รถสูบขนาดใหญ่และทีมช่างเฉพาะทางสำหรับบ่อบำบัดน้ำเสียโรงงาน อาคารสูง และนิคมอุตสาหกรรม พร้อมใบรับรองการกำจัดถูกต้องตามกฎหมาย</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head">
+            <span class="code num">SW-04</span>
+            <h3 class="title" data-lang-th="สัญญาบำรุงรักษารายปี" data-lang-en="Annual Maintenance Contracts">สัญญาบำรุงรักษารายปี</h3>
+            <i data-lucide="plus" class="chev"></i>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">
+            <p data-lang-th="แผนตรวจเช็คและสูบตามรอบสำหรับหมู่บ้าน คอนโด และอาคารสำนักงาน ลดความเสี่ยงระบบล้นฉุกเฉิน พร้อมรายงานผลทุกครั้ง" data-lang-en="Scheduled inspection and pumping plans for villages, condos and offices — reduce emergency overflow risk with a report after every visit.">แผนตรวจเช็คและสูบตามรอบสำหรับหมู่บ้าน คอนโด และอาคารสำนักงาน ลดความเสี่ยงระบบล้นฉุกเฉิน พร้อมรายงานผลทุกครั้ง</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head">
+            <span class="code num">SW-05</span>
+            <h3 class="title" data-lang-th="ตรวจสอบระบบบำบัดน้ำเสีย" data-lang-en="Wastewater System Inspection">ตรวจสอบระบบบำบัดน้ำเสีย</h3>
+            <i data-lucide="plus" class="chev"></i>
+          </div>
+          <div class="acc-body"><div class="acc-body-inner">
+            <p data-lang-th="ตรวจวัดค่าคุณภาพน้ำและสภาพท่อด้วยกล้อง CCTV เพื่อวางแผนซ่อมบำรุงก่อนเกิดปัญหาใหญ่" data-lang-en="Water quality testing and CCTV pipe inspection to plan maintenance before small issues become major failures.">ตรวจวัดค่าคุณภาพน้ำและสภาพท่อด้วยกล้อง CCTV เพื่อวางแผนซ่อมบำรุงก่อนเกิดปัญหาใหญ่</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process" class="py alt">
+    <div class="container">
+      <div class="section-tag en-tag">SEQ / DISPATCH PROTOCOL</div>
+      <div class="section-head reveal">
+        <h2 data-lang-th="ขั้นตอนตั้งแต่รับสายถึงหน้างาน" data-lang-en="From Call To On-Site">ขั้นตอนตั้งแต่รับสายถึงหน้างาน</h2>
+        <p data-lang-th="ทุกสายเข้าสู่ศูนย์ควบคุมกลาง ระบบจัดสรรรถสูบที่ใกล้ที่สุดโดยอัตโนมัติ" data-lang-en="Every call routes through central dispatch — the system assigns the nearest truck automatically.">ทุกสายเข้าสู่ศูนย์ควบคุมกลาง ระบบจัดสรรรถสูบที่ใกล้ที่สุดโดยอัตโนมัติ</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-wrap reveal">
+          <div class="process-row">
+            <span class="pnum num">01</span>
+            <div class="pbody">
+              <h3 data-lang-th="รับสายที่ศูนย์ควบคุม" data-lang-en="Call Received At Dispatch">รับสายที่ศูนย์ควบคุม</h3>
+              <p data-lang-th="เจ้าหน้าที่รับเรื่องและระบุพิกัดหน้างานทันที ไม่มีระบบตอบรับอัตโนมัติ" data-lang-en="A live operator logs your location instantly — no automated menus.">เจ้าหน้าที่รับเรื่องและระบุพิกัดหน้างานทันที ไม่มีระบบตอบรับอัตโนมัติ</p>
+            </div>
+          </div>
+          <div class="process-row">
+            <span class="pnum num">02</span>
+            <div class="pbody">
+              <h3 data-lang-th="ส่งรถสูบที่ใกล้ที่สุด" data-lang-en="Nearest Truck Dispatched">ส่งรถสูบที่ใกล้ที่สุด</h3>
+              <p data-lang-th="ระบบ GPS จับคู่รถสูบว่างที่อยู่ใกล้ที่สุดกับพิกัดของคุณโดยอัตโนมัติ" data-lang-en="GPS tracking auto-matches the closest available truck to your coordinates.">ระบบ GPS จับคู่รถสูบว่างที่อยู่ใกล้ที่สุดกับพิกัดของคุณโดยอัตโนมัติ</p>
+            </div>
+          </div>
+          <div class="process-row">
+            <span class="pnum num">03</span>
+            <div class="pbody">
+              <h3 data-lang-th="ทีมช่างถึงหน้างาน" data-lang-en="Crew Arrives On Site">ทีมช่างถึงหน้างาน</h3>
+              <p data-lang-th="ช่างพร้อมอุปกรณ์ครบชุด ประเมินหน้างานและลงมือปฏิบัติงานทันที" data-lang-en="Fully equipped crew assesses the site and gets to work immediately.">ช่างพร้อมอุปกรณ์ครบชุด ประเมินหน้างานและลงมือปฏิบัติงานทันที</p>
+            </div>
+          </div>
+          <div class="process-row">
+            <span class="pnum num">04</span>
+            <div class="pbody">
+              <h3 data-lang-th="ปิดงานพร้อมรายงานผล" data-lang-en="Job Closed With Report">ปิดงานพร้อมรายงานผล</h3>
+              <p data-lang-th="ส่งรายงานสภาพระบบและใบเสร็จผ่านไลน์หรืออีเมลทันทีที่งานเสร็จ" data-lang-en="System condition report and receipt sent via Line or email the moment the job finishes.">ส่งรายงานสภาพระบบและใบเสร็จผ่านไลน์หรืออีเมลทันทีที่งานเสร็จ</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-media reveal">
+          <img src="https://images.unsplash.com/photo-1636986056048-06f553d44666?w=800&h=900&fit=crop" alt="แผงควบคุมเครื่องจักรในศูนย์ปฏิบัติการ">
+          <p class="credits">Photo by <a href="https://unsplash.com/@vadakkunokki?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Prince Prabhakaran</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COVERAGE ============ -->
+  <section id="coverage" class="py coverage">
+    <div class="coverage-bg">
+      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=900&fit=crop" alt="ท่อโลหะอุตสาหกรรม">
+    </div>
+    <div class="container coverage-content">
+      <div class="section-tag en-tag">MAP / COVERAGE GRID</div>
+      <div class="section-head reveal">
+        <h2 data-lang-th="ครอบคลุมทุกโซนในกรุงเทพฯ-ปริมณฑล" data-lang-en="Full Bangkok Metro Coverage">ครอบคลุมทุกโซนในกรุงเทพฯ-ปริมณฑล</h2>
+        <p data-lang-th="รถสูบกระจายตัวประจำโซน เพื่อให้ถึงหน้างานได้เร็วที่สุดไม่ว่าคุณอยู่จุดไหน" data-lang-en="Trucks are staged by zone so we can reach you fast, wherever you are.">รถสูบกระจายตัวประจำโซน เพื่อให้ถึงหน้างานได้เร็วที่สุดไม่ว่าคุณอยู่จุดไหน</p>
+      </div>
+      <div class="zone-grid reveal">
+        <div class="zone-card"><span class="zc-code num">BKK-01</span><span class="zc-name" data-lang-th="กรุงเทพฯ ชั้นใน" data-lang-en="Inner Bangkok">กรุงเทพฯ ชั้นใน</span></div>
+        <div class="zone-card"><span class="zc-code num">BKK-02</span><span class="zc-name" data-lang-th="กรุงเทพฯ ตะวันออก" data-lang-en="East Bangkok">กรุงเทพฯ ตะวันออก</span></div>
+        <div class="zone-card"><span class="zc-code num">NBI-01</span><span class="zc-name" data-lang-th="นนทบุรี" data-lang-en="Nonthaburi">นนทบุรี</span></div>
+        <div class="zone-card"><span class="zc-code num">PTM-01</span><span class="zc-name" data-lang-th="ปทุมธานี" data-lang-en="Pathum Thani">ปทุมธานี</span></div>
+        <div class="zone-card"><span class="zc-code num">SPK-01</span><span class="zc-name" data-lang-th="สมุทรปราการ" data-lang-en="Samut Prakan">สมุทรปราการ</span></div>
+        <div class="zone-card"><span class="zc-code num">SKM-01</span><span class="zc-name" data-lang-th="สมุทรสาคร" data-lang-en="Samut Sakhon">สมุทรสาคร</span></div>
+        <div class="zone-card"><span class="zc-code num">BKK-03</span><span class="zc-name" data-lang-th="กรุงเทพฯ ใต้" data-lang-en="South Bangkok">กรุงเทพฯ ใต้</span></div>
+        <div class="zone-card"><span class="zc-code num">NPT-01</span><span class="zc-name" data-lang-th="นครปฐม" data-lang-en="Nakhon Pathom">นครปฐม</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST / STATS ============ -->
+  <section id="trust" class="py">
+    <div class="container">
+      <div class="section-tag en-tag">LOG / SYSTEM UPTIME</div>
+      <div class="trust-grid">
+        <div class="reveal">
+          <h2 data-lang-th="ทำงานเหมือนศูนย์ควบคุม<br>ไม่ใช่ร้านซ่อมทั่วไป" data-lang-en="We Run Like A Control Room<br>Not A Repair Shop">ทำงานเหมือนศูนย์ควบคุม<br>ไม่ใช่ร้านซ่อมทั่วไป</h2>
+          <p style="color:var(--muted);margin-top:16px;max-width:480px;" data-lang-th="รถทุกคันติดตั้ง GPS และเชื่อมกับศูนย์สั่งการแบบเรียลไทม์ ช่างทุกคนผ่านการอบรมความปลอดภัยและมีใบรับรองกำจัดสิ่งปฏิกูลถูกต้อง" data-lang-en="Every truck is GPS-tracked and linked to live dispatch. Every crew member is safety-certified with proper waste disposal licensing.">รถทุกคันติดตั้ง GPS และเชื่อมกับศูนย์สั่งการแบบเรียลไทม์ ช่างทุกคนผ่านการอบรมความปลอดภัยและมีใบรับรองกำจัดสิ่งปฏิกูลถูกต้อง</p>
+          <div class="stat-grid">
+            <div class="stat-card"><span class="num">18,400+</span><span class="label" data-lang-th="งานสำเร็จตั้งแต่เปิดระบบ" data-lang-en="jobs completed to date">งานสำเร็จตั้งแต่เปิดระบบ</span></div>
+            <div class="stat-card"><span class="num">45<span style="font-size:1rem;">min</span></span><span class="label" data-lang-th="เวลาตอบสนองเฉลี่ย" data-lang-en="average response time">เวลาตอบสนองเฉลี่ย</span></div>
+            <div class="stat-card"><span class="num">24/7</span><span class="label" data-lang-th="เปิดรับสายทุกวัน" data-lang-en="dispatch always open">เปิดรับสายทุกวัน</span></div>
+            <div class="stat-card"><span class="num">12</span><span class="label" data-lang-th="รถสูบในระบบ" data-lang-en="trucks in the fleet">รถสูบในระบบ</span></div>
+          </div>
+        </div>
+        <div class="trust-img reveal">
+          <img src="https://images.unsplash.com/photo-1618684005092-2aef740793d0?w=800&h=900&fit=crop" alt="มาตรวัดแรงดันระบบควบคุม">
+        </div>
+      </div>
+      <p class="credits">Photo by <a href="https://unsplash.com/@wimvanteinde?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Wim van 't Einde</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
+    </div>
+  </section>
+
+  <!-- ============ LOG ENTRIES ============ -->
+  <section class="py alt">
+    <div class="container">
+      <div class="section-tag en-tag">LOG / FIELD REPORTS</div>
+      <div class="section-head reveal">
+        <h2 data-lang-th="เสียงจากหน้างานจริง" data-lang-en="Reports From The Field">เสียงจากหน้างานจริง</h2>
+      </div>
+      <div class="log-list reveal">
+        <div class="log-card">
+          <span class="log-time num">02:14 — 03/09</span>
+          <p data-lang-th="โทรตอนตีสองบ่อเกรอะล้น ทีมมาถึงใน 30 นาที จัดการเรียบร้อยไม่มีกลิ่นตกค้าง" data-lang-en="Called at 2am with an overflowing tank. Crew arrived in 30 minutes, handled it clean — no lingering smell.">โทรตอนตีสองบ่อเกรอะล้น ทีมมาถึงใน 30 นาที จัดการเรียบร้อยไม่มีกลิ่นตกค้าง</p>
+          <span class="log-who" data-lang-th="คุณอนุชา — บ้านเดี่ยว บางนา" data-lang-en="Anucha — house owner, Bang Na">คุณอนุชา — บ้านเดี่ยว บางนา</span>
+        </div>
+        <div class="log-card">
+          <span class="log-time num">14:40 — 21/08</span>
+          <p data-lang-th="ใช้สัญญารายปีกับหมู่บ้าน ทีมมาตรวจตามรอบทุกครั้งไม่เคยเบี้ยว รายงานชัดเจนทุกใบ" data-lang-en="Our village runs an annual contract with them — always on schedule, every report is clear and complete.">ใช้สัญญารายปีกับหมู่บ้าน ทีมมาตรวจตามรอบทุกครั้งไม่เคยเบี้ยว รายงานชัดเจนทุกใบ</p>
+          <span class="log-who" data-lang-th="คุณศิริพร — นิติบุคคลหมู่บ้าน รังสิต" data-lang-en="Siriporn — village management, Rangsit">คุณศิริพร — นิติบุคคลหมู่บ้าน รังสิต</span>
+        </div>
+        <div class="log-card">
+          <span class="log-time num">09:05 — 05/07</span>
+          <p data-lang-th="ท่อโรงงานอุดตันหนัก ทีมเอาเครื่องแรงดันสูงมาแก้จนหมดปัญหาภายในวันเดียว พร้อมใบรับรองกำจัดถูกต้อง" data-lang-en="Severe pipe blockage at our factory. High-pressure jetting cleared it same-day, with proper disposal certification.">ท่อโรงงานอุดตันหนัก ทีมเอาเครื่องแรงดันสูงมาแก้จนหมดปัญหาภายในวันเดียว พร้อมใบรับรองกำจัดถูกต้อง</p>
+          <span class="log-who" data-lang-th="คุณวีระ — ฝ่ายอาคาร นิคมฯบางพลี" data-lang-en="Weera — facilities, Bang Phli industrial estate">คุณวีระ — ฝ่ายอาคาร นิคมฯบางพลี</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section id="contact" class="cta-banner">
+    <div class="cta-banner-bg">
+      <img src="https://images.unsplash.com/photo-1763572079452-e6c8674ec8fb?w=1600&h=900&fit=crop" alt="ไฟท้ายรถสูบส้วมตอนกลางคืน">
+    </div>
+    <div class="container cta-banner-content reveal">
+      <div class="status-pill"><span class="status-dot"></span><span data-lang-th="พร้อมรับสายตอนนี้" data-lang-en="STANDING BY NOW">พร้อมรับสายตอนนี้</span></div>
+      <h2 data-lang-th="ปัญหาไม่รอ เราก็ไม่รอ" data-lang-en="Problems Don't Wait. Neither Do We.">ปัญหาไม่รอ เราก็ไม่รอ</h2>
+      <p data-lang-th="ไม่ว่าจะตีสามหรือวันหยุดนักขัตฤกษ์ ศูนย์ควบคุมของเราเปิดรับสายเสมอ" data-lang-en="Whether it's 3am or a public holiday, our dispatch line is always open.">ไม่ว่าจะตีสามหรือวันหยุดนักขัตฤกษ์ ศูนย์ควบคุมของเราเปิดรับสายเสมอ</p>
+      <a href="tel:0812345678" class="cta-phone">081-234-5678</a>
+      <div class="hero-actions" style="margin-top:8px;">
+        <a href="tel:0812345678" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรด่วนตอนนี้" data-lang-en="Call Now">โทรด่วนตอนนี้</span></a>
+        <a href="https://line.me" target="_blank" rel="noopener" class="btn btn-secondary"><i data-lucide="message-circle"></i><span>LINE: @phetnaruea</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="flogo">เพชร<em>นาะเรือ</em></div>
+        <p data-lang-th="ศูนย์บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ครอบคลุมกรุงเทพฯและปริมณฑล ทีมช่างมืออาชีพพร้อมอุปกรณ์มาตรฐาน" data-lang-en="24/7 emergency septic and waste pumping dispatch, covering greater Bangkok. Professional crews, standard-grade equipment.">ศูนย์บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ครอบคลุมกรุงเทพฯและปริมณฑล ทีมช่างมืออาชีพพร้อมอุปกรณ์มาตรฐาน</p>
+      </div>
+      <div>
+        <h4 data-lang-th="เมนู" data-lang-en="Menu">เมนู</h4>
+        <ul>
+          <li><a class="flink" href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a></li>
+          <li><a class="flink" href="#process" data-lang-th="ขั้นตอนทำงาน" data-lang-en="Process">ขั้นตอนทำงาน</a></li>
+          <li><a class="flink" href="#coverage" data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</a></li>
+          <li><a class="flink" href="#trust" data-lang-th="ทำไมต้องเรา" data-lang-en="Why Us">ทำไมต้องเรา</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h4>
+        <ul>
+          <li><a class="flink" href="tel:0812345678">081-234-5678</a></li>
+          <li><a class="flink" href="mailto:dispatch@phetnaruea.co.th">dispatch@phetnaruea.co.th</a></li>
+          <li><span class="flink" data-lang-th="เปิดบริการ 24 ชั่วโมงทุกวัน" data-lang-en="Open 24 hours, every day">เปิดบริการ 24 ชั่วโมงทุกวัน</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>
+        <p data-lang-th="© 2569 เพชรนาะเรือ สงวนลิขสิทธิ์" data-lang-en="© 2026 Phet Na Ruea. All rights reserved.">© 2569 เพชรนาะเรือ สงวนลิขสิทธิ์</p>
+        <p class="credits">Photo by <a href="https://unsplash.com/@edrecestansberry?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Edrece Stansberry</a>, <a href="https://unsplash.com/@vadakkunokki?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Prince Prabhakaran</a>, <a href="https://unsplash.com/@sigmund?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Compagnons</a>, <a href="https://unsplash.com/@wimvanteinde?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Wim van 't Einde</a> &amp; <a href="https://unsplash.com/@capturedbyvibemind?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Captured By Vibemind</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
+      </div>
+      <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll shrink
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 20){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  });
+
+  // Mobile nav toggle
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', function(){
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Accordion
+  document.querySelectorAll('.acc-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      var item = head.parentElement;
+      var wasOpen = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.acc-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+  lucide.createIcons();
+</script>
+
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){if(/[<&]/.test(t)){e.innerHTML=t}else{e.textContent=t}}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+
+</body>
+</html>
