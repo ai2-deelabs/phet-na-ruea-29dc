@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/logo/logo_nobg-160.png">
+<title>เพชรนาเรือ บริการสูบส้วม ล้างท่อ ด่วนถึงหน้าบ้าน 60 นาที</title>
+<meta name="description" content="เพชรนาเรือ บริการสูบส้วม ล้างท่อ ทั่วกรุงเทพฯ-ปริมณฑล ทีมงานมืออาชีพ ไร้กลิ่น ราคาชัดเจน โทรด่วนถึงหน้าบ้านใน 60 นาที รับประกันงาน 6 เดือน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+  :root{
+    --background:#F3F6FB;
+    --card:#FFFFFF;
+    --bg-accent:#DDE7F5;
+    --foreground:#002454;
+    --muted:#5A7398;
+    --border:#C6D6EC;
+    --primary:#002454;
+    --secondary:#001838;
+    --accent:#F3CC03;
+    --font-heading:'Prompt', sans-serif;
+    --font-body:'Sarabun', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--font-body);
+    background: var(--background);
+    color: var(--foreground);
+    line-height:1.8;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family: var(--font-heading);
+    line-height:1.5;
+    font-weight:700;
+    padding-top:.15em;
+  }
+  .container{max-width:1180px; margin:0 auto; padding:0 1.25rem;}
+  section{position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.4em;
+    font-family:var(--font-heading);
+    font-weight:600;
+    font-size:.85rem;
+    color:var(--primary);
+    background:var(--bg-accent);
+    padding:.5em 1em;
+    border-radius:999px;
+    margin-bottom:1rem;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+    font-family:var(--font-heading);
+    font-weight:600;
+    font-size:1.05rem;
+    padding:.9em 1.7em;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    min-height:44px;
+    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--primary); color:#FFFFFF; box-shadow:0 10px 24px -8px rgba(0,36,84,.45); }
+  .btn-primary:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 16px 30px -8px rgba(0,36,84,.55); }
+  .btn-secondary{ background:var(--card); color:var(--primary); border:2px solid var(--primary); }
+  .btn-secondary:hover{ background:var(--bg-accent); transform:translateY(-3px); }
+  .btn-accent{ background:var(--accent); color:var(--foreground); }
+  .btn-accent:hover{ transform:translateY(-3px) scale(1.02); }
+
+  /* ---------- HEADER ---------- */
+  #siteHeader{
+    position:sticky; top:0; z-index:200;
+    background:rgba(243,246,251,.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid transparent;
+    transition: background .35s ease, box-shadow .35s ease, padding .35s ease, border-color .35s ease;
+  }
+  #siteHeader.scrolled{
+    background:rgba(243,246,251,.98);
+    box-shadow:0 4px 18px -8px rgba(0,36,84,.25);
+    border-color:var(--border);
+  }
+  #siteHeader .header-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:.75rem;
+    padding:.85rem 1.25rem;
+  }
+  #siteHeader .logo{
+    font-family:var(--font-heading);
+    font-weight:800;
+    font-size:clamp(1.15rem, 4.2vw, 1.65rem);
+    color:var(--secondary);
+    white-space:nowrap;
+    overflow:visible;
+    flex-shrink:0;
+    display:flex; align-items:center; gap:.15em;
+  }
+  #siteHeader .logo .dot{ color:var(--accent); }
+  #siteHeader .nav-links{
+    display:none;
+    min-width:0;
+    flex:1 1 auto;
+    align-items:center;
+    justify-content:center;
+    gap:clamp(.8rem, 2vw, 1.8rem);
+  }
+  #siteHeader .nav-links a{
+    font-weight:600;
+    font-size:.98rem;
+    padding:.6em .3em;
+    white-space:nowrap;
+    color:var(--foreground);
+    border-bottom:2px solid transparent;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  #siteHeader .nav-links a:hover{ color:var(--primary); border-color:var(--primary); }
+  #siteHeader .header-actions{
+    display:flex; align-items:center; gap:.5rem;
+    flex-shrink:0;
+  }
+  #siteHeader .header-cta{
+    display:flex; align-items:center; gap:.4em;
+    background:var(--primary); color:#fff;
+    font-family:var(--font-heading); font-weight:600;
+    font-size:.92rem;
+    padding:.65em 1.1em;
+    border-radius:999px;
+    min-height:44px;
+    white-space:nowrap;
+    box-shadow:0 8px 18px -8px rgba(0,36,84,.5);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  #siteHeader .header-cta:hover{ transform:translateY(-2px); }
+  #siteHeader .header-cta span{ display:none; }
+  #siteHeader .hamburger{
+    display:flex; align-items:center; justify-content:center;
+    width:44px; height:44px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--secondary);
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  #siteHeader .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--card);
+    border-top:1px solid var(--border);
+    padding:.5rem 1.25rem 1.25rem;
+  }
+  #siteHeader .mobile-menu.open{ display:flex; }
+  #siteHeader .mobile-menu a{
+    font-weight:600;
+    padding:.85em .25em;
+    border-bottom:1px solid var(--border);
+    min-height:44px;
+    display:flex;
+    align-items:center;
+  }
+  #siteHeader .mobile-menu a:last-child{ border-bottom:none; }
+
+  @media (min-width:768px){
+    #siteHeader .nav-links{ display:flex; }
+    #siteHeader .header-cta span{ display:inline; }
+    #siteHeader .hamburger{ display:none; }
+    #siteHeader .mobile-menu{ display:none !important; }
+  }
+
+  /* ---------- LANG SWITCH ---------- */
+  .lang-sw{
+    display:flex; align-items:center; gap:.3em;
+    font-size:.78em;
+    color:var(--muted);
+    padding:.4em .5em;
+    border-radius:8px;
+    flex-shrink:0;
+  }
+  .lang-sw:hover{ color:var(--primary); }
+
+  /* ---------- PIPE DIVIDERS ---------- */
+  .pipe-divider{ line-height:0; width:100%; overflow:hidden; }
+  .pipe-divider svg{ width:100%; height:70px; display:block; }
+  @media(min-width:768px){ .pipe-divider svg{ height:110px; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background: radial-gradient(circle at 15% 15%, var(--bg-accent) 0%, var(--background) 55%);
+    padding:2.75rem 0 4rem;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; top:-60px; right:-60px;
+    width:260px; height:260px; border-radius:50%;
+    background:var(--bg-accent);
+    opacity:.7;
+    z-index:0;
+  }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1fr; gap:2.25rem;
+    align-items:center;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.1rem, 7vw, 3.4rem);
+    color:var(--secondary);
+    padding-top:.25em;
+  }
+  .hero-copy h1 em{ font-style:normal; color:var(--primary); }
+  .hero-copy p{
+    font-size:1.08rem;
+    color:var(--muted);
+    max-width:52ch;
+    margin-top:1rem;
+  }
+  .hero-actions{
+    display:flex; flex-direction:column; gap:.85rem;
+    margin-top:1.75rem;
+  }
+  .hero-actions .btn{ width:100%; }
+  .phone-huge{
+    margin-top:1.75rem;
+    display:inline-flex; align-items:center; gap:.75rem;
+    background:var(--card);
+    border:2px dashed var(--primary);
+    border-radius:24px;
+    padding:.9rem 1.25rem;
+  }
+  .phone-huge .ph-icon{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--primary); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    animation: ring 2.4s ease-in-out infinite;
+  }
+  @keyframes ring{
+    0%,100%{ transform:rotate(0deg); }
+    5%{ transform:rotate(-15deg); }
+    10%{ transform:rotate(12deg); }
+    15%{ transform:rotate(-10deg); }
+    20%{ transform:rotate(0deg); }
+  }
+  .phone-huge .ph-text small{
+    display:block; font-size:.78rem; color:var(--muted); font-weight:600;
+  }
+  .phone-huge .ph-text .ph-num{
+    font-family:var(--font-heading);
+    font-weight:800;
+    font-size:clamp(1.5rem, 6vw, 2.1rem);
+    color:var(--secondary);
+    letter-spacing:.5px;
+    line-height:1.3;
+  }
+  .hero-visual{
+    position:relative;
+    display:flex; justify-content:center;
+    z-index:1;
+  }
+  .hero-badge{
+    position:relative;
+    width:min(320px, 78vw);
+    aspect-ratio:1/1;
+    border-radius:50%;
+    overflow:visible;
+    animation: floaty 5s ease-in-out infinite;
+  }
+  @keyframes floaty{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-14px); }
+  }
+  .hero-badge img{
+    width:100%; height:100%; object-fit:cover; border-radius:50%;
+    border:8px solid var(--card);
+    box-shadow:0 24px 40px -16px rgba(0,36,84,.4);
+  }
+  .hero-badge .mini-badge{
+    position:absolute; bottom:-6px; left:-18px;
+    background:var(--accent); color:var(--foreground);
+    font-family:var(--font-heading); font-weight:700; font-size:.85rem;
+    padding:.6em 1em; border-radius:999px;
+    box-shadow:0 10px 20px -8px rgba(0,36,84,.35);
+    display:flex; align-items:center; gap:.4em;
+  }
+  .hero-badge .mini-badge2{
+    position:absolute; top:6px; right:-14px;
+    background:var(--secondary); color:#fff;
+    font-family:var(--font-heading); font-weight:700; font-size:.8rem;
+    padding:.55em .9em; border-radius:999px;
+    box-shadow:0 10px 20px -8px rgba(0,36,84,.35);
+  }
+
+  @media(min-width:900px){
+    .hero{ padding:4.5rem 0 6rem; }
+    .hero-grid{ grid-template-columns:1.15fr 1fr; gap:2rem; }
+    .hero-actions{ flex-direction:row; }
+    .hero-actions .btn{ width:auto; }
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+  /* ---------- STATS ---------- */
+  .stats-section{ background:var(--secondary); padding:3rem 0; }
+  .stats-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 1rem;
+  }
+  .stat-item{ text-align:center; min-width:0; }
+  .stat-num{
+    font-family:var(--font-heading); font-weight:800;
+    font-size:clamp(2rem, 8vw, 3rem);
+    color:var(--accent);
+    line-height:1.3;
+  }
+  .stat-label{ color:#D6E4F6; font-size:.92rem; margin-top:.25rem; }
+  @media(min-width:768px){ .stats-grid{ grid-template-columns:repeat(4,1fr); } }
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 2.75rem; }
+  .section-head h2{ font-size:clamp(1.7rem, 5vw, 2.5rem); color:var(--secondary); }
+  .section-head p{ color:var(--muted); margin-top:.75rem; }
+
+  /* ---------- PROCESS / PIPE DIAGRAM ---------- */
+  .process{ padding:4.5rem 0; background:var(--background); }
+  .process-track{ position:relative; }
+  .process-line-svg{ position:absolute; top:0; left:36px; height:100%; width:6px; z-index:0; }
+  .process-line-svg svg{ width:100%; height:100%; overflow:visible; }
+  .process-steps{ display:flex; flex-direction:column; gap:2.25rem; position:relative; z-index:1; }
+  .process-step{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:1.1rem; align-items:flex-start; }
+  .step-num{
+    grid-column:1;
+    width:74px; height:74px; border-radius:50%;
+    background:var(--primary); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-heading); font-weight:800; font-size:1.6rem;
+    flex-shrink:0;
+    border:5px solid var(--card);
+    box-shadow:0 10px 22px -10px rgba(0,36,84,.5);
+  }
+  .step-body{ grid-column:2; min-width:0; background:var(--card); border-radius:20px; padding:1.25rem 1.4rem; border:1px solid var(--border); }
+  .step-body h3{ font-size:1.15rem; color:var(--secondary); }
+  .step-body p{ color:var(--muted); margin-top:.4rem; font-size:.98rem; }
+
+  @media(min-width:900px){
+    .process-line-svg{ left:0; top:44px; width:100%; height:8px; }
+    .process-steps{ flex-direction:row; justify-content:space-between; gap:1rem; }
+    .process-step{ grid-template-columns:1fr; flex:1; min-width:0; text-align:center; justify-items:center; }
+    .step-num{ grid-column:1; }
+    .step-body{ grid-column:1; margin-top:1rem; width:100%; }
+  }
+
+  /* ---------- PORTFOLIO SCATTER ---------- */
+  .portfolio{ padding:4.5rem 0 5rem; background:var(--bg-accent); position:relative; overflow:hidden; }
+  .works-scroll{
+    display:flex; gap:1.4rem; overflow-x:auto; padding:.5rem .25rem 1.25rem;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .work-badge{
+    scroll-snap-align:start;
+    flex:0 0 auto;
+    width:190px;
+    text-align:center;
+  }
+  .work-badge .wb-img{
+    width:190px; height:190px; border-radius:50%;
+    overflow:hidden; border:6px solid var(--card);
+    box-shadow:0 16px 30px -14px rgba(0,36,84,.45);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .work-badge .wb-img img{ width:100%; height:100%; object-fit:cover; }
+  .work-badge:hover .wb-img{ transform:scale(1.05) rotate(-2deg); box-shadow:0 22px 36px -14px rgba(0,36,84,.55); }
+  .work-badge .wb-cap{ font-family:var(--font-heading); font-weight:600; font-size:.92rem; margin-top:.75rem; color:var(--secondary); }
+  .works-scatter{ position:relative; display:none; height:640px; margin-top:1rem; }
+  .works-scatter .work-badge{ position:absolute; width:190px; }
+  .works-scatter .work-badge .wb-img{ width:190px; height:190px; }
+  .wb-1{ top:0; left:0%; transform:rotate(-6deg); }
+  .wb-2{ top:9%; left:19%; transform:rotate(4deg); }
+  .wb-3{ top:0%; left:40%; width:160px !important; }
+  .wb-4{ top:24%; left:58%; transform:rotate(6deg); }
+  .wb-5{ top:40%; left:6%; transform:rotate(3deg); }
+  .wb-6{ top:38%; left:78%; transform:rotate(-5deg); width:160px !important; }
+  .wb-3 .wb-img, .wb-6 .wb-img{ width:160px; height:160px; }
+
+  @media(min-width:960px){
+    .works-scroll{ display:none; }
+    .works-scatter{ display:block; }
+  }
+
+  /* ---------- WHY US ---------- */
+  .why{ padding:4.5rem 0; background:var(--background); }
+  .why-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; }
+  .why-img{ position:relative; }
+  .why-img img{ width:100%; height:340px; object-fit:cover; border-radius:32px; box-shadow:0 20px 40px -18px rgba(0,36,84,.35); }
+  .why-img .why-tag{
+    position:absolute; bottom:-18px; right:-10px;
+    background:var(--accent); color:var(--foreground);
+    font-family:var(--font-heading); font-weight:700;
+    padding:.9em 1.2em; border-radius:20px;
+    box-shadow:0 14px 26px -12px rgba(0,36,84,.4);
+    display:flex; align-items:center; gap:.5em;
+    font-size:.95rem;
+  }
+  .why-list{ display:flex; flex-direction:column; gap:1.1rem; }
+  .why-item{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:.9rem; align-items:flex-start; }
+  .why-item .wi-icon{
+    grid-column:1;
+    width:48px; height:48px; border-radius:14px;
+    background:var(--bg-accent); color:var(--primary);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .why-item .wi-text{ grid-column:2; min-width:0; }
+  .why-item .wi-text h4{ font-size:1.05rem; color:var(--secondary); }
+  .why-item .wi-text p{ color:var(--muted); font-size:.95rem; margin-top:.2rem; }
+
+  @media(min-width:900px){ .why-grid{ grid-template-columns:1fr 1.1fr; } }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .reviews{ padding:4.5rem 0; background:var(--secondary); position:relative; overflow:hidden; }
+  .reviews .section-head h2, .reviews .section-head p{ color:#fff; }
+  .reviews .section-head p{ color:#B7CCE8; }
+  .review-scroll{ display:flex; gap:1.25rem; overflow-x:auto; padding:.5rem .25rem 1rem; scroll-snap-type:x mandatory; }
+  .review-card{
+    scroll-snap-align:start;
+    flex:0 0 auto;
+    width:min(320px, 82vw);
+    background:var(--card);
+    border-radius:24px;
+    padding:1.6rem 1.5rem;
+    position:relative;
+  }
+  .review-card::after{
+    content:"";
+    position:absolute; bottom:-14px; left:36px;
+    width:26px; height:26px;
+    background:var(--card);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  .review-stars{ color:#C79E00; display:flex; gap:.15rem; margin-bottom:.75rem; }
+  .review-card p.quote{ color:var(--foreground); font-size:.98rem; }
+  .review-who{ display:flex; align-items:center; gap:.7rem; margin-top:1.1rem; }
+  .review-who .rw-avatar{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--bg-accent); color:var(--primary);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-heading); font-weight:700;
+    flex-shrink:0;
+  }
+  .review-who .rw-name{ font-weight:600; font-size:.92rem; color:var(--secondary); }
+  .review-who .rw-loc{ font-size:.82rem; color:var(--muted); }
+
+  /* ---------- SERVICE AREA ---------- */
+  .area{ padding:4.5rem 0; background:var(--background); }
+  .area-wrap{ display:flex; flex-direction:column; gap:2.25rem; align-items:center; }
+  .area-tags{ display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; max-width:760px; }
+  .area-tag{
+    font-family:var(--font-heading); font-weight:600; font-size:.92rem;
+    background:var(--card); border:2px solid var(--border);
+    color:var(--secondary);
+    padding:.65em 1.2em; border-radius:999px;
+    transition:transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .area-tag:hover{ transform:translateY(-3px) rotate(-1deg); border-color:var(--primary); background:var(--bg-accent); }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    padding:4rem 0 5rem;
+    background: linear-gradient(160deg, var(--primary), var(--secondary));
+    text-align:center;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta h2{ color:#fff; font-size:clamp(1.8rem, 6vw, 2.7rem); }
+  .final-cta p{ color:#D6E4F6; max-width:52ch; margin:.9rem auto 0; }
+  .final-phone{
+    display:inline-flex; flex-direction:column; align-items:center;
+    margin-top:2rem; gap:.35rem;
+  }
+  .final-phone .fp-num{
+    font-family:var(--font-heading); font-weight:800;
+    font-size:clamp(2.4rem, 10vw, 4rem);
+    color:var(--accent);
+    line-height:1.3;
+    letter-spacing:1px;
+  }
+  .final-cta .btn-row{ display:flex; flex-direction:column; gap:1rem; margin-top:1.75rem; align-items:center; }
+  .final-cta .btn{ width:min(320px, 100%); }
+  @media(min-width:640px){ .final-cta .btn-row{ flex-direction:row; justify-content:center; } .final-cta .btn{ width:auto; } }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--foreground); color:#D6E4F6; padding:3.5rem 0 2rem; }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.25rem; }
+  .footer-brand{ font-family:var(--font-heading); font-weight:800; font-size:1.5rem; color:#fff; }
+  .footer-col h5{ font-family:var(--font-heading); font-weight:600; color:#fff; margin-bottom:.9rem; font-size:1rem; }
+  .footer-col p, .footer-col a{ color:#B0C7E4; font-size:.94rem; display:block; margin-bottom:.55rem; }
+  .footer-col a:hover{ color:var(--accent); }
+  .foot-contact-item{ display:flex; align-items:flex-start; gap:.5rem; margin-bottom:.65rem; min-width:0; }
+  .foot-contact-item span{ min-width:0; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:2.5rem; padding-top:1.5rem;
+    display:flex; flex-direction:column; gap:.75rem;
+    font-size:.82rem; color:#9DB6D6;
+  }
+  .credits{ font-size:.78rem; color:#8FA9C8; line-height:1.9; }
+  .credits a{ color:#8FA9C8; text-decoration:underline; }
+  .deelabs-badge{ font-size:.75rem; color:#8FA9C8; font-weight:400; }
+  .deelabs-badge:hover{ color:var(--accent); }
+
+  @media(min-width:768px){ .footer-grid{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
+
+  /* utility */
+  .center-text{ text-align:center; }
+
+  /* ===== brand logo assets ===== */
+  #siteHeader .logo, #siteHeader .brand, #siteHeader .hd-logo{
+    display:inline-flex; align-items:center; min-width:0;
+  }
+  /* margin, not gap: the brand text is split into spans in some variants
+     and a flex gap would push those apart too */
+  .brand-mark{
+    height:40px; width:auto; flex:0 0 auto; align-self:center; display:block;
+    margin-inline-end:.5em;
+  }
+  .brand-wordmark{
+    width:250px; max-width:100%; height:auto; display:block; margin-bottom:.25rem;
+    /* the wordmark's sub-line is navy; footers are navy too, so lift it off
+       the background with a thin light outline instead of a solid plate */
+    filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
+           drop-shadow(0 0 2px rgba(255,255,255,.65));
+  }
+  @media(max-width:640px){
+    .brand-mark{ height:30px; }
+    .brand-wordmark{ width:190px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="logo"><img class="brand-mark" src="assets/logo/logo_nobg-160.png" alt="" aria-hidden="true" width="160" height="123" decoding="async">เพชรนาเรือ<span class="dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+      <a href="#works" data-lang-th="ผลงาน" data-lang-en="Our Work">ผลงาน</a>
+      <a href="#why" data-lang-th="ทำไมเลือกเรา" data-lang-en="Why Us">ทำไมเลือกเรา</a>
+      <a href="#area" data-lang-th="พื้นที่บริการ" data-lang-en="Service Area">พื้นที่บริการ</a>
+      <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-sw">
+        <i data-lucide="globe" width="14" height="14"></i>
+        <span class="lang-sw__label">TH</span>
+      </div>
+      <a href="tel:0887623287" class="header-cta">
+        <i data-lucide="phone-call" width="18" height="18"></i>
+        <span data-lang-th="โทรเลย" data-lang-en="Call Now">โทรเลย</span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <i data-lucide="menu" width="20" height="20"></i>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+    <a href="#works" data-lang-th="ผลงาน" data-lang-en="Our Work">ผลงาน</a>
+    <a href="#why" data-lang-th="ทำไมเลือกเรา" data-lang-en="Why Us">ทำไมเลือกเรา</a>
+    <a href="#area" data-lang-th="พื้นที่บริการ" data-lang-en="Service Area">พื้นที่บริการ</a>
+    <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow"><i data-lucide="sparkles" width="16" height="16"></i>
+        <span data-lang-th="สูบส้วม-ล้างท่อ ไร้กลิ่นกวนใจ" data-lang-en="Odor-free septic & drain service">สูบส้วม-ล้างท่อ ไร้กลิ่นกวนใจ</span>
+      </div>
+      <h1 data-lang-th="ส้วมเต็ม ส้วมตัน ท่ออุดตัน โทรหา<em>เพชรนาเรือ</em>!" data-lang-en="Tank full? Drain blocked? Call <em>Phet Na Ruea</em>!">ส้วมเต็ม ส้วมตัน ท่ออุดตัน โทรหา<em>เพชรนาเรือ</em>!</h1>
+      <p data-lang-th="ทีมช่างมืออาชีพพร้อมรถสูบวิ่งถึงหน้าบ้านใน 60 นาที ราคาชัดเจนแจ้งก่อนเริ่มงาน ไม่มีบวกเพิ่มทีหลัง" data-lang-en="Professional crew with a tank truck at your door in 60 minutes. Clear pricing quoted upfront, never a hidden surcharge later.">ทีมช่างมืออาชีพพร้อมรถสูบวิ่งถึงหน้าบ้านใน 60 นาที ราคาชัดเจนแจ้งก่อนเริ่มงาน ไม่มีบวกเพิ่มทีหลัง</p>
+      <div class="hero-actions">
+        <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone-call" width="18" height="18"></i><span data-lang-th="โทรด่วน 088-7623287" data-lang-en="Call Now 088-7623287">โทรด่วน 088-7623287</span></a>
+        <a href="#contact" class="btn btn-secondary"><i data-lucide="message-circle" width="18" height="18"></i><span data-lang-th="แชทผ่าน LINE" data-lang-en="Chat on LINE">แชทผ่าน LINE</span></a>
+      </div>
+      <div class="phone-huge">
+        <div class="ph-icon"><i data-lucide="phone" width="24" height="24"></i></div>
+        <div class="ph-text">
+          <small data-lang-th="โทรฟรีทุกเครือข่าย ตลอด 24 ชม." data-lang-en="Free call, all networks, 24 hours">โทรฟรีทุกเครือข่าย ตลอด 24 ชม.</small>
+          <span class="ph-num">088-7623287</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-badge">
+        <img src="https://images.unsplash.com/photo-1729628371767-7a833756b8b5?w=700&h=700&fit=crop" alt="รถสูบส้วมของเพชรนาเรือจอดพร้อมให้บริการ">
+        <div class="mini-badge"><i data-lucide="badge-check" width="16" height="16"></i> <span data-lang-th="รับประกันงาน" data-lang-en="Warrantied work">รับประกันงาน</span></div>
+        <div class="mini-badge2" data-lang-th="ถึงใน 60 นาที" data-lang-en="Arrive in 60 min">ถึงใน 60 นาที</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pipe-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,100 480,0 720,40 C960,80 1200,0 1440,40 L1440,100 L0,100 Z" fill="var(--secondary)"></path></svg>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num">12,000+</div>
+      <div class="stat-label" data-lang-th="หลังคาเรือนไว้วางใจ" data-lang-en="households served">หลังคาเรือนไว้วางใจ</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">24 <span data-lang-th="ชม." data-lang-en="hrs">ชม.</span></div>
+      <div class="stat-label" data-lang-th="บริการฉุกเฉินทุกวัน" data-lang-en="emergency service, every day">บริการฉุกเฉินทุกวัน</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">15 <span data-lang-th="ปี" data-lang-en="yrs">ปี</span></div>
+      <div class="stat-label" data-lang-th="ประสบการณ์ในวงการ" data-lang-en="years of experience">ประสบการณ์ในวงการ</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-lang-th="0 กลิ่น" data-lang-en="0 Smell">0 กลิ่น</div>
+      <div class="stat-label" data-lang-th="เทคโนโลยีสูบไร้กลิ่นรบกวน" data-lang-en="odor-free pumping technology">เทคโนโลยีสูบไร้กลิ่นรบกวน</div>
+    </div>
+  </div>
+</section>
+
+<div class="pipe-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,60 C240,0 480,100 720,60 C960,20 1200,100 1440,60 L1440,0 L0,0 Z" fill="var(--secondary)"></path></svg>
+</div>
+
+<!-- ============ PROCESS / SERVICES ============ -->
+<section class="process" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><i data-lucide="wrench" width="16" height="16"></i>
+        <span data-lang-th="ขั้นตอนการทำงาน" data-lang-en="How it works">ขั้นตอนการทำงาน</span>
+      </div>
+      <h2 data-lang-th="5 ขั้นตอน จบปัญหาส้วม-ท่อ" data-lang-en="5 Steps to a Fixed Septic & Drain">5 ขั้นตอน จบปัญหาส้วม-ท่อ</h2>
+      <p data-lang-th="ระบบงานเป็นขั้นเป็นตอน โปร่งใสทุกจุด ตั้งแต่โทรนัดจนถึงใบรับประกัน" data-lang-en="A transparent step-by-step system, from your first call to your written warranty.">ระบบงานเป็นขั้นเป็นตอน โปร่งใสทุกจุด ตั้งแต่โทรนัดจนถึงใบรับประกัน</p>
+    </div>
+    <div class="process-track">
+      <div class="process-line-svg" aria-hidden="true">
+        <svg viewBox="0 0 8 700" preserveAspectRatio="none"><path d="M4,0 C4,140 4,140 4,280 C4,420 4,420 4,560 C4,650 4,650 4,700" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16" fill="none"/></svg>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3 data-lang-th="โทรนัดหมาย" data-lang-en="Call & Schedule">โทรนัดหมาย</h3>
+            <p data-lang-th="แจ้งอาการเบื้องต้นทางโทรศัพท์ นัดวัน-เวลาที่สะดวกได้ทันที" data-lang-en="Describe the issue over the phone and pick a convenient time instantly.">แจ้งอาการเบื้องต้นทางโทรศัพท์ นัดวัน-เวลาที่สะดวกได้ทันที</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3 data-lang-th="รถสูบถึงหน้าบ้าน" data-lang-en="Truck Arrives">รถสูบถึงหน้าบ้าน</h3>
+            <p data-lang-th="ทีมงานพร้อมอุปกรณ์ครบชุด เดินทางถึงภายใน 60 นาที" data-lang-en="Fully equipped crew reaches your door within 60 minutes.">ทีมงานพร้อมอุปกรณ์ครบชุด เดินทางถึงภายใน 60 นาที</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3 data-lang-th="สูบ-ล้างทำความสะอาด" data-lang-en="Pump & Clean">สูบ-ล้างทำความสะอาด</h3>
+            <p data-lang-th="ใช้เครื่องแรงดันสูงระบบปิดสนิท ไม่มีกลิ่นฟุ้งรบกวนเพื่อนบ้าน" data-lang-en="Sealed high-pressure equipment with zero odor escaping to neighbors.">ใช้เครื่องแรงดันสูงระบบปิดสนิท ไม่มีกลิ่นฟุ้งรบกวนเพื่อนบ้าน</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3 data-lang-th="ตรวจสอบระบบท่อ" data-lang-en="Inspect the System">ตรวจสอบระบบท่อ</h3>
+            <p data-lang-th="เช็กจุดเสี่ยงอุดตันซ้ำ พร้อมคำแนะนำการดูแลระยะยาว" data-lang-en="Check high-risk points and give long-term maintenance advice.">เช็กจุดเสี่ยงอุดตันซ้ำ พร้อมคำแนะนำการดูแลระยะยาว</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3 data-lang-th="ออกใบรับประกัน" data-lang-en="Issue Warranty">ออกใบรับประกัน</h3>
+            <p data-lang-th="รับใบเสร็จและใบรับประกันงาน 6 เดือนทันทีหลังจบงาน" data-lang-en="Receive your receipt and 6-month written warranty right after the job.">รับใบเสร็จและใบรับประกันงาน 6 เดือนทันทีหลังจบงาน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pipe-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,100 480,0 720,40 C960,80 1200,0 1440,40 L1440,100 L0,100 Z" fill="var(--bg-accent)"></path></svg>
+</div>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="portfolio" id="works">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><i data-lucide="camera" width="16" height="16"></i>
+        <span data-lang-th="ผลงานจริงที่ผ่านมา" data-lang-en="Real Past Jobs">ผลงานจริงที่ผ่านมา</span>
+      </div>
+      <h2 data-lang-th="งานที่เพชรนาเรือภูมิใจ" data-lang-en="Jobs Phet Na Ruea Is Proud Of">งานที่เพชรนาเรือภูมิใจ</h2>
+      <p data-lang-th="ตัวอย่างงานสูบส้วมและล้างท่อจริงจากลูกค้าทั่วกรุงเทพฯ-ปริมณฑล" data-lang-en="Real septic and drain jobs completed for customers across Bangkok and beyond.">ตัวอย่างงานสูบส้วมและล้างท่อจริงจากลูกค้าทั่วกรุงเทพฯ-ปริมณฑล</p>
+    </div>
+
+    <div class="works-scroll">
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1729628377442-7b3b37a99273?w=400&h=400&fit=crop" alt="รถสูบส้วมงานด่วนย่านบางนา" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="งานด่วน ย่านบางนา" data-lang-en="Rush job, Bang Na">งานด่วน ย่านบางนา</div>
+      </div>
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1686259879666-0d5b4ccfcd3b?w=400&h=400&fit=crop" alt="รถสูบส้วมกำลังวิ่งไปหน้างาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ออกงานย่านรามอินทรา" data-lang-en="On the way, Ram Inthra">ออกงานย่านรามอินทรา</div>
+      </div>
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1710661184714-8da83aaf8ecc?w=400&h=400&fit=crop" alt="ล้างระบบท่อรวมโรงงาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ล้างท่อรวมโรงงาน" data-lang-en="Factory pipe system">ล้างท่อรวมโรงงาน</div>
+      </div>
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1668397004204-e10def11a285?w=400&h=400&fit=crop" alt="ช่างตรวจเช็คระบบท่อก่อนเริ่มงาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ตรวจเช็คก่อนเริ่มงาน" data-lang-en="Pre-job inspection">ตรวจเช็คก่อนเริ่มงาน</div>
+      </div>
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1734322860201-4d657c8a5b3e?w=400&h=400&fit=crop" alt="ทีมงานเพชรนาเรือร่วมกันหน้ารถสูบ" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ทีมงานพร้อมลุย" data-lang-en="Crew ready to go">ทีมงานพร้อมลุย</div>
+      </div>
+      <div class="work-badge reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1564047046531-fe7ceae81291?w=400&h=400&fit=crop" alt="บ้านเดี่ยวลูกค้าย่านมีนบุรี" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="บ้านเดี่ยว ย่านมีนบุรี" data-lang-en="House job, Min Buri">บ้านเดี่ยว ย่านมีนบุรี</div>
+      </div>
+    </div>
+
+    <div class="works-scatter">
+      <div class="work-badge wb-1 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1729628377442-7b3b37a99273?w=400&h=400&fit=crop" alt="รถสูบส้วมงานด่วนย่านบางนา" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="งานด่วน ย่านบางนา" data-lang-en="Rush job, Bang Na">งานด่วน ย่านบางนา</div>
+      </div>
+      <div class="work-badge wb-2 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1686259879666-0d5b4ccfcd3b?w=400&h=400&fit=crop" alt="รถสูบส้วมกำลังวิ่งไปหน้างาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ออกงานย่านรามอินทรา" data-lang-en="On the way, Ram Inthra">ออกงานย่านรามอินทรา</div>
+      </div>
+      <div class="work-badge wb-3 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1710661184714-8da83aaf8ecc?w=400&h=400&fit=crop" alt="ล้างระบบท่อรวมโรงงาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ล้างท่อรวมโรงงาน" data-lang-en="Factory pipe system">ล้างท่อรวมโรงงาน</div>
+      </div>
+      <div class="work-badge wb-4 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1668397004204-e10def11a285?w=400&h=400&fit=crop" alt="ช่างตรวจเช็คระบบท่อก่อนเริ่มงาน" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ตรวจเช็คก่อนเริ่มงาน" data-lang-en="Pre-job inspection">ตรวจเช็คก่อนเริ่มงาน</div>
+      </div>
+      <div class="work-badge wb-5 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1734322860201-4d657c8a5b3e?w=400&h=400&fit=crop" alt="ทีมงานเพชรนาเรือร่วมกันหน้ารถสูบ" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="ทีมงานพร้อมลุย" data-lang-en="Crew ready to go">ทีมงานพร้อมลุย</div>
+      </div>
+      <div class="work-badge wb-6 reveal">
+        <div class="wb-img"><img src="https://images.unsplash.com/photo-1564047046531-fe7ceae81291?w=400&h=400&fit=crop" alt="บ้านเดี่ยวลูกค้าย่านมีนบุรี" loading="lazy" decoding="async"></div>
+        <div class="wb-cap" data-lang-th="บ้านเดี่ยว ย่านมีนบุรี" data-lang-en="House job, Min Buri">บ้านเดี่ยว ย่านมีนบุรี</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="why">
+  <div class="container why-grid">
+    <div class="why-img reveal">
+      <img src="https://images.unsplash.com/photo-1668910242001-f51ede00662d?w=700&h=560&fit=crop" alt="ห้องน้ำสะอาดหลังบริการของเพชรนาเรือ" loading="lazy" decoding="async">
+      <div class="why-tag"><i data-lucide="heart" width="16" height="16"></i> <span data-lang-th="ลูกค้าพอใจ 98%" data-lang-en="98% happy customers">ลูกค้าพอใจ 98%</span></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow"><i data-lucide="thumbs-up" width="16" height="16"></i>
+        <span data-lang-th="ทำไมต้องเพชรนาเรือ" data-lang-en="Why Phet Na Ruea">ทำไมต้องเพชรนาเรือ</span>
+      </div>
+      <h2 data-lang-th="เหตุผลที่ลูกค้าเลือกเรา" data-lang-en="Why customers keep calling us">เหตุผลที่ลูกค้าเลือกเรา</h2>
+      <div class="why-list" style="margin-top:1.75rem;">
+        <div class="why-item">
+          <div class="wi-icon"><i data-lucide="truck" width="22" height="22"></i></div>
+          <div class="wi-text">
+            <h4 data-lang-th="ถึงหน้าบ้านไว" data-lang-en="Fast arrival">ถึงหน้าบ้านไว</h4>
+            <p data-lang-th="รถสูบกระจายทุกโซน เดินทางถึงภายใน 60 นาที" data-lang-en="Trucks stationed across every zone, arriving within 60 minutes.">รถสูบกระจายทุกโซน เดินทางถึงภายใน 60 นาที</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="wi-icon"><i data-lucide="shield-check" width="22" height="22"></i></div>
+          <div class="wi-text">
+            <h4 data-lang-th="ช่างมีใบอนุญาต" data-lang-en="Licensed technicians">ช่างมีใบอนุญาต</h4>
+            <p data-lang-th="ทีมงานผ่านการอบรม มีใบอนุญาตกำจัดสิ่งปฏิกูลถูกต้อง" data-lang-en="Trained crew with proper waste-disposal permits.">ทีมงานผ่านการอบรม มีใบอนุญาตกำจัดสิ่งปฏิกูลถูกต้อง</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="wi-icon"><i data-lucide="banknote" width="22" height="22"></i></div>
+          <div class="wi-text">
+            <h4 data-lang-th="ราคาชัดเจน" data-lang-en="Transparent pricing">ราคาชัดเจน</h4>
+            <p data-lang-th="แจ้งราคาก่อนเริ่มงานทุกครั้ง ไม่มีบวกเพิ่มภายหลัง" data-lang-en="Quote given before work starts, no surprise add-ons.">แจ้งราคาก่อนเริ่มงานทุกครั้ง ไม่มีบวกเพิ่มภายหลัง</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="wi-icon"><i data-lucide="leaf" width="22" height="22"></i></div>
+          <div class="wi-text">
+            <h4 data-lang-th="กำจัดสิ่งปฏิกูลถูกวิธี" data-lang-en="Proper eco-disposal">กำจัดสิ่งปฏิกูลถูกวิธี</h4>
+            <p data-lang-th="นำไปกำจัดยังโรงบำบัดที่ได้มาตรฐาน ไม่ปล่อยลงแหล่งน้ำ" data-lang-en="Waste is treated at certified facilities, never dumped into waterways.">นำไปกำจัดยังโรงบำบัดที่ได้มาตรฐาน ไม่ปล่อยลงแหล่งน้ำ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pipe-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,60 C240,0 480,100 720,60 C960,20 1200,100 1440,60 L1440,100 L0,100 Z" fill="var(--secondary)"></path></svg>
+</div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="background:rgba(255,255,255,.12); color:var(--accent);"><i data-lucide="message-square-text" width="16" height="16"></i>
+        <span data-lang-th="เสียงจากลูกค้า" data-lang-en="Customer Reviews">เสียงจากลูกค้า</span>
+      </div>
+      <h2 data-lang-th="รีวิวจริงจากลูกค้าเพชรนาเรือ" data-lang-en="Real Reviews from Real Customers">รีวิวจริงจากลูกค้าเพชรนาเรือ</h2>
+      <p data-lang-th="ความประทับใจของลูกค้าที่เคยใช้บริการสูบส้วมและล้างท่อกับเรา" data-lang-en="What customers say after using our septic pumping and drain cleaning service.">ความประทับใจของลูกค้าที่เคยใช้บริการสูบส้วมและล้างท่อกับเรา</p>
+    </div>
+    <div class="review-scroll">
+      <div class="review-card reveal">
+        <div class="review-stars"><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i></div>
+        <p class="quote" data-lang-th="โทรตอนเช้า บ่ายรถก็มาแล้ว ทำงานไวมาก ไม่มีกลิ่นเลย ประทับใจสุดๆ" data-lang-en="Called in the morning, the truck came by afternoon. Fast work with zero smell — very impressed.">โทรตอนเช้า บ่ายรถก็มาแล้ว ทำงานไวมาก ไม่มีกลิ่นเลย ประทับใจสุดๆ</p>
+        <div class="review-who">
+          <div class="rw-avatar">พ</div>
+          <div>
+            <div class="rw-name">คุณพรทิพย์</div>
+            <div class="rw-loc" data-lang-th="ลาดพร้าว" data-lang-en="Lat Phrao">ลาดพร้าว</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i></div>
+        <p class="quote" data-lang-th="ราคาตรงตามที่แจ้งเป๊ะ ไม่มีหลอกบวกเพิ่มแบบเจ้าอื่น แนะนำเลยครับ" data-lang-en="Price matched exactly what was quoted, no sneaky add-ons like other companies. Highly recommend.">ราคาตรงตามที่แจ้งเป๊ะ ไม่มีหลอกบวกเพิ่มแบบเจ้าอื่น แนะนำเลยครับ</p>
+        <div class="review-who">
+          <div class="rw-avatar">ส</div>
+          <div>
+            <div class="rw-name">คุณสมชาย</div>
+            <div class="rw-loc" data-lang-th="บางนา" data-lang-en="Bang Na">บางนา</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i><i data-lucide="star" width="16" height="16"></i></div>
+        <p class="quote" data-lang-th="ท่อตันมาหลายวัน เรียกเพชรนาเรือมาแป๊บเดียวจบ ช่างพูดจาดี สุภาพมาก" data-lang-en="The drain had been clogged for days. Phet Na Ruea fixed it fast — polite and friendly crew.">ท่อตันมาหลายวัน เรียกเพชรนาเรือมาแป๊บเดียวจบ ช่างพูดจาดี สุภาพมาก</p>
+        <div class="review-who">
+          <div class="rw-avatar">ก</div>
+          <div>
+            <div class="rw-name">คุณกัญญา</div>
+            <div class="rw-loc" data-lang-th="มีนบุรี" data-lang-en="Min Buri">มีนบุรี</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="area" id="area">
+  <div class="container area-wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><i data-lucide="map-pin" width="16" height="16"></i>
+        <span data-lang-th="พื้นที่ให้บริการ" data-lang-en="Service Coverage">พื้นที่ให้บริการ</span>
+      </div>
+      <h2 data-lang-th="ครอบคลุมทั่วกรุงเทพฯ-ปริมณฑล" data-lang-en="Covering Bangkok & Greater Metro Area">ครอบคลุมทั่วกรุงเทพฯ-ปริมณฑล</h2>
+      <p data-lang-th="ไม่ว่าคุณอยู่โซนไหน เพชรนาเรือไปถึงได้ทุกที่ในเขตให้บริการ" data-lang-en="Wherever you are in our coverage zone, Phet Na Ruea can reach you.">ไม่ว่าคุณอยู่โซนไหน เพชรนาเรือไปถึงได้ทุกที่ในเขตให้บริการ</p>
+    </div>
+    <div class="area-tags reveal">
+      <span class="area-tag">บางนา</span>
+      <span class="area-tag">ลาดพร้าว</span>
+      <span class="area-tag">รามอินทรา</span>
+      <span class="area-tag">บางกะปิ</span>
+      <span class="area-tag">มีนบุรี</span>
+      <span class="area-tag">สายไหม</span>
+      <span class="area-tag">หนองจอก</span>
+      <span class="area-tag" data-lang-th="สมุทรปราการ" data-lang-en="Samut Prakan">สมุทรปราการ</span>
+      <span class="area-tag" data-lang-th="นนทบุรี" data-lang-en="Nonthaburi">นนทบุรี</span>
+      <span class="area-tag" data-lang-th="ปทุมธานี" data-lang-en="Pathum Thani">ปทุมธานี</span>
+    </div>
+  </div>
+</section>
+
+<div class="pipe-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,100 480,0 720,40 C960,80 1200,0 1440,40 L1440,100 L0,100 Z" fill="var(--primary)"></path></svg>
+</div>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <div class="eyebrow" style="background:rgba(255,255,255,.15); color:var(--accent);"><i data-lucide="phone-call" width="16" height="16"></i>
+      <span data-lang-th="พร้อมช่วยเหลือทันที" data-lang-en="Ready to help right now">พร้อมช่วยเหลือทันที</span>
+    </div>
+    <h2 data-lang-th="ส้วมเต็ม อย่าปล่อยไว้ โทรเพชรนาเรือวันนี้" data-lang-en="Don't wait on a full tank — call Phet Na Ruea today">ส้วมเต็ม อย่าปล่อยไว้ โทรเพชรนาเรือวันนี้</h2>
+    <p data-lang-th="ทีมงานพร้อมออกรถทุกวัน ไม่เว้นวันหยุด สอบถามและประเมินราคาฟรี" data-lang-en="Our crew is ready every day, holidays included. Free quotes on every call.">ทีมงานพร้อมออกรถทุกวัน ไม่เว้นวันหยุด สอบถามและประเมินราคาฟรี</p>
+    <div class="final-phone">
+      <span style="font-size:.85rem; color:#D6E4F6;" data-lang-th="โทรสายด่วน" data-lang-en="Hotline">โทรสายด่วน</span>
+      <a href="tel:0887623287" class="fp-num">088-7623287</a>
+    </div>
+    <div class="btn-row">
+      <a href="tel:0887623287" class="btn btn-accent"><i data-lucide="phone-call" width="18" height="18"></i><span data-lang-th="โทรเลยตอนนี้" data-lang-en="Call right now">โทรเลยตอนนี้</span></a>
+      <a href="https://line.me/ti/p/~phetnaruea" target="_blank" rel="noopener" class="btn btn-secondary" style="background:transparent; color:#fff; border-color:#fff;"><i data-lucide="message-circle" width="18" height="18"></i><span data-lang-th="LINE: @phetnaruea" data-lang-en="LINE: @phetnaruea">LINE: @phetnaruea</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img class="brand-wordmark" src="assets/logo/logotext_nobg-600.png" alt="เพชรนาเรือ บริการสูบส้วมและสิ่งปฏิกูลครบวงจร" width="600" height="216" loading="lazy" decoding="async"></div>
+        <p style="margin-top:.9rem;" data-lang-th="บริการสูบส้วม ล้างท่อ ครบวงจร ไร้กลิ่น ราคาชัดเจน ให้บริการทั่วกรุงเทพฯและปริมณฑล" data-lang-en="Full-service septic pumping & drain cleaning — odor-free, clear pricing, across Bangkok and beyond.">บริการสูบส้วม ล้างท่อ ครบวงจร ไร้กลิ่น ราคาชัดเจน ให้บริการทั่วกรุงเทพฯและปริมณฑล</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-lang-th="เมนู" data-lang-en="Menu">เมนู</h5>
+        <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+        <a href="#works" data-lang-th="ผลงาน" data-lang-en="Our Work">ผลงาน</a>
+        <a href="#why" data-lang-th="ทำไมเลือกเรา" data-lang-en="Why Us">ทำไมเลือกเรา</a>
+        <a href="#area" data-lang-th="พื้นที่บริการ" data-lang-en="Service Area">พื้นที่บริการ</a>
+      </div>
+      <div class="footer-col">
+        <h5 data-lang-th="ติดต่อเรา" data-lang-en="Contact">ติดต่อเรา</h5>
+        <div class="foot-contact-item"><i data-lucide="phone" width="16" height="16"></i><span>088-7623287</span></div>
+        <div class="foot-contact-item"><i data-lucide="message-circle" width="16" height="16"></i><span>LINE: @phetnaruea</span></div>
+        <div class="foot-contact-item"><i data-lucide="mail" width="16" height="16"></i><span>contact@phetnaruea.co.th</span></div>
+      </div>
+      <div class="footer-col">
+        <h5 data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</h5>
+        <div class="foot-contact-item"><i data-lucide="map-pin" width="16" height="16"></i><span data-lang-th="กรุงเทพฯ และปริมณฑล ทุกเขต" data-lang-en="Bangkok and all surrounding provinces">กรุงเทพฯ และปริมณฑล ทุกเขต</span></div>
+        <div class="foot-contact-item"><i data-lucide="clock" width="16" height="16"></i><span data-lang-th="เปิดบริการทุกวัน 24 ชม." data-lang-en="Open every day, 24 hours">เปิดบริการทุกวัน 24 ชม.</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="credits">
+        <span data-lang-th="เครดิตภาพ:" data-lang-en="Photo credits:">เครดิตภาพ:</span>
+        <a href="https://unsplash.com/@dtrinksrph?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by David Trinks on Unsplash</a>,
+        <a href="https://unsplash.com/@photo_tanbir?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Tanbir Mahmud on Unsplash</a>,
+        <a href="https://unsplash.com/@ankong?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Rak Ankong on Unsplash</a>,
+        <a href="https://unsplash.com/@11x11?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Enzo Tommasi on Unsplash</a>,
+        <a href="https://unsplash.com/@jingwenwang?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Jin wen Wang on Unsplash</a>,
+        <a href="https://unsplash.com/@awicaks?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Arief Wicaksono on Unsplash</a>,
+        <a href="https://unsplash.com/@3dottawa?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Photo by Point3D Commercial Imaging Ltd. on Unsplash</a>
+        — <span data-lang-th="ภาพทั้งหมดจาก" data-lang-en="All images from">ภาพทั้งหมดจาก</span> <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.75rem;">
+        <span data-lang-th="© 2569 เพชรนาเรือ บริการสูบส้วม-ล้างท่อ สงวนลิขสิทธิ์" data-lang-en="© 2026 Phet Na Ruea Septic & Drain Service. All rights reserved.">© 2569 เพชรนาเรือ บริการสูบส้วม-ล้างท่อ สงวนลิขสิทธิ์</span>
+        <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  // Header scroll shrink
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    if(window.scrollY > 12){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', function(){
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(function(el){ io.observe(el); });
+</script>
+
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){if(/[<&]/.test(t)){e.innerHTML=t}else{e.textContent=t}}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+
+</body>
+</html>

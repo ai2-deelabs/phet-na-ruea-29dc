@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เพชรนาะเรือ | สูบส้วมฉุกเฉิน 24 ชม.</title>
-<meta name="description" content="เพชรนาะเรือ บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ทีมช่างและรถสูบพร้อมออกปฏิบัติการทันทีทั่วกรุงเทพฯและปริมณฑล">
+<link rel="icon" type="image/png" href="assets/logo/logo_nobg-160.png">
+<title>เพชรนาเรือ | สูบส้วมฉุกเฉิน 24 ชม.</title>
+<meta name="description" content="เพชรนาเรือ บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ทีมช่างและรถสูบพร้อมออกปฏิบัติการทันทีทั่วกรุงเทพฯและปริมณฑล">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.460.0"></script>
 <style>
   :root{
-    --background:#0A0C0B;
-    --card:#121613;
-    --bg-accent:#0F1613;
-    --foreground:#EDEFEC;
-    --muted:#83938B;
-    --border:#232B27;
-    --primary:#00F0A0;
-    --secondary:#1B2320;
-    --accent:#00B37D;
+    --background:#001129;
+    --card:#062244;
+    --bg-accent:#041B36;
+    --foreground:#EEF3FA;
+    --muted:#8FA6C4;
+    --border:#123561;
+    --primary:#F3CC03;
+    --secondary:#0A2A52;
+    --accent:#FFD93D;
     --font-heading:'Kanit', sans-serif;
     --font-body:'IBM Plex Sans Thai', sans-serif;
   }
@@ -42,19 +43,19 @@
   .en-tag{font-family:var(--font-body);letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;color:var(--muted);}
   section{position:relative;scroll-margin-top:82px;}
   .container{max-width:1280px;margin:0 auto;padding:0 20px;}
-  ::selection{background:var(--primary);color:#04140F;}
+  ::selection{background:var(--primary);color:#001129;}
 
   /* ============ HEADER ============ */
   #siteHeader{
     position:fixed;top:0;left:0;right:0;z-index:1000;
-    background:rgba(10,12,11,0.55);
+    background:rgba(0,17,41,0.55);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid transparent;
     transition:background .35s ease, border-color .35s ease, padding .35s ease;
   }
   #siteHeader.scrolled{
-    background:rgba(10,12,11,0.92);
+    background:rgba(0,17,41,0.92);
     border-bottom-color:var(--border);
   }
   #siteHeader .header-inner{
@@ -76,7 +77,7 @@
   #siteHeader .nav-links{
     position:fixed;top:0;right:0;bottom:0;
     width:min(78vw,320px);
-    background:#0D110F;
+    background:#04203F;
     border-left:1px solid var(--border);
     display:flex;flex-direction:column;
     padding:90px 28px 28px;
@@ -98,7 +99,7 @@
   #siteHeader .nav-cta-mobile{margin-top:18px;}
   #siteHeader .cta{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--primary);color:#04140F;
+    background:var(--primary);color:#001129;
     font-family:var(--font-body);font-weight:600;
     font-size:0.92rem;
     padding:0.85em 1.3em;
@@ -106,9 +107,9 @@
     min-height:44px;
     white-space:nowrap;
     transition:transform .25s ease, box-shadow .25s ease;
-    box-shadow:0 0 0 rgba(0,240,160,0);
+    box-shadow:0 0 0 rgba(243,204,3,0);
   }
-  #siteHeader .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,240,160,0.25);}
+  #siteHeader .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(243,204,3,0.25);}
   #siteHeader .hamburger{
     display:flex;flex-direction:column;justify-content:center;gap:5px;
     width:44px;height:44px;background:transparent;border:1px solid var(--border);
@@ -130,7 +131,7 @@
     }
     #siteHeader .nav-links a{padding:8px 0;border-bottom:none;min-height:auto;font-size:0.95rem;}
     #siteHeader .hamburger{display:none;}
-    #siteHeader .nav-cta-mobile{display:none;}
+    #siteHeader .nav-links a.nav-cta-mobile{display:none;}
     #siteHeader .nav-cta-desktop{display:inline-flex;}
     #siteHeader .header-inner{gap:32px;}
   }
@@ -159,7 +160,7 @@
   @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
   .hero-img-wrap::after{
     content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(10,12,11,0.15),rgba(10,12,11,0.95) 92%);
+    background:linear-gradient(180deg,rgba(0,17,41,0.15),rgba(0,17,41,0.95) 92%);
   }
   .hero-inner{
     position:relative;z-index:2;
@@ -184,7 +185,7 @@
   }
   .status-pill{
     display:inline-flex;align-items:center;gap:8px;
-    background:rgba(0,240,160,0.08);
+    background:rgba(243,204,3,0.08);
     border:1px solid var(--primary);
     color:var(--primary);
     padding:0.6em 1em;
@@ -194,7 +195,7 @@
     margin-bottom:20px;
   }
   .status-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);animation:pulse 1.6s ease-in-out infinite;flex-shrink:0;}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,240,160,0.55);}50%{box-shadow:0 0 0 6px rgba(0,240,160,0);}}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(243,204,3,0.55);}50%{box-shadow:0 0 0 6px rgba(243,204,3,0);}}
   .hero h1{
     font-size:clamp(2.5rem,9vw,6.2rem);
     font-weight:800;
@@ -218,8 +219,8 @@
     min-height:48px;
     transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
   }
-  .btn-primary{background:var(--primary);color:#04140F;}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,240,160,0.28);}
+  .btn-primary{background:var(--primary);color:#001129;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(243,204,3,0.28);}
   .btn-secondary{background:var(--secondary);color:var(--foreground);border:1px solid var(--border);}
   .btn-secondary:hover{border-color:var(--primary);color:var(--primary);}
   .hero-specs{
@@ -294,10 +295,10 @@
   }
 
   /* ============ COVERAGE ============ */
-  .coverage{position:relative;background:#0B0F0D;}
+  .coverage{position:relative;background:#001129;}
   .coverage-bg{position:absolute;inset:0;}
   .coverage-bg img{width:100%;height:100%;object-fit:cover;opacity:0.22;filter:grayscale(60%);}
-  .coverage-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,11,0.7),var(--background) 90%);}
+  .coverage-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,17,41,0.7),var(--background) 90%);}
   .coverage-content{position:relative;z-index:2;}
   .zone-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:40px;}
   @media (min-width:640px){.zone-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
@@ -334,7 +335,7 @@
   .cta-banner{position:relative;overflow:hidden;}
   .cta-banner-bg{position:absolute;inset:0;}
   .cta-banner-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(50%) brightness(0.4);}
-  .cta-banner-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,12,11,0.95),rgba(10,12,11,0.55));}
+  .cta-banner-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,17,41,0.95),rgba(0,17,41,0.55));}
   .cta-banner-content{position:relative;z-index:2;text-align:left;padding:90px 0;}
   .cta-banner h2{font-size:clamp(2rem,6vw,3.6rem);transform:scaleX(0.9);transform-origin:left;width:110%;padding-top:0.15em;}
   .cta-banner p{color:var(--muted);max-width:480px;margin-top:16px;font-size:1.05rem;}
@@ -345,7 +346,7 @@
   }
 
   /* ============ FOOTER ============ */
-  footer{background:#080A09;border-top:1px solid var(--border);padding:64px 0 28px;}
+  footer{background:#000B1C;border-top:1px solid var(--border);padding:64px 0 28px;}
   .footer-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;}
   @media (min-width:768px){.footer-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);}}
   footer .flogo{font-family:var(--font-heading);font-weight:800;font-size:1.4rem;margin-bottom:12px;}
@@ -365,24 +366,46 @@
   .deelabs-badge:hover{color:var(--primary);}
 
   .icon-wrap{width:44px;height:44px;border-radius:8px;background:var(--secondary);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;}
+
+  /* ===== brand logo assets ===== */
+  #siteHeader .logo, #siteHeader .brand, #siteHeader .hd-logo{
+    display:inline-flex; align-items:center; min-width:0;
+  }
+  /* margin, not gap: the brand text is split into spans in some variants
+     and a flex gap would push those apart too */
+  .brand-mark{
+    height:40px; width:auto; flex:0 0 auto; align-self:center; display:block;
+    margin-inline-end:.5em;
+  }
+  .brand-wordmark{
+    width:250px; max-width:100%; height:auto; display:block; margin-bottom:.25rem;
+    /* the wordmark's sub-line is navy; footers are navy too, so lift it off
+       the background with a thin light outline instead of a solid plate */
+    filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
+           drop-shadow(0 0 2px rgba(255,255,255,.65));
+  }
+  @media(max-width:640px){
+    .brand-mark{ height:30px; }
+    .brand-wordmark{ width:190px; }
+  }
 </style>
 </head>
 <body>
 
 <header id="siteHeader">
   <div class="header-inner">
-    <a href="#top" class="logo">เพชร<em>นาะเรือ</em></a>
+    <a href="#top" class="logo"><img class="brand-mark" src="assets/logo/logo_nobg-160.png" alt="" aria-hidden="true" width="160" height="123" decoding="async">เพชร<em>นาเรือ</em></a>
     <nav class="nav-links" id="navLinks">
       <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
       <a href="#process" data-lang-th="ขั้นตอนทำงาน" data-lang-en="Process">ขั้นตอนทำงาน</a>
       <a href="#coverage" data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</a>
       <a href="#trust" data-lang-th="ทำไมต้องเรา" data-lang-en="Why Us">ทำไมต้องเรา</a>
       <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
-      <a href="tel:0812345678" class="btn btn-primary nav-cta-mobile" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
+      <a href="tel:0887623287" class="btn btn-primary nav-cta-mobile" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
     </nav>
     <div class="header-actions">
       <div class="lang-sw"><i data-lucide="globe" width="14" height="14"></i><span class="lang-sw__label">TH</span></div>
-      <a href="tel:0812345678" class="cta nav-cta-desktop" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
+      <a href="tel:0887623287" class="cta nav-cta-desktop" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -399,9 +422,9 @@
     <div class="hero-inner">
       <div class="status-pill"><span class="status-dot"></span><span data-lang-th="ระบบพร้อม — รับสายตลอด 24 ชั่วโมง" data-lang-en="SYS: ONLINE — DISPATCH READY 24/7">ระบบพร้อม — รับสายตลอด 24 ชั่วโมง</span></div>
       <h1 data-lang-th="สูบส้วม<br>ฉุกเฉิน<span>.</span>" data-lang-en="EMERGENCY<br>SEPTIC<span>.</span>">สูบส้วม<br>ฉุกเฉิน<span>.</span></h1>
-      <p class="lead" data-lang-th="เพชรนาะเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด" data-lang-en="Phet Na Ruea dispatch control — septic and waste pumping crews mobilize the moment you call. Bangkok metro coverage, every day, every hour.">เพชรนาะเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด</p>
+      <p class="lead" data-lang-th="เพชรนาเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด" data-lang-en="Phet Na Ruea dispatch control — septic and waste pumping crews mobilize the moment you call. Bangkok metro coverage, every day, every hour.">เพชรนาเรือ ศูนย์ควบคุมสั่งการรถสูบส้วมและดูดสิ่งปฏิกูล ทีมช่างพร้อมออกปฏิบัติการทันทีที่รับสาย ทั่วกรุงเทพฯและปริมณฑล ไม่มีวันหยุด</p>
       <div class="hero-actions">
-        <a href="tel:0812345678" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรสายด่วน 081-234-5678" data-lang-en="Call Hotline 081-234-5678">โทรสายด่วน 081-234-5678</span></a>
+        <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรสายด่วน 088-7623287" data-lang-en="Call Hotline 088-7623287">โทรสายด่วน 088-7623287</span></a>
         <a href="#services" class="btn btn-secondary"><span data-lang-th="ดูบริการทั้งหมด" data-lang-en="View Services">ดูบริการทั้งหมด</span><i data-lucide="arrow-down-right"></i></a>
       </div>
       <div class="hero-specs">
@@ -481,11 +504,11 @@
         <div class="acc-item">
           <div class="acc-head">
             <span class="code num">SW-05</span>
-            <h3 class="title" data-lang-th="ตรวจสอบระบบบำบัดน้ำเสีย" data-lang-en="Wastewater System Inspection">ตรวจสอบระบบบำบัดน้ำเสีย</h3>
+            <h3 class="title" data-lang-th="ล้างถังแซท / ถังบำบัดสำเร็จรูป" data-lang-en="Septic Tank Cleaning">ล้างถังแซท / ถังบำบัดสำเร็จรูป</h3>
             <i data-lucide="plus" class="chev"></i>
           </div>
           <div class="acc-body"><div class="acc-body-inner">
-            <p data-lang-th="ตรวจวัดค่าคุณภาพน้ำและสภาพท่อด้วยกล้อง CCTV เพื่อวางแผนซ่อมบำรุงก่อนเกิดปัญหาใหญ่" data-lang-en="Water quality testing and CCTV pipe inspection to plan maintenance before small issues become major failures.">ตรวจวัดค่าคุณภาพน้ำและสภาพท่อด้วยกล้อง CCTV เพื่อวางแผนซ่อมบำรุงก่อนเกิดปัญหาใหญ่</p>
+            <p data-lang-th="ล้างถังแซทและถังบำบัดสำเร็จรูปให้สะอาดทั้งระบบ พร้อมตรวจสภาพท่อด้วยกล้อง CCTV ก่อนปิดงาน" data-lang-en="Water quality testing and CCTV pipe inspection to plan maintenance before small issues become major failures.">ล้างถังแซทและถังบำบัดสำเร็จรูปให้สะอาดทั้งระบบ พร้อมตรวจสภาพท่อด้วยกล้อง CCTV ก่อนปิดงาน</p>
           </div></div>
         </div>
       </div>
@@ -533,7 +556,7 @@
           </div>
         </div>
         <div class="process-media reveal">
-          <img src="https://images.unsplash.com/photo-1636986056048-06f553d44666?w=800&h=900&fit=crop" alt="แผงควบคุมเครื่องจักรในศูนย์ปฏิบัติการ">
+          <img src="https://images.unsplash.com/photo-1636986056048-06f553d44666?w=800&h=900&fit=crop" alt="แผงควบคุมเครื่องจักรในศูนย์ปฏิบัติการ" loading="lazy" decoding="async">
           <p class="credits">Photo by <a href="https://unsplash.com/@vadakkunokki?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Prince Prabhakaran</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
         </div>
       </div>
@@ -543,7 +566,7 @@
   <!-- ============ COVERAGE ============ -->
   <section id="coverage" class="py coverage">
     <div class="coverage-bg">
-      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=900&fit=crop" alt="ท่อโลหะอุตสาหกรรม">
+      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&h=900&fit=crop" alt="ท่อโลหะอุตสาหกรรม" loading="lazy" decoding="async">
     </div>
     <div class="container coverage-content">
       <div class="section-tag en-tag">MAP / COVERAGE GRID</div>
@@ -580,7 +603,7 @@
           </div>
         </div>
         <div class="trust-img reveal">
-          <img src="https://images.unsplash.com/photo-1618684005092-2aef740793d0?w=800&h=900&fit=crop" alt="มาตรวัดแรงดันระบบควบคุม">
+          <img src="https://images.unsplash.com/photo-1618684005092-2aef740793d0?w=800&h=900&fit=crop" alt="มาตรวัดแรงดันระบบควบคุม" loading="lazy" decoding="async">
         </div>
       </div>
       <p class="credits">Photo by <a href="https://unsplash.com/@wimvanteinde?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Wim van 't Einde</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
@@ -617,15 +640,15 @@
   <!-- ============ CTA BANNER ============ -->
   <section id="contact" class="cta-banner">
     <div class="cta-banner-bg">
-      <img src="https://images.unsplash.com/photo-1763572079452-e6c8674ec8fb?w=1600&h=900&fit=crop" alt="ไฟท้ายรถสูบส้วมตอนกลางคืน">
+      <img src="https://images.unsplash.com/photo-1763572079452-e6c8674ec8fb?w=1600&h=900&fit=crop" alt="ไฟท้ายรถสูบส้วมตอนกลางคืน" loading="lazy" decoding="async">
     </div>
     <div class="container cta-banner-content reveal">
       <div class="status-pill"><span class="status-dot"></span><span data-lang-th="พร้อมรับสายตอนนี้" data-lang-en="STANDING BY NOW">พร้อมรับสายตอนนี้</span></div>
       <h2 data-lang-th="ปัญหาไม่รอ เราก็ไม่รอ" data-lang-en="Problems Don't Wait. Neither Do We.">ปัญหาไม่รอ เราก็ไม่รอ</h2>
       <p data-lang-th="ไม่ว่าจะตีสามหรือวันหยุดนักขัตฤกษ์ ศูนย์ควบคุมของเราเปิดรับสายเสมอ" data-lang-en="Whether it's 3am or a public holiday, our dispatch line is always open.">ไม่ว่าจะตีสามหรือวันหยุดนักขัตฤกษ์ ศูนย์ควบคุมของเราเปิดรับสายเสมอ</p>
-      <a href="tel:0812345678" class="cta-phone">081-234-5678</a>
+      <a href="tel:0887623287" class="cta-phone">088-7623287</a>
       <div class="hero-actions" style="margin-top:8px;">
-        <a href="tel:0812345678" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรด่วนตอนนี้" data-lang-en="Call Now">โทรด่วนตอนนี้</span></a>
+        <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรด่วนตอนนี้" data-lang-en="Call Now">โทรด่วนตอนนี้</span></a>
         <a href="https://line.me" target="_blank" rel="noopener" class="btn btn-secondary"><i data-lucide="message-circle"></i><span>LINE: @phetnaruea</span></a>
       </div>
     </div>
@@ -637,7 +660,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="flogo">เพชร<em>นาะเรือ</em></div>
+        <div class="flogo"><img class="brand-wordmark" src="assets/logo/logotext_nobg-600.png" alt="เพชรนาเรือ บริการสูบส้วมและสิ่งปฏิกูลครบวงจร" width="600" height="216" loading="lazy" decoding="async"></div>
         <p data-lang-th="ศูนย์บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ครอบคลุมกรุงเทพฯและปริมณฑล ทีมช่างมืออาชีพพร้อมอุปกรณ์มาตรฐาน" data-lang-en="24/7 emergency septic and waste pumping dispatch, covering greater Bangkok. Professional crews, standard-grade equipment.">ศูนย์บริการสูบส้วมและดูดสิ่งปฏิกูลฉุกเฉิน 24 ชั่วโมง ครอบคลุมกรุงเทพฯและปริมณฑล ทีมช่างมืออาชีพพร้อมอุปกรณ์มาตรฐาน</p>
       </div>
       <div>
@@ -652,15 +675,15 @@
       <div>
         <h4 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h4>
         <ul>
-          <li><a class="flink" href="tel:0812345678">081-234-5678</a></li>
-          <li><a class="flink" href="mailto:dispatch@phetnaruea.co.th">dispatch@phetnaruea.co.th</a></li>
+          <li><a class="flink" href="tel:0887623287">088-7623287</a></li>
+          <li><a class="flink" href="mailto:contact@phetnaruea.co.th">contact@phetnaruea.co.th</a></li>
           <li><span class="flink" data-lang-th="เปิดบริการ 24 ชั่วโมงทุกวัน" data-lang-en="Open 24 hours, every day">เปิดบริการ 24 ชั่วโมงทุกวัน</span></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <div>
-        <p data-lang-th="© 2569 เพชรนาะเรือ สงวนลิขสิทธิ์" data-lang-en="© 2026 Phet Na Ruea. All rights reserved.">© 2569 เพชรนาะเรือ สงวนลิขสิทธิ์</p>
+        <p data-lang-th="© 2569 เพชรนาเรือ สงวนลิขสิทธิ์" data-lang-en="© 2026 Phet Na Ruea. All rights reserved.">© 2569 เพชรนาเรือ สงวนลิขสิทธิ์</p>
         <p class="credits">Photo by <a href="https://unsplash.com/@edrecestansberry?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Edrece Stansberry</a>, <a href="https://unsplash.com/@vadakkunokki?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Prince Prabhakaran</a>, <a href="https://unsplash.com/@sigmund?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Compagnons</a>, <a href="https://unsplash.com/@wimvanteinde?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Wim van 't Einde</a> &amp; <a href="https://unsplash.com/@capturedbyvibemind?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Captured By Vibemind</a> on <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a></p>
       </div>
       <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>

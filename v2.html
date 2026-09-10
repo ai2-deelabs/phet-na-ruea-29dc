@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เพชรนาะเรือ | บริการดูดส้วม-ท่อตัน ฉุกเฉิน 24 ชั่วโมง</title>
-<meta name="description" content="เพชรนาะเรือ บริการดูดส้วม แก้ท่อตัน บ่อดักไขมัน ฉุกเฉิน 24 ชั่วโมง ทั่วกรุงเทพฯและปริมณฑล ทีมงานมืออาชีพ ราคาเป็นธรรม ไว้ใจได้กว่า 40 ปี">
+<link rel="icon" type="image/png" href="assets/logo/logo_nobg-160.png">
+<title>เพชรนาเรือ | บริการดูดส้วม-ท่อตัน ฉุกเฉิน 24 ชั่วโมง</title>
+<meta name="description" content="เพชรนาเรือ บริการดูดส้วม แก้ท่อตัน บ่อดักไขมัน ฉุกเฉิน 24 ชั่วโมง ทั่วกรุงเทพฯและปริมณฑล ทีมงานมืออาชีพ ราคาเป็นธรรม ไว้ใจได้กว่า 40 ปี">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.460.0"></script>
 <style>
   :root{
-    --background:#FBF3DF;
-    --card:var(--card);
-    --bg-accent:#F2C230;
-    --foreground:#2B1B12;
-    --muted:#6B5040;
-    --border:#E3C98F;
-    --primary:#E8432A;
-    --secondary:#2B1B12;
-    --accent:#E8432A;
+    --background:#F4F6FA;
+    --card:#FFFFFF;
+    --bg-accent:#F3CC03;
+    --foreground:#002454;
+    --muted:#4A6489;
+    --border:#C9D6E8;
+    --primary:#002454;
+    --secondary:#001838;
+    --accent:#B31217;
 
     --font-heading:'Chonburi', serif;
     --font-body:'Sarabun', sans-serif;
@@ -43,8 +44,8 @@
   section{position:relative; padding:80px 0;}
 
   /* ===== HEADER (verbatim structure) ===== */
-  #siteHeader{position:sticky; top:0; z-index:1000; background:rgba(251,243,223,0.92); backdrop-filter:blur(8px); border-bottom:2px solid var(--border); transition:all .35s ease;}
-  #siteHeader.scrolled{background:rgba(251,243,223,0.98); box-shadow:0 4px 20px rgba(43,27,18,0.12);}
+  #siteHeader{position:sticky; top:0; z-index:1000; background:rgba(244,246,250,0.92); backdrop-filter:blur(8px); border-bottom:2px solid var(--border); transition:all .35s ease;}
+  #siteHeader.scrolled{background:rgba(244,246,250,0.98); box-shadow:0 4px 20px rgba(0,36,84,0.12);}
   #siteHeader .header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1160px; margin:0 auto; transition:padding .35s ease;}
   #siteHeader.scrolled .header-inner{padding:8px 24px;}
   #siteHeader .brand{
@@ -71,13 +72,13 @@
   #siteHeader .cta-btn{
     background:var(--primary); color:var(--card); padding:0.7em 1.3em; border-radius:999px;
     font-size:0.9rem; font-weight:600; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; gap:6px;
-    box-shadow:0 4px 14px rgba(232,67,42,0.35); transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 4px 14px rgba(0,36,84,0.35); transition:transform .25s ease, box-shadow .25s ease;
   }
-  #siteHeader .cta-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(232,67,42,0.45);}
+  #siteHeader .cta-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,36,84,0.45);}
   #siteHeader .lang-sw{
     display:flex; align-items:center; gap:4px; font-size:0.78em; color:var(--foreground); padding:8px; border-radius:8px; min-height:44px; min-width:44px; justify-content:center;
   }
-  #siteHeader .lang-sw:hover{background:rgba(43,27,18,0.06);}
+  #siteHeader .lang-sw:hover{background:rgba(0,36,84,0.06);}
   #siteHeader .hamburger{
     display:flex; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; align-items:center; background:none; border:none; cursor:pointer; flex-shrink:0;
   }
@@ -105,7 +106,7 @@
     padding:56px 0 40px;
     text-align:center;
     background:
-      radial-gradient(circle at 50% 18%, rgba(242,194,48,0.9), rgba(242,194,48,0) 60%),
+      radial-gradient(circle at 50% 18%, rgba(243,204,3,0.9), rgba(243,204,3,0) 60%),
       var(--background);
     overflow:hidden;
   }
@@ -138,14 +139,14 @@
     font-family:var(--font-body); font-weight:600; font-size:1rem; min-height:44px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
     border:2px solid transparent;
   }
-  .btn-primary{background:var(--primary); color:var(--card); box-shadow:0 6px 18px rgba(232,67,42,0.35);}
-  .btn-primary:hover{transform:translateY(-3px) scale(1.02); box-shadow:0 10px 26px rgba(232,67,42,0.45);}
+  .btn-primary{background:var(--primary); color:var(--card); box-shadow:0 6px 18px rgba(0,36,84,0.35);}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02); box-shadow:0 10px 26px rgba(0,36,84,0.45);}
   .btn-outline{background:transparent; color:var(--foreground); border-color:var(--foreground);}
   .btn-outline:hover{background:var(--foreground); color:var(--bg-accent);}
 
   .poster-frame{
     position:relative; z-index:1; max-width:760px; margin:0 auto; border:10px solid var(--card);
-    outline:3px solid var(--foreground); border-radius:14px; overflow:visible; box-shadow:0 24px 50px rgba(43,27,18,0.28);
+    outline:3px solid var(--foreground); border-radius:14px; overflow:visible; box-shadow:0 24px 50px rgba(0,36,84,0.28);
     transform:rotate(-1deg);
   }
   .poster-frame img{border-radius:6px; transition:transform 1.2s ease;}
@@ -154,7 +155,7 @@
     position:absolute; top:-22px; right:-18px; background:var(--primary); color:var(--card); width:92px; height:92px;
     border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center;
     font-family:var(--font-heading); font-size:0.72rem; text-align:center; line-height:1.3; transform:rotate(8deg);
-    border:3px dashed var(--card); box-shadow:0 8px 18px rgba(43,27,18,0.3);
+    border:3px dashed var(--card); box-shadow:0 8px 18px rgba(0,36,84,0.3);
   }
   .poster-badge b{font-size:1.5rem; display:block;}
   .credit{font-size:0.72rem; color:var(--muted); text-align:center; margin-top:14px;}
@@ -254,7 +255,7 @@
   .footer-col h5{font-size:0.95rem; color:var(--bg-accent); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.5px;}
   .footer-col p, .footer-col a{color:color-mix(in srgb, var(--bg-accent) 55%, white); font-size:0.95rem; display:block; margin-bottom:10px;}
   .footer-col a:hover{color:var(--bg-accent);}
-  .footer-bottom{border-top:1px solid rgba(235,217,176,0.2); margin-top:40px; padding-top:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;}
+  .footer-bottom{border-top:1px solid rgba(201,214,232,0.2); margin-top:40px; padding-top:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;}
   .footer-bottom p{font-size:0.82rem; color:color-mix(in srgb, var(--bg-accent) 40%, var(--foreground)); margin:0;}
   .credits-list{font-size:0.72rem; color:color-mix(in srgb, var(--bg-accent) 30%, var(--foreground)); margin-top:10px; line-height:1.7;}
   .credits-list a{color:color-mix(in srgb, var(--bg-accent) 40%, var(--foreground)); text-decoration:underline;}
@@ -274,7 +275,7 @@
 
 <header id="siteHeader">
   <div class="header-inner">
-    <a href="#top" class="brand">เพชรนาะเรือ</a>
+    <a href="#top" class="brand"><img class="brand-mark" src="assets/logo/logo_nobg-160.png" alt="" aria-hidden="true" width="160" height="123" decoding="async">เพชรนาเรือ</a>
     <nav>
       <ul class="nav-links">
         <li><a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a></li>
@@ -289,7 +290,7 @@
         <i data-lucide="globe" width="14" height="14"></i>
         <span class="lang-sw__label">TH</span>
       </div>
-      <a href="tel:0812345678" class="cta-btn desktop-cta" id="desktopCta">
+      <a href="tel:0887623287" class="cta-btn desktop-cta" id="desktopCta">
         <i data-lucide="phone" width="16" height="16"></i>
         <span data-lang-th="โทรด่วน" data-lang-en="Call Now">โทรด่วน</span>
       </a>
@@ -306,9 +307,9 @@
       <li><a href="#reviews" data-lang-th="รีวิว" data-lang-en="Reviews">รีวิว</a></li>
       <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
     </ul>
-    <a href="tel:0812345678" class="cta-btn">
+    <a href="tel:0887623287" class="cta-btn">
       <i data-lucide="phone" width="16" height="16"></i>
-      <span data-lang-th="โทรด่วน 081-234-5678" data-lang-en="Call Now 081-234-5678">โทรด่วน 081-234-5678</span>
+      <span data-lang-th="โทรด่วน 088-7623287" data-lang-en="Call Now 088-7623287">โทรด่วน 088-7623287</span>
     </a>
   </div>
 </header>
@@ -321,12 +322,12 @@
     <div class="hero-inner">
       <span class="hero-eyebrow" data-lang-th="ร้านเก่าแก่ประจำย่าน ตั้งแต่ปี 2528" data-lang-en="Neighborhood institution since 1985">ร้านเก่าแก่ประจำย่าน ตั้งแต่ปี 2528</span>
       <div class="hero-numeral">24</div>
-      <h1><em data-lang-th="ชั่วโมง" data-lang-en="Hours">ชั่วโมง</em> <span data-lang-th="บริการดูดส้วม" data-lang-en="Sewage Pumping Service">บริการดูดส้วม</span><br><span data-lang-th="เพชรนาะเรือ" data-lang-en="Phet Na Ruea">เพชรนาะเรือ</span></h1>
+      <h1><em data-lang-th="ชั่วโมง" data-lang-en="Hours">ชั่วโมง</em> <span data-lang-th="บริการดูดส้วม" data-lang-en="Sewage Pumping Service">บริการดูดส้วม</span><br><span data-lang-th="เพชรนาเรือ" data-lang-en="Phet Na Ruea">เพชรนาเรือ</span></h1>
       <p class="hero-sub" data-lang-th="ดูดส้วม ท่อตัน บ่อดักไขมัน ฉุกเฉินทุกเวลา ทีมงานมืออาชีพ รถสูบมาตรฐาน ไม่มีกลิ่น ไม่มีคราบ ราคาเป็นธรรม" data-lang-en="Septic pumping, drain clearing, grease trap service, and round-the-clock emergencies handled by a professional crew with standard-grade trucks — fair prices, no mess left behind.">ดูดส้วม ท่อตัน บ่อดักไขมัน ฉุกเฉินทุกเวลา ทีมงานมืออาชีพ รถสูบมาตรฐาน ไม่มีกลิ่น ไม่มีคราบ ราคาเป็นธรรม</p>
       <div class="hero-ctas">
-        <a href="tel:0812345678" class="btn btn-primary">
+        <a href="tel:0887623287" class="btn btn-primary">
           <i data-lucide="phone-call"></i>
-          <span data-lang-th="โทรเลย 081-234-5678" data-lang-en="Call 081-234-5678">โทรเลย 081-234-5678</span>
+          <span data-lang-th="โทรเลย 088-7623287" data-lang-en="Call 088-7623287">โทรเลย 088-7623287</span>
         </a>
         <a href="#contact" class="btn btn-outline">
           <i data-lucide="message-circle"></i>
@@ -351,7 +352,7 @@
         </div>
         <div class="reveal">
           <div class="stat-num">24</div>
-          <div class="stat-label" data-lang-th="ชั่วโมง ทุกวันไม่หยุด" data-lang-en="hours, every single day">ชั่วโมง ทุกวันไม่หยุด</div>
+          <div class="stat-label" data-lang-th="ชั่วโมง ทุกวัน ไม่เว้นวันหยุด" data-lang-en="hours, every single day">ชั่วโมง ทุกวัน ไม่เว้นวันหยุด</div>
         </div>
         <div class="reveal">
           <div class="stat-num">10,000+</div>
@@ -373,10 +374,10 @@
       <div class="service-row reveal">
         <div class="service-num">01</div>
         <div class="service-body">
-          <h3 data-lang-th="ดูดส้วม สูบสิ่งปฏิกูล" data-lang-en="Septic Tank Pumping">ดูดส้วม สูบสิ่งปฏิกูล</h3>
+          <h3 data-lang-th="ดูดส้วม / ล้างถังแซท" data-lang-en="Septic Tank Pumping">ดูดส้วม / ล้างถังแซท</h3>
           <p data-lang-th="บริการดูดส้วมบ้านพักอาศัย คอนโด อาคารพาณิชย์ ด้วยรถสูบมาตรฐาน กำจัดสิ่งปฏิกูลถูกวิธี ไม่ทิ้งเรี่ยราด" data-lang-en="Home, condo, and commercial septic pumping using standard-grade trucks with proper, legal waste disposal.">บริการดูดส้วมบ้านพักอาศัย คอนโด อาคารพาณิชย์ ด้วยรถสูบมาตรฐาน กำจัดสิ่งปฏิกูลถูกวิธี ไม่ทิ้งเรี่ยราด</p>
         </div>
-        <div class="service-img"><img src="https://images.unsplash.com/photo-1757191462578-7c59fa85b016?w=520&h=340&fit=crop" alt="ถังและสายสูบของรถสูบส้วม"></div>
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1757191462578-7c59fa85b016?w=520&h=340&fit=crop" alt="ถังและสายสูบของรถสูบส้วม" loading="lazy" decoding="async"></div>
       </div>
 
       <div class="service-row reverse reveal">
@@ -385,7 +386,7 @@
           <h3 data-lang-th="แก้ท่ออุดตัน" data-lang-en="Drain & Pipe Unclogging">แก้ท่ออุดตัน</h3>
           <p data-lang-th="ท่อตัน น้ำท่วมขัง กลิ่นเหม็นในห้องน้ำหรือครัว เราแก้ได้ทุกจุด ด้วยเครื่องมือแรงดันสูงและสายไฟฟ้าเจาะท่อ" data-lang-en="Clogged pipes, standing water, or foul odors — solved with high-pressure jetting and drain-snake tools.">ท่อตัน น้ำท่วมขัง กลิ่นเหม็นในห้องน้ำหรือครัว เราแก้ได้ทุกจุด ด้วยเครื่องมือแรงดันสูงและสายไฟฟ้าเจาะท่อ</p>
         </div>
-        <div class="service-img"><img src="https://images.unsplash.com/photo-1698031610511-c7a35d121b17?w=520&h=340&fit=crop" alt="ท่อประปาและท่อระบายน้ำที่ต่อกัน"></div>
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1698031610511-c7a35d121b17?w=520&h=340&fit=crop" alt="ท่อประปาและท่อระบายน้ำที่ต่อกัน" loading="lazy" decoding="async"></div>
       </div>
 
       <div class="service-row reveal">
@@ -394,7 +395,7 @@
           <h3 data-lang-th="ล้างบ่อดักไขมัน" data-lang-en="Grease Trap Cleaning">ล้างบ่อดักไขมัน</h3>
           <p data-lang-th="สำหรับร้านอาหาร ตลาด และโรงครัว ล้างบ่อดักไขมันตามรอบ ป้องกันกลิ่นและท่ออุดตันจากคราบมัน" data-lang-en="Scheduled grease-trap cleaning for restaurants, markets, and kitchens — preventing odor and grease-clogged drains.">สำหรับร้านอาหาร ตลาด และโรงครัว ล้างบ่อดักไขมันตามรอบ ป้องกันกลิ่นและท่ออุดตันจากคราบมัน</p>
         </div>
-        <div class="service-img"><img src="https://images.unsplash.com/photo-1665930489997-e5e9d527ae39?w=520&h=340&fit=crop" alt="ท่อสีเขียวเรียงกันเป็นแถว"></div>
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1665930489997-e5e9d527ae39?w=520&h=340&fit=crop" alt="ท่อสีเขียวเรียงกันเป็นแถว" loading="lazy" decoding="async"></div>
       </div>
 
       <div class="service-row reverse reveal">
@@ -403,7 +404,7 @@
           <h3 data-lang-th="ฉุกเฉิน 24 ชั่วโมง" data-lang-en="24-Hour Emergency">ฉุกเฉิน 24 ชั่วโมง</h3>
           <p data-lang-th="ส้วมล้น ท่อแตกกลางดึก โทรหาเราได้ทุกเวลา ทีมงานพร้อมออกงานภายใน 30-60 นาทีในเขตให้บริการ" data-lang-en="Overflowing septic tank or a burst pipe at midnight? Call anytime — our crew dispatches within 30–60 minutes in-area.">ส้วมล้น ท่อแตกกลางดึก โทรหาเราได้ทุกเวลา ทีมงานพร้อมออกงานภายใน 30-60 นาทีในเขตให้บริการ</p>
         </div>
-        <div class="service-img"><img src="https://images.unsplash.com/photo-1543357644-160b53c087e8?w=520&h=340&fit=crop" alt="ช่างสวมหมวกนิรภัยสีเหลืองพร้อมปฏิบัติงาน"></div>
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1543357644-160b53c087e8?w=520&h=340&fit=crop" alt="ช่างสวมหมวกนิรภัยสีเหลืองพร้อมปฏิบัติงาน" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>
@@ -449,7 +450,7 @@
       </div>
       <div class="area-wrap">
         <div class="area-img reveal">
-          <img src="https://images.unsplash.com/photo-1768392811103-3982ebd65d4b?w=760&h=560&fit=crop" alt="ถนนในกรุงเทพฯ พร้อมป้ายสีเหลืองสไตล์ย้อนยุค">
+          <img src="https://images.unsplash.com/photo-1768392811103-3982ebd65d4b?w=760&h=560&fit=crop" alt="ถนนในกรุงเทพฯ พร้อมป้ายสีเหลืองสไตล์ย้อนยุค" loading="lazy" decoding="async">
         </div>
         <div class="reveal">
           <p data-lang-th="เราให้บริการครอบคลุมกรุงเทพฯ และปริมณฑล พร้อมทีมประจำโซนเพื่อความรวดเร็วในการเข้าถึง" data-lang-en="We cover Bangkok and its surrounding provinces, with zone-based crews for faster response times.">เราให้บริการครอบคลุมกรุงเทพฯ และปริมณฑล พร้อมทีมประจำโซนเพื่อความรวดเร็วในการเข้าถึง</p>
@@ -498,9 +499,9 @@
     <div class="container">
       <div class="cta-banner reveal">
         <h2 data-lang-th="ปัญหาเรื่องส้วม<br>เรื่องเล็ก" data-lang-en="Sewage problems?<br>Small matter.">ปัญหาเรื่องส้วม<br>เรื่องเล็ก</h2>
-        <div class="cta-phone">081-234-5678</div>
+        <div class="cta-phone">088-7623287</div>
         <div>
-          <a href="tel:0812345678" class="btn btn-primary">
+          <a href="tel:0887623287" class="btn btn-primary">
             <i data-lucide="phone-call"></i>
             <span data-lang-th="โทรด่วนตอนนี้" data-lang-en="Call now">โทรด่วนตอนนี้</span>
           </a>
@@ -515,12 +516,12 @@
   <div class="container">
     <div class="footer-grid">
       <div class="reveal">
-        <div class="footer-brand">เพชรนาะเรือ</div>
+        <div class="footer-brand"><img class="brand-wordmark" src="assets/logo/logotext_nobg-600.png" alt="เพชรนาเรือ บริการสูบส้วมและสิ่งปฏิกูลครบวงจร" width="600" height="216" loading="lazy" decoding="async"></div>
         <p data-lang-th="ผู้ให้บริการดูดส้วมและแก้ท่อตันประจำย่าน ไว้วางใจได้กว่า 40 ปี" data-lang-en="The neighborhood's trusted septic and drainage service for over 40 years." style="max-width:320px; margin-top:14px;">ผู้ให้บริการดูดส้วมและแก้ท่อตันประจำย่าน ไว้วางใจได้กว่า 40 ปี</p>
       </div>
       <div class="footer-col reveal">
         <h5 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h5>
-        <a href="tel:0812345678">081-234-5678</a>
+        <a href="tel:0887623287">088-7623287</a>
         <a href="mailto:contact@phetnaruea.co.th">contact@phetnaruea.co.th</a>
         <span data-lang-th="เปิดบริการทุกวัน 24 ชั่วโมง" data-lang-en="Open every day, 24 hours">เปิดบริการทุกวัน 24 ชั่วโมง</span>
       </div>
@@ -534,12 +535,12 @@
       <div class="footer-col reveal">
         <h5 data-lang-th="ติดตามเรา" data-lang-en="Follow Us">ติดตามเรา</h5>
         <a href="#" data-lang-th="Facebook" data-lang-en="Facebook">Facebook</a>
-        <a href="#" data-lang-th="LINE Official" data-lang-en="LINE Official">LINE Official</a>
+        <a href="https://line.me/ti/p/~phetnaruea" target="_blank" rel="noopener" data-lang-th="LINE Official" data-lang-en="LINE Official">LINE Official</a>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2569 เพชรนาะเรือ. <span data-lang-th="สงวนลิขสิทธิ์" data-lang-en="All rights reserved.">สงวนลิขสิทธิ์</span></p>
+      <p>&copy; 2569 เพชรนาเรือ. <span data-lang-th="สงวนลิขสิทธิ์" data-lang-en="All rights reserved.">สงวนลิขสิทธิ์</span></p>
       <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>
     </div>
     <p class="credits-list" data-lang-th="เครดิตภาพ:" data-lang-en="Photo credits:">เครดิตภาพ:
@@ -587,5 +588,27 @@
      as generated. Scoped media blocks, so the desktop design is untouched. */
   @media(max-width:767px){
     #siteHeader > div.header-inner > a.brand{white-space:nowrap;font-size:clamp(0.8rem,4.2vw,18px);}
+  }
+
+  /* ===== brand logo assets ===== */
+  #siteHeader .logo, #siteHeader .brand, #siteHeader .hd-logo{
+    display:inline-flex; align-items:center; min-width:0;
+  }
+  /* margin, not gap: the brand text is split into spans in some variants
+     and a flex gap would push those apart too */
+  .brand-mark{
+    height:40px; width:auto; flex:0 0 auto; align-self:center; display:block;
+    margin-inline-end:.5em;
+  }
+  .brand-wordmark{
+    width:250px; max-width:100%; height:auto; display:block; margin-bottom:.25rem;
+    /* the wordmark's sub-line is navy; footers are navy too, so lift it off
+       the background with a thin light outline instead of a solid plate */
+    filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
+           drop-shadow(0 0 2px rgba(255,255,255,.65));
+  }
+  @media(max-width:640px){
+    .brand-mark{ height:30px; }
+    .brand-wordmark{ width:190px; }
   }
 </style>
