@@ -1,0 +1,6 @@
+# local cruft
+.DS_Store
+**/.DS_Store
+
+# internal generation notes — not for the public site
+.prompts/

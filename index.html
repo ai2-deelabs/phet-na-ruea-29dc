@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/logo/logo_nobg-160.png">
+<title>เพชรนาเรือ | บริการสูบส้วม-ดูดสิ่งปฏิกูล ครบวงจร 24 ชั่วโมง</title>
+<meta name="description" content="เพชรนาเรือ บริการสูบส้วม ดูดสิ่งปฏิกูล ล้างท่ออุดตัน ดูดไขมัน และบำบัดน้ำเสีย ครบวงจร ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง รถสูบมาตรฐาน ตลอด 24 ชั่วโมง โทร 088-7623287">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+  :root{
+    --background:#00101F;
+    --card:#04203F;
+    --bg-accent:#0A2E56;
+    --foreground:#DCE8F7;
+    --muted:#8098B8;
+    --border:#12406F;
+    --primary:#F3CC03;
+    --secondary:#3E6FA8;
+    --accent:#FFD93D;
+    --font-heading:'Kanit', sans-serif;
+    --font-body:'Sarabun', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--background);
+    color:var(--foreground);
+    font-family:var(--font-body);
+    line-height:1.8;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    overflow-x:hidden;
+    font-size:16px;
+  }
+  img{max-width:100%; height:auto; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  h1,h2,h3,h4{
+    font-family:var(--font-heading);
+    line-height:1.5;
+    font-weight:600;
+    letter-spacing:0;
+  }
+  .en{font-family:var(--font-body); letter-spacing:.04em;}
+  .cap{
+    font-family:var(--font-body);
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .container{max-width:1180px; margin:0 auto; padding:0 1.25rem;}
+  section{position:relative;}
+  .section-pad{padding:4rem 0;}
+
+  /* ---------- HEADER (verbatim structure, themed) ---------- */
+  #siteHeader{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:rgba(0,16,31,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:background .3s ease, box-shadow .3s ease, padding .3s ease;
+  }
+  #siteHeader.scrolled{
+    background:rgba(0,16,31,.97);
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+  }
+  #siteHeader .header-inner{
+    max-width:1180px; margin:0 auto; padding:0 1.25rem;
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:64px; gap:1rem;
+  }
+  #siteHeader .logo{
+    font-family:var(--font-heading);
+    font-weight:700;
+    font-size:clamp(1.05rem, 3vw, 1.4rem);
+    color:var(--foreground);
+    white-space:nowrap;
+    flex-shrink:0;
+    display:flex; align-items:center; gap:.5rem;
+  }
+  #siteHeader .logo .dot{color:var(--primary);}
+  #siteHeader .header-right{
+    display:flex; align-items:center; gap:.9rem;
+  }
+  #siteHeader .lang-sw{
+    display:flex; align-items:center; gap:.3rem;
+    font-size:.78em; color:var(--muted);
+    padding:.4rem; border-radius:6px;
+    flex-shrink:0;
+  }
+  #siteHeader .lang-sw:hover{color:var(--accent);}
+  #siteHeader .hamburger{
+    display:flex; align-items:center; justify-content:center;
+    width:44px; height:44px;
+    background:transparent; border:1px solid var(--border); border-radius:6px;
+    color:var(--foreground); cursor:pointer;
+    flex-shrink:0;
+  }
+  #siteHeader nav.site-nav{
+    position:fixed; top:64px; left:0; right:0; bottom:0;
+    background:var(--background);
+    display:none; flex-direction:column;
+    padding:1.5rem 1.25rem 2rem;
+    overflow-y:auto;
+    border-top:1px solid var(--border);
+  }
+  #siteHeader nav.site-nav.open{display:flex;}
+  #siteHeader nav.site-nav a{
+    font-size:1rem; padding:.9rem .25rem;
+    border-bottom:1px solid var(--border);
+    color:var(--foreground);
+  }
+  #siteHeader nav.site-nav a.nav-cta{
+    margin-top:1.25rem; text-align:center;
+    background:var(--primary); color:var(--background);
+    border:none; border-radius:8px; font-weight:600;
+    padding:.9rem 1rem;
+  }
+
+  @media (min-width:768px){
+    #siteHeader .header-inner{min-height:72px;}
+    #siteHeader .hamburger{display:none;}
+    #siteHeader nav.site-nav{
+      position:static; display:flex !important; flex-direction:row;
+      align-items:center; background:transparent; border:none;
+      padding:0; overflow:visible; width:auto; gap:.4rem;
+    }
+    #siteHeader nav.site-nav a{
+      border-bottom:none; padding:.5rem .7rem; font-size:.92rem;
+      border-radius:6px; white-space:nowrap;
+    }
+    #siteHeader nav.site-nav a:hover{background:var(--bg-accent); color:var(--accent);}
+    #siteHeader nav.site-nav a.nav-cta{
+      margin-top:0; margin-left:.6rem;
+      padding:.6rem 1.1rem; white-space:nowrap;
+    }
+    #siteHeader nav.site-nav a.nav-cta:hover{background:var(--accent); color:var(--background);}
+  }
+
+  /* ---------- SHELL: RAIL + MAIN ---------- */
+  .shell{display:flex; flex-direction:column;}
+  .rail{
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    padding:1.25rem 1.25rem;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    margin-top:64px;
+  }
+  .rail-brand{
+    font-family:var(--font-heading);
+    font-weight:800;
+    font-size:clamp(1.4rem, 6vw, 2rem);
+    color:transparent;
+    -webkit-text-stroke:1.5px var(--primary);
+    text-stroke:1.5px var(--primary);
+    line-height:1.3;
+  }
+  .rail-code{
+    font-size:.68rem; color:var(--muted);
+    letter-spacing:.12em; text-transform:uppercase;
+    text-align:right; font-variant-numeric:tabular-nums;
+  }
+  .rail-code span{display:block; color:var(--primary);}
+
+  @media (min-width:1024px){
+    .shell{flex-direction:row; align-items:stretch;}
+    .rail{
+      margin-top:72px;
+      flex-direction:column; justify-content:space-between; align-items:center;
+      width:76px; min-width:76px;
+      position:sticky; top:72px; height:calc(100vh - 72px);
+      border-bottom:none; border-right:1px solid var(--border);
+      padding:2rem .75rem;
+    }
+    .rail-brand{
+      writing-mode:vertical-rl; transform:rotate(180deg);
+      font-size:clamp(1.6rem, 2.4vw, 2.2rem);
+      letter-spacing:.02em;
+    }
+    .rail-code{
+      writing-mode:vertical-rl; transform:rotate(180deg);
+      text-align:left;
+    }
+    .rail-code span{display:inline;}
+    .main{flex:1; min-width:0;}
+  }
+
+  /* ---------- DOC HEADER / HERO ---------- */
+  .doc-header{
+    padding:2.5rem 0 3rem;
+    border-bottom:1px solid var(--border);
+  }
+  .doc-meta{
+    display:grid; grid-template-columns:1fr; gap:.6rem 1.5rem;
+    padding-bottom:1.5rem; margin-bottom:1.75rem;
+    border-bottom:1px dashed var(--border);
+  }
+  .doc-meta .row{display:flex; justify-content:space-between; gap:1rem; min-width:0;}
+  .doc-meta .row .k{color:var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; flex-shrink:0;}
+  .doc-meta .row .v{color:var(--foreground); font-size:.85rem; text-align:right; font-variant-numeric:tabular-nums; min-width:0;}
+  .doc-title{
+    font-size:clamp(2.1rem, 8vw, 4.2rem);
+    padding-top:.4rem;
+    color:var(--foreground);
+    max-width:16ch;
+  }
+  .doc-title em{
+    font-style:normal; color:var(--primary);
+    display:block;
+  }
+  .doc-sub{
+    margin-top:1.25rem; max-width:56ch;
+    color:var(--muted); font-size:1.02rem;
+  }
+  .doc-cta{
+    margin-top:2rem; display:flex; flex-wrap:wrap; gap:.9rem;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.85em 1.4em; border-radius:8px;
+    font-family:var(--font-body); font-weight:600; font-size:.95rem;
+    min-height:44px; cursor:pointer; border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-primary{background:var(--primary); color:var(--background);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(243,204,3,.35);}
+  .btn-outline{background:transparent; color:var(--foreground); border-color:var(--border);}
+  .btn-outline:hover{border-color:var(--primary); color:var(--accent); transform:translateY(-2px);}
+
+  .doc-stats{
+    margin-top:2.75rem; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1px;
+    background:var(--border); border:1px solid var(--border); border-radius:10px; overflow:hidden;
+  }
+  .doc-stats .stat{background:var(--card); padding:1.1rem 1rem; min-width:0;}
+  .doc-stats .stat .num{font-family:var(--font-heading); font-size:1.6rem; color:var(--accent); font-variant-numeric:tabular-nums;}
+  .doc-stats .stat .lbl{font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-top:.25rem;}
+
+  @media (min-width:640px){
+    .doc-meta{grid-template-columns:repeat(2, minmax(0,1fr));}
+    .doc-stats{grid-template-columns:repeat(4, minmax(0,1fr));}
+  }
+
+  /* ---------- SECTION LABEL ---------- */
+  .section-head{
+    display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap;
+    margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid var(--border);
+  }
+  .section-head .idx{
+    font-family:var(--font-heading); font-size:.85rem; color:var(--primary);
+    border:1px solid var(--primary); border-radius:5px; padding:.15em .5em;
+    font-variant-numeric:tabular-nums; flex-shrink:0;
+  }
+  .section-head h2{font-size:clamp(1.5rem,4vw,2.1rem); min-width:0;}
+  .section-head .tag{margin-left:auto; font-size:.72rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase;}
+
+  .bg-accent{background:var(--bg-accent);}
+
+  /* ---------- SERVICES MANIFEST ---------- */
+  .manifest{display:flex; flex-direction:column; gap:.9rem;}
+  .m-row{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:.6rem;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    opacity:0; transform:translateY(18px);
+  }
+  .m-row.reveal{opacity:1; transform:translateY(0);}
+  .m-row:hover{border-color:var(--primary); transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.35);}
+  .m-row .m-top{display:flex; align-items:center; gap:.8rem; min-width:0;}
+  .m-row .m-code{
+    font-family:var(--font-heading); color:var(--primary); font-size:.85rem;
+    border-right:1px solid var(--border); padding-right:.8rem; flex-shrink:0;
+    font-variant-numeric:tabular-nums;
+  }
+  .m-row .m-icon{
+    width:38px; height:38px; border-radius:8px; background:var(--bg-accent);
+    display:flex; align-items:center; justify-content:center; color:var(--accent); flex-shrink:0;
+  }
+  .m-row h3{font-size:1.15rem; min-width:0;}
+  .m-row .m-desc{color:var(--muted); font-size:.92rem; min-width:0;}
+  .m-row .m-spec{
+    display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.3rem;
+  }
+  .m-row .m-spec span{
+    font-size:.72rem; color:var(--muted); border:1px solid var(--border);
+    border-radius:5px; padding:.25em .6em; letter-spacing:.04em;
+  }
+
+  @media (min-width:768px){
+    .m-row{
+      display:grid; grid-template-columns:auto auto minmax(0,1fr) auto; align-items:center; gap:1.2rem;
+      padding:1.1rem 1.5rem;
+    }
+    .m-row .m-code{grid-column:1;}
+    .m-row .m-icon{grid-column:2;}
+    .m-row .m-body{grid-column:3; min-width:0;}
+    .m-row .m-spec{grid-column:4; flex-direction:column; align-items:flex-end; margin-top:0;}
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{display:flex; flex-direction:column; gap:0;}
+  .p-step{
+    display:flex; gap:1.1rem; padding:1.4rem 0; border-bottom:1px solid var(--border);
+    opacity:0; transform:translateX(-14px); transition:opacity .5s ease, transform .5s ease;
+  }
+  .p-step.reveal{opacity:1; transform:translateX(0);}
+  .p-step:last-child{border-bottom:none;}
+  .p-step .p-num{
+    font-family:var(--font-heading); font-size:1.6rem; color:var(--primary); flex-shrink:0;
+    width:2.4em; font-variant-numeric:tabular-nums;
+  }
+  .p-step .p-body{min-width:0;}
+  .p-step h3{font-size:1.05rem; margin-bottom:.25rem;}
+  .p-step p{color:var(--muted); font-size:.92rem;}
+
+  @media (min-width:768px){
+    .process{flex-direction:row; flex-wrap:wrap; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+    .p-step{flex:1 1 20%; min-width:0; flex-direction:column; background:var(--card); padding:1.6rem 1.3rem; border-bottom:none; border-right:1px solid var(--border);}
+    .p-step:last-child{border-right:none;}
+  }
+
+  /* ---------- FLEET GALLERY ---------- */
+  .fleet-grid{display:grid; grid-template-columns:1fr; gap:1.1rem;}
+  .fleet-card{
+    border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card);
+    opacity:0; transform:scale(.96); transition:opacity .5s ease, transform .5s ease;
+  }
+  .fleet-card.reveal{opacity:1; transform:scale(1);}
+  .fleet-card .img-wrap{position:relative; overflow:hidden; aspect-ratio:4/3;}
+  .fleet-card img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+  .fleet-card:hover img{transform:scale(1.08);}
+  .fleet-card .fig{
+    position:absolute; top:.7rem; left:.7rem; background:rgba(0,16,31,.8);
+    color:var(--accent); font-size:.7rem; padding:.25em .6em; border-radius:5px;
+    border:1px solid var(--primary); font-variant-numeric:tabular-nums;
+  }
+  .fleet-card .cap{padding:.9rem 1rem; display:block;}
+  .fleet-card .cap b{color:var(--foreground); font-family:var(--font-heading); font-weight:500; font-size:.9rem; display:block; margin-bottom:.2rem; letter-spacing:0;}
+  .credit-line{font-size:.68rem; color:var(--muted); padding:0 1rem .8rem; display:block;}
+  .credit-line a{color:var(--muted); text-decoration:underline;}
+
+  @media (min-width:640px){.fleet-grid{grid-template-columns:repeat(2, minmax(0,1fr));}}
+  @media (min-width:1024px){.fleet-grid{grid-template-columns:repeat(3, minmax(0,1fr));}}
+
+  /* ---------- COVERAGE ---------- */
+  .coverage-wrap{display:flex; flex-direction:column; gap:2rem;}
+  .coverage-chips{display:flex; flex-wrap:wrap; gap:.6rem;}
+  .coverage-chips span{
+    border:1px solid var(--border); border-radius:6px; padding:.5em .9em;
+    font-size:.85rem; color:var(--foreground); background:var(--card);
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .coverage-chips span:hover{border-color:var(--primary); color:var(--accent);}
+  .coverage-note{
+    border-left:3px solid var(--primary); padding:1rem 1.3rem; background:var(--card);
+    border-radius:0 8px 8px 0; color:var(--muted); font-size:.9rem; max-width:60ch;
+  }
+
+  /* ---------- TRUST STATS ---------- */
+  .trust-grid{display:grid; grid-template-columns:1fr; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+  .trust-item{background:var(--card); padding:1.6rem 1.4rem; display:flex; align-items:center; gap:1rem; min-width:0;}
+  .trust-item .t-icon{width:44px; height:44px; border-radius:8px; background:var(--bg-accent); color:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .trust-item .t-text{min-width:0;}
+  .trust-item .t-text b{font-family:var(--font-heading); font-size:1.05rem; display:block; color:var(--foreground); font-weight:500;}
+  .trust-item .t-text span{font-size:.82rem; color:var(--muted);}
+  @media (min-width:768px){.trust-grid{grid-template-columns:repeat(3, minmax(0,1fr));}}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .notes-grid{display:grid; grid-template-columns:1fr; gap:1.1rem;}
+  .note{
+    background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1.4rem;
+    position:relative;
+  }
+  .note::before{
+    content:"";
+    position:absolute; top:0; left:1.2rem; width:2px; height:14px; background:var(--primary);
+  }
+  .note p.q{color:var(--foreground); font-size:.95rem; margin-bottom:.9rem;}
+  .note .who{display:flex; justify-content:space-between; gap:1rem; min-width:0;}
+  .note .who b{font-family:var(--font-heading); font-weight:500; font-size:.9rem; color:var(--accent); min-width:0;}
+  .note .who span{font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; flex-shrink:0;}
+  @media (min-width:768px){.notes-grid{grid-template-columns:repeat(3, minmax(0,1fr));}}
+
+  /* ---------- EMERGENCY CTA ---------- */
+  .emg{
+    background:linear-gradient(135deg, var(--bg-accent), var(--card));
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    padding:3.2rem 0; text-align:center;
+  }
+  .emg .cap{color:var(--accent); justify-content:center; display:flex;}
+  .emg h2{font-size:clamp(1.6rem,6vw,2.6rem); margin-top:.6rem;}
+  .emg .phone-big{
+    font-family:var(--font-heading); font-weight:700; color:var(--primary);
+    font-size:clamp(2.4rem, 9vw, 4.5rem); margin-top:1rem; letter-spacing:.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .emg p.sub{color:var(--muted); margin-top:.75rem;}
+  .emg .doc-cta{justify-content:center; margin-top:1.75rem;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr; gap:1.5rem;}
+  .contact-card{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1.6rem;}
+  .contact-card h3{font-size:1.1rem; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;}
+  .contact-card h3 i{color:var(--primary); width:20px; height:20px;}
+  .contact-line{display:flex; gap:.8rem; align-items:flex-start; margin-bottom:.9rem; min-width:0;}
+  .contact-line i{color:var(--primary); width:18px; height:18px; flex-shrink:0; margin-top:.15em;}
+  .contact-line .v{min-width:0; font-size:.92rem; color:var(--foreground);}
+  .contact-line .v small{display:block; color:var(--muted); font-size:.78rem; margin-top:.15rem;}
+  .contact-line .v a{color:var(--foreground); text-decoration:none; border-bottom:1px solid var(--border); transition:color .2s ease, border-color .2s ease;}
+  .contact-line .v a:hover{color:var(--accent); border-color:var(--primary);}
+  @media (min-width:768px){.contact-grid{grid-template-columns:repeat(2, minmax(0,1fr));}}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--border); padding:2.5rem 0 1.5rem;}
+  footer .foot-grid{display:flex; flex-direction:column; gap:1.5rem; margin-bottom:2rem;}
+  footer .foot-brand{font-family:var(--font-heading); font-weight:700; font-size:1.2rem;}
+  footer .foot-brand .dot{color:var(--primary);}
+  footer p.tagline{color:var(--muted); font-size:.88rem; margin-top:.5rem; max-width:48ch;}
+  footer .foot-links{display:flex; flex-wrap:wrap; gap:1rem 1.5rem;}
+  footer .foot-links a{font-size:.88rem; color:var(--muted);}
+  footer .foot-links a:hover{color:var(--accent);}
+  .foot-bottom{
+    border-top:1px solid var(--border); padding-top:1.4rem;
+    display:flex; flex-direction:column; gap:.6rem;
+  }
+  .credits-list{font-size:.7rem; color:var(--muted); line-height:1.9;}
+  .credits-list a{color:var(--muted); text-decoration:underline;}
+  .foot-social{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem;}
+  .foot-social a{
+    display:inline-flex; align-items:center; gap:.4rem;
+    border:1px solid var(--border); border-radius:6px; padding:.45em .8em;
+    font-size:.8rem; color:var(--muted); background:var(--card);
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .foot-social a:hover{border-color:var(--primary); color:var(--accent);}
+  .foot-social i{width:16px; height:16px;}
+  .deelabs-badge{font-size:.75rem; color:var(--muted); font-weight:400;}
+  .deelabs-badge:hover{color:var(--accent);}
+  @media (min-width:768px){
+    .foot-grid{flex-direction:row; justify-content:space-between; align-items:flex-start;}
+    .foot-bottom{flex-direction:row; justify-content:space-between; align-items:center;}
+  }
+
+  /* reveal generic */
+  .reveal-init{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal-init.reveal{opacity:1; transform:translateY(0);}
+
+  /* ===== brand logo assets ===== */
+  #siteHeader .logo, #siteHeader .brand, #siteHeader .hd-logo{
+    display:inline-flex; align-items:center; min-width:0;
+  }
+  /* margin, not gap: the brand text is split into spans in some variants
+     and a flex gap would push those apart too */
+  .brand-mark{
+    height:40px; width:auto; flex:0 0 auto; align-self:center; display:block;
+    margin-inline-end:.5em;
+  }
+  .brand-wordmark{
+    width:250px; max-width:100%; height:auto; display:block; margin-bottom:.25rem;
+    /* the wordmark's sub-line is navy; footers are navy too, so lift it off
+       the background with a thin light outline instead of a solid plate */
+    filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
+           drop-shadow(0 0 2px rgba(255,255,255,.65));
+  }
+  @media(max-width:640px){
+    .brand-mark{ height:30px; }
+    .brand-wordmark{ width:190px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "เพชรนาเรือ",
+  "alternateName": "Phet Na Ruea",
+  "description": "บริการสูบส้วม ดูดสิ่งปฏิกูล ล้างท่ออุดตัน ดูดไขมัน และบำบัดน้ำเสีย ตลอด 24 ชั่วโมง",
+  "telephone": "+66887623287",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "145 หมู่ 5",
+    "addressLocality": "ต.แม่นาเรือ อ.เมือง",
+    "addressRegion": "พะเยา",
+    "addressCountry": "TH"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": ["https://www.facebook.com/profile.php?id=61592076981750"],
+  "areaServed": [{"@type": "Place", "name": "ในเขตตัวเมืองพะเยา"}, {"@type": "Place", "name": "แม่กา"}, {"@type": "Place", "name": "ท่าวังทอง"}, {"@type": "Place", "name": "ดงเจน"}, {"@type": "Place", "name": "แม่ใจ"}, {"@type": "Place", "name": "บ้านต๊ำ"}, {"@type": "Place", "name": "บ้านต๋อม"}, {"@type": "Place", "name": "แม่นาเรือ"}, {"@type": "Place", "name": "แม่ต๋ำ"}, {"@type": "Place", "name": "สันป่าม่วง"}, {"@type": "Place", "name": "บ้านสาง"}]
+}
+</script>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo"><img class="brand-mark" src="assets/logo/logo_nobg-160.png" alt="" aria-hidden="true" width="160" height="123" decoding="async">เพชรนาเรือ<span class="dot">.</span></a>
+    <div class="header-right">
+      <div class="lang-sw" aria-label="Language switch">
+        <i data-lucide="globe" width="14" height="14"></i>
+        <span class="lang-sw__label">TH</span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <i data-lucide="menu" id="menuIcon"></i>
+      </button>
+    </div>
+    <nav class="site-nav" id="siteNav">
+      <a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a>
+      <a href="#process" data-lang-th="ขั้นตอนงาน" data-lang-en="Process">ขั้นตอนงาน</a>
+      <a href="#fleet" data-lang-th="รถ-อุปกรณ์" data-lang-en="Fleet">รถ-อุปกรณ์</a>
+      <a href="#coverage" data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</a>
+      <a href="#trust" data-lang-th="เกี่ยวกับเรา" data-lang-en="About">เกี่ยวกับเรา</a>
+      <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+      <a href="tel:0887623287" class="nav-cta" data-lang-th="โทรด่วน 24 ชม." data-lang-en="Call 24/7">โทรด่วน 24 ชม.</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+<div class="shell">
+  <div class="rail">
+    <div class="rail-brand">เพชรนาเรือ</div>
+    <div class="rail-code">DOC. PNR<span>REV. 03</span></div>
+  </div>
+
+  <main class="main">
+
+    <!-- ============ DOC HEADER / HERO ============ -->
+    <section class="doc-header">
+      <div class="container">
+        <div class="doc-meta">
+          <div class="row"><span class="k">DOC NO.</span><span class="v">PNR-2026-003</span></div>
+          <div class="row"><span class="k">REV.</span><span class="v">A / 2026</span></div>
+          <div class="row"><span class="k" data-lang-th="เรื่อง" data-lang-en="Subject">เรื่อง</span><span class="v" data-lang-th="บริการสูบสิ่งปฏิกูล" data-lang-en="Pumping Service">บริการสูบสิ่งปฏิกูล</span></div>
+          <div class="row"><span class="k" data-lang-th="สถานะ" data-lang-en="Status">สถานะ</span><span class="v" data-lang-th="พร้อมปฏิบัติงาน" data-lang-en="Operational">พร้อมปฏิบัติงาน</span></div>
+        </div>
+
+        <h1 class="doc-title">
+          <span data-lang-th="สูบส้วม" data-lang-en="Septic">สูบส้วม</span>
+          <em data-lang-th="ดูดสิ่งปฏิกูล ครบวงจร" data-lang-en="Full Pumping Service">ดูดสิ่งปฏิกูล ครบวงจร</em>
+        </h1>
+        <p class="doc-sub" data-lang-th="ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน" data-lang-en="Industrial-grade vacuum trucks and certified technicians for septic pumping, grease trap cleaning, drain jetting and wastewater service across Mueang Phayao and nearby sub-districts — every job logged and certified.">ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน</p>
+
+        <div class="doc-cta">
+          <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone"></i><span data-lang-th="โทรด่วน 088-7623287" data-lang-en="Call 088-7623287">โทรด่วน 088-7623287</span></a>
+          <a href="#services" class="btn btn-outline"><i data-lucide="file-text"></i><span data-lang-th="ดูรายการบริการ" data-lang-en="View Services">ดูรายการบริการ</span></a>
+        </div>
+
+        <div class="doc-stats">
+          <div class="stat"><div class="num">18+</div><div class="lbl" data-lang-th="ปีประสบการณ์" data-lang-en="Years Active">ปีประสบการณ์</div></div>
+          <div class="stat"><div class="num">32</div><div class="lbl" data-lang-th="คันรถสูบ" data-lang-en="Fleet Trucks">คันรถสูบ</div></div>
+          <div class="stat"><div class="num">24/7</div><div class="lbl" data-lang-th="พร้อมออกงาน" data-lang-en="Emergency Ready">พร้อมออกงาน</div></div>
+          <div class="stat"><div class="num">9,400+</div><div class="lbl" data-lang-th="งานสำเร็จ" data-lang-en="Jobs Completed">งานสำเร็จ</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES MANIFEST ============ -->
+    <section id="services" class="section-pad">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">01</span>
+          <h2 data-lang-th="รายการบริการ" data-lang-en="Service Manifest">รายการบริการ</h2>
+          <span class="tag" data-lang-th="แฟ้มบริการ" data-lang-en="Manifest Log">แฟ้มบริการ</span>
+        </div>
+
+        <div class="manifest">
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-01</span>
+              <span class="m-icon"><i data-lucide="droplet"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="สูบส้วม / ล้างถังแซท" data-lang-en="Septic Tank Pumping">สูบส้วม / ล้างถังแซท</h3>
+              <p class="m-desc" data-lang-th="บ้านพักอาศัย คอนโด ทาวน์เฮาส์ อพาร์ตเมนต์ สูบหมด ไม่มีกลิ่นตกค้าง" data-lang-en="Homes, condos, townhouses and apartments — complete removal with zero residual odor.">บ้านพักอาศัย คอนโด ทาวน์เฮาส์ อพาร์ตเมนต์ สูบหมด ไม่มีกลิ่นตกค้าง</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="รถสูบ 6 ล้อ" data-lang-en="6-Wheel Truck">รถสูบ 6 ล้อ</span>
+              <span data-lang-th="ภายใน 1 ชม." data-lang-en="Within 1 hr">ภายใน 1 ชม.</span>
+            </div>
+          </div>
+
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-02</span>
+              <span class="m-icon"><i data-lucide="flame"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="ดูดไขมัน / บ่อดักไขมัน" data-lang-en="Grease Trap Cleaning">ดูดไขมัน / บ่อดักไขมัน</h3>
+              <p class="m-desc" data-lang-th="ร้านอาหาร โรงแรม ครัวกลาง โรงงานผลิตอาหาร ป้องกันท่ออุดตันจากไขมันสะสม" data-lang-en="Restaurants, hotels, central kitchens and food plants — preventing grease buildup blockages.">ร้านอาหาร โรงแรม ครัวกลาง โรงงานผลิตอาหาร ป้องกันท่ออุดตันจากไขมันสะสม</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="ตามรอบสัญญา" data-lang-en="Contract Schedule">ตามรอบสัญญา</span>
+              <span data-lang-th="ออกใบรับรอง" data-lang-en="Certified">ออกใบรับรอง</span>
+            </div>
+          </div>
+
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-03</span>
+              <span class="m-icon"><i data-lucide="waves"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="ล้างท่อ / แก้ท่ออุดตัน" data-lang-en="Drain Jetting & Unblocking">ล้างท่อ / แก้ท่ออุดตัน</h3>
+              <p class="m-desc" data-lang-th="ใช้แรงดันน้ำสูงเจาะทะลุสิ่งอุดตัน ไม่กัดกร่อนผนังท่อ ปลอดภัยต่อระบบเดิม" data-lang-en="High-pressure jetting clears blockages without corroding existing pipe walls.">ใช้แรงดันน้ำสูงเจาะทะลุสิ่งอุดตัน ไม่กัดกร่อนผนังท่อ ปลอดภัยต่อระบบเดิม</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="แรงดัน 3000 PSI" data-lang-en="3000 PSI">แรงดัน 3000 PSI</span>
+              <span data-lang-th="ด่วนพิเศษ" data-lang-en="Priority">ด่วนพิเศษ</span>
+            </div>
+          </div>
+
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-04</span>
+              <span class="m-icon"><i data-lucide="factory"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="สูบบ่อบำบัดน้ำเสีย" data-lang-en="Wastewater Pit Pumping">สูบบ่อบำบัดน้ำเสีย</h3>
+              <p class="m-desc" data-lang-th="โรงงาน อาคารสำนักงาน นิคมอุตสาหกรรม บำรุงรักษาระบบบำบัดตามรอบมาตรฐาน" data-lang-en="Factories, offices and industrial estates — scheduled treatment system maintenance.">โรงงาน อาคารสำนักงาน นิคมอุตสาหกรรม บำรุงรักษาระบบบำบัดตามรอบมาตรฐาน</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="รถสูบ 10 ล้อ" data-lang-en="10-Wheel Truck">รถสูบ 10 ล้อ</span>
+              <span data-lang-th="สัญญารายปี" data-lang-en="Annual Contract">สัญญารายปี</span>
+            </div>
+          </div>
+
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-05</span>
+              <span class="m-icon"><i data-lucide="camera"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="ตรวจสอบท่อด้วยกล้อง CCTV" data-lang-en="CCTV Pipe Inspection">ตรวจสอบท่อด้วยกล้อง CCTV</h3>
+              <p class="m-desc" data-lang-th="สำรวจสภาพท่อใต้ดินแบบเรียลไทม์ ระบุจุดชำรุด-อุดตันก่อนซ่อมจริง" data-lang-en="Real-time underground pipe survey pinpoints damage before repair work begins.">สำรวจสภาพท่อใต้ดินแบบเรียลไทม์ ระบุจุดชำรุด-อุดตันก่อนซ่อมจริง</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="รายงานภาพวิดีโอ" data-lang-en="Video Report">รายงานภาพวิดีโอ</span>
+              <span data-lang-th="นัดล่วงหน้า" data-lang-en="By Appointment">นัดล่วงหน้า</span>
+            </div>
+          </div>
+
+          <div class="m-row reveal-item">
+            <div class="m-top">
+              <span class="m-code">SVC-06</span>
+              <span class="m-icon"><i data-lucide="siren"></i></span>
+            </div>
+            <div class="m-body">
+              <h3 data-lang-th="บริการฉุกเฉิน 24 ชั่วโมง" data-lang-en="24-Hour Emergency Response">บริการฉุกเฉิน 24 ชั่วโมง</h3>
+              <p class="m-desc" data-lang-th="ท่อแตก น้ำท่วมขัง ส้วมเต็มกะทันหัน ทีมด่วนออกงานได้ทันทีทุกพื้นที่" data-lang-en="Burst pipes, flooding, sudden overflow — rapid dispatch teams available everywhere.">ท่อแตก น้ำท่วมขัง ส้วมเต็มกะทันหัน ทีมด่วนออกงานได้ทันทีทุกพื้นที่</p>
+            </div>
+            <div class="m-spec">
+              <span data-lang-th="ตอบสนอง 60 นาที" data-lang-en="60-min Response">ตอบสนอง 60 นาที</span>
+              <span data-lang-th="ไม่มีวันหยุด" data-lang-en="No Days Off">ไม่มีวันหยุด</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="section-pad bg-accent">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">02</span>
+          <h2 data-lang-th="ขั้นตอนปฏิบัติงาน" data-lang-en="Operating Procedure">ขั้นตอนปฏิบัติงาน</h2>
+          <span class="tag" data-lang-th="SOP-05" data-lang-en="SOP-05">SOP-05</span>
+        </div>
+
+        <div class="process">
+          <div class="p-step reveal-item">
+            <div class="p-num">01</div>
+            <div class="p-body">
+              <h3 data-lang-th="รับแจ้ง / นัดหมาย" data-lang-en="Call & Schedule">รับแจ้ง / นัดหมาย</h3>
+              <p data-lang-th="แจ้งอาการผ่านโทรศัพท์หรือไลน์ ทีมงานประเมินและนัดเวลาเข้างาน" data-lang-en="Report the issue by phone or LINE — our team assesses and schedules a visit.">แจ้งอาการผ่านโทรศัพท์หรือไลน์ ทีมงานประเมินและนัดเวลาเข้างาน</p>
+            </div>
+          </div>
+          <div class="p-step reveal-item">
+            <div class="p-num">02</div>
+            <div class="p-body">
+              <h3 data-lang-th="สำรวจหน้างาน" data-lang-en="Site Survey">สำรวจหน้างาน</h3>
+              <p data-lang-th="ช่างลงพื้นที่ตรวจจุดสูบ-จุดท่อ ประเมินปริมาณงานจริง" data-lang-en="On-site technician checks pump access and estimates true job scope.">ช่างลงพื้นที่ตรวจจุดสูบ-จุดท่อ ประเมินปริมาณงานจริง</p>
+            </div>
+          </div>
+          <div class="p-step reveal-item">
+            <div class="p-num">03</div>
+            <div class="p-body">
+              <h3 data-lang-th="ระดมรถ-อุปกรณ์" data-lang-en="Dispatch Fleet">ระดมรถ-อุปกรณ์</h3>
+              <p data-lang-th="จัดรถสูบและอุปกรณ์ให้เหมาะกับขนาดงาน เดินทางถึงไซต์งาน" data-lang-en="Right-sized truck and equipment dispatched to the job site.">จัดรถสูบและอุปกรณ์ให้เหมาะกับขนาดงาน เดินทางถึงไซต์งาน</p>
+            </div>
+          </div>
+          <div class="p-step reveal-item">
+            <div class="p-num">04</div>
+            <div class="p-body">
+              <h3 data-lang-th="ปฏิบัติงานสูบ / ล้างท่อ" data-lang-en="Pumping & Jetting">ปฏิบัติงานสูบ / ล้างท่อ</h3>
+              <p data-lang-th="ดำเนินการตามมาตรฐานความปลอดภัย ทำความสะอาดพื้นที่หลังงานเสร็จ" data-lang-en="Work executed to safety standard, site cleaned after completion.">ดำเนินการตามมาตรฐานความปลอดภัย ทำความสะอาดพื้นที่หลังงานเสร็จ</p>
+            </div>
+          </div>
+          <div class="p-step reveal-item">
+            <div class="p-num">05</div>
+            <div class="p-body">
+              <h3 data-lang-th="รายงานผล-ออกใบรับรอง" data-lang-en="Report & Certificate">รายงานผล-ออกใบรับรอง</h3>
+              <p data-lang-th="ส่งมอบใบรับรองการปฏิบัติงานและใบเสร็จรับเงินทันที" data-lang-en="Job certificate and receipt handed over on completion.">ส่งมอบใบรับรองการปฏิบัติงานและใบเสร็จรับเงินทันที</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLEET / EQUIPMENT ============ -->
+    <section id="fleet" class="section-pad">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">03</span>
+          <h2 data-lang-th="รถและอุปกรณ์" data-lang-en="Fleet & Equipment">รถและอุปกรณ์</h2>
+          <span class="tag" data-lang-th="FIG. 01-03" data-lang-en="FIG. 01-03">FIG. 01-03</span>
+        </div>
+
+        <div class="fleet-grid">
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 01</span>
+              <img src="https://images.pexels.com/photos/4741959/pexels-photo-4741959.jpeg?w=700&h=525&fit=crop" alt="มุมสูงระบบบำบัดน้ำเสียแบบวงกลม" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="ระบบบำบัดกลาง" data-lang-en="Central Treatment Unit">ระบบบำบัดกลาง</b><span data-lang-th="จุดพักน้ำก่อนปล่อยสู่ระบบระบายส่วนกลาง" data-lang-en="Holding stage before discharge into the municipal system.">จุดพักน้ำก่อนปล่อยสู่ระบบระบายส่วนกลาง</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@pok-rie-33563" target="_blank" rel="noopener nofollow">Photo by Pok Rie on Pexels</a>
+          </div>
+
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 02</span>
+              <img src="https://images.pexels.com/photos/12726229/pexels-photo-12726229.jpeg?w=700&h=525&fit=crop" alt="ถังบำบัดพร้อมท่อสีฟ้า" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="ชุดวาล์วควบคุม" data-lang-en="Valve Control Set">ชุดวาล์วควบคุม</b><span data-lang-th="ควบคุมแรงดันการสูบให้คงที่ตลอดกระบวนการ" data-lang-en="Regulates suction pressure consistently through the process.">ควบคุมแรงดันการสูบให้คงที่ตลอดกระบวนการ</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@alexeydemidov" target="_blank" rel="noopener nofollow">Photo by Alexey Demidov on Pexels</a>
+          </div>
+
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 03</span>
+              <img src="https://images.pexels.com/photos/35877100/pexels-photo-35877100.jpeg?w=700&h=525&fit=crop" alt="เครื่องจักรอุตสาหกรรมกลางแจ้ง" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="เครื่องสูบแรงดันสูง" data-lang-en="High-Pressure Pump Unit">เครื่องสูบแรงดันสูง</b><span data-lang-th="ตรวจเช็คสภาพก่อนออกปฏิบัติงานทุกครั้ง" data-lang-en="Inspected before every dispatch.">ตรวจเช็คสภาพก่อนออกปฏิบัติงานทุกครั้ง</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@souvik-dutta-2153793012" target="_blank" rel="noopener nofollow">Photo by Souvik Dutta on Pexels</a>
+          </div>
+
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 04</span>
+              <img src="https://images.pexels.com/photos/37299043/pexels-photo-37299043.jpeg?w=700&h=525&fit=crop" alt="ทีมช่างหน้างานพร้อมท่อขนาดใหญ่" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="ทีมปฏิบัติการหน้างาน" data-lang-en="Field Operations Team">ทีมปฏิบัติการหน้างาน</b><span data-lang-th="ช่างผ่านการอบรมความปลอดภัยตามมาตรฐาน" data-lang-en="Safety-trained technicians on every job.">ช่างผ่านการอบรมความปลอดภัยตามมาตรฐาน</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@felicia-navarrete-2151848879" target="_blank" rel="noopener nofollow">Photo by Felicia Navarrete on Pexels</a>
+          </div>
+
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 05</span>
+              <img src="https://images.pexels.com/photos/37090943/pexels-photo-37090943.jpeg?w=700&h=525&fit=crop" alt="เจ้าหน้าที่สวมชุดป้องกันในโรงงาน" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="มาตรฐานความปลอดภัย" data-lang-en="Safety Standard">มาตรฐานความปลอดภัย</b><span data-lang-th="อุปกรณ์ป้องกันครบชุดทุกภารกิจ" data-lang-en="Full protective gear on every mission.">อุปกรณ์ป้องกันครบชุดทุกภารกิจ</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@annyles-ortiz-2160689070" target="_blank" rel="noopener nofollow">Photo by Annyles Ortiz on Pexels</a>
+          </div>
+
+          <div class="fleet-card reveal-item">
+            <div class="img-wrap">
+              <span class="fig">FIG. 06</span>
+              <img src="https://images.pexels.com/photos/28772266/pexels-photo-28772266.jpeg?w=700&h=525&fit=crop" alt="กองท่อเหล็กเก่ากลางแจ้ง" loading="lazy" decoding="async">
+            </div>
+            <span class="cap"><b data-lang-th="คลังอะไหล่ท่อ" data-lang-en="Pipe Fitting Stock">คลังอะไหล่ท่อ</b><span data-lang-th="สำรองอะไหล่พร้อมเปลี่ยนหน้างานทันที" data-lang-en="Spare fittings ready for immediate replacement on-site.">สำรองอะไหล่พร้อมเปลี่ยนหน้างานทันที</span></span>
+            <a class="credit-line" href="https://www.pexels.com/@qhung999" target="_blank" rel="noopener nofollow">Photo by Q. Hưng Phạm on Pexels</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COVERAGE ============ -->
+    <section id="coverage" class="section-pad bg-accent">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">04</span>
+          <h2 data-lang-th="พื้นที่ให้บริการ" data-lang-en="Service Coverage">พื้นที่ให้บริการ</h2>
+          <span class="tag" data-lang-th="ZONE MAP" data-lang-en="ZONE MAP">ZONE MAP</span>
+        </div>
+        <div class="coverage-wrap">
+          <div class="coverage-chips">
+            <span data-lang-th="ในเขตตัวเมืองพะเยา" data-lang-en="Mueang Phayao">ในเขตตัวเมืองพะเยา</span>
+            <span data-lang-th="แม่กา" data-lang-en="Mae Ka">แม่กา</span>
+            <span data-lang-th="ท่าวังทอง" data-lang-en="Tha Wang Thong">ท่าวังทอง</span>
+            <span data-lang-th="ดงเจน" data-lang-en="Dong Chen">ดงเจน</span>
+            <span data-lang-th="แม่ใจ" data-lang-en="Mae Chai">แม่ใจ</span>
+            <span data-lang-th="บ้านต๊ำ" data-lang-en="Ban Tam">บ้านต๊ำ</span>
+            <span data-lang-th="บ้านต๋อม" data-lang-en="Ban Tom">บ้านต๋อม</span>
+            <span data-lang-th="แม่นาเรือ" data-lang-en="Mae Na Ruea">แม่นาเรือ</span>
+            <span data-lang-th="แม่ต๋ำ" data-lang-en="Mae Tam">แม่ต๋ำ</span>
+            <span data-lang-th="สันป่าม่วง" data-lang-en="San Pa Muang">สันป่าม่วง</span>
+            <span data-lang-th="บ้านสาง" data-lang-en="Ban Sang">บ้านสาง</span>
+          </div>
+          <p class="coverage-note" data-lang-th="นอกพื้นที่ข้างต้น ติดต่อสอบถามได้ทุกกรณี ทีมงานประเมินระยะทางและค่าบริการให้ก่อนนัดหมายจริง" data-lang-en="Outside these zones? Contact us anyway — we'll assess distance and quote before confirming any visit.">นอกพื้นที่ข้างต้น ติดต่อสอบถามได้ทุกกรณี ทีมงานประเมินระยะทางและค่าบริการให้ก่อนนัดหมายจริง</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST ============ -->
+    <section id="trust" class="section-pad">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">05</span>
+          <h2 data-lang-th="เหตุผลที่ลูกค้าไว้วางใจ" data-lang-en="Why Customers Trust Us">เหตุผลที่ลูกค้าไว้วางใจ</h2>
+          <span class="tag" data-lang-th="CERT" data-lang-en="CERT">CERT</span>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="shield-check"></i></div>
+            <div class="t-text"><b data-lang-th="จดทะเบียนถูกต้อง" data-lang-en="Fully Licensed">จดทะเบียนถูกต้อง</b><span data-lang-th="ใบอนุญาตขนส่งสิ่งปฏิกูลครบถ้วน" data-lang-en="Complete waste-transport permits.">ใบอนุญาตขนส่งสิ่งปฏิกูลครบถ้วน</span></div>
+          </div>
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="gauge"></i></div>
+            <div class="t-text"><b data-lang-th="ตอบสนองไว" data-lang-en="Fast Response">ตอบสนองไว</b><span data-lang-th="เฉลี่ยเข้าถึงหน้างานภายใน 60 นาที" data-lang-en="Average on-site arrival within 60 minutes.">เฉลี่ยเข้าถึงหน้างานภายใน 60 นาที</span></div>
+          </div>
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="file-check-2"></i></div>
+            <div class="t-text"><b data-lang-th="มีใบรับรองทุกงาน" data-lang-en="Certificate Every Job">มีใบรับรองทุกงาน</b><span data-lang-th="ตรวจสอบย้อนหลังได้ทุกใบงาน" data-lang-en="Fully traceable job records.">ตรวจสอบย้อนหลังได้ทุกใบงาน</span></div>
+          </div>
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="truck"></i></div>
+            <div class="t-text"><b data-lang-th="กองรถมาตรฐาน" data-lang-en="Standardized Fleet">กองรถมาตรฐาน</b><span data-lang-th="รถสูบ 32 คัน ตรวจเช็คสภาพประจำเดือน" data-lang-en="32 trucks, inspected monthly.">รถสูบ 32 คัน ตรวจเช็คสภาพประจำเดือน</span></div>
+          </div>
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="clock"></i></div>
+            <div class="t-text"><b data-lang-th="ให้บริการตลอด 24 ชม." data-lang-en="24-Hour Availability">ให้บริการตลอด 24 ชม.</b><span data-lang-th="ทีมเวรพร้อมรับสายทุกวัน ไม่เว้นวันหยุด" data-lang-en="On-call teams every day, no exceptions.">ทีมเวรพร้อมรับสายทุกวัน ไม่เว้นวันหยุด</span></div>
+          </div>
+          <div class="trust-item reveal-item">
+            <div class="t-icon"><i data-lucide="users"></i></div>
+            <div class="t-text"><b data-lang-th="ทีมช่างกว่า 60 คน" data-lang-en="60+ Field Technicians">ทีมช่างกว่า 60 คน</b><span data-lang-th="ผ่านการอบรมความปลอดภัยประจำปี" data-lang-en="Annual safety-certified training.">ผ่านการอบรมความปลอดภัยประจำปี</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section-pad bg-accent">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">06</span>
+          <h2 data-lang-th="บันทึกจากผู้ใช้บริการ" data-lang-en="Field Notes From Clients">บันทึกจากผู้ใช้บริการ</h2>
+          <span class="tag" data-lang-th="LOG-09" data-lang-en="LOG-09">LOG-09</span>
+        </div>
+        <div class="notes-grid">
+          <div class="note reveal-item">
+            <p class="q" data-lang-th="โทรตอนเที่ยงคืนที่ท่อแตกในตึก ทีมมาถึงไม่ถึงชั่วโมง แก้ปัญหาเสร็จก่อนเช้า ประทับใจมาก" data-lang-en="Called at midnight when a pipe burst in our building — team arrived within the hour and had it fixed before morning.">โทรตอนเที่ยงคืนที่ท่อแตกในตึก ทีมมาถึงไม่ถึงชั่วโมง แก้ปัญหาเสร็จก่อนเช้า ประทับใจมาก</p>
+            <div class="who"><b data-lang-th="คุณอนันต์ ว." data-lang-en="Mr. Anan W.">คุณอนันต์ ว.</b><span data-lang-th="นิติบุคคลอาคารชุด" data-lang-en="Condo Manager">นิติบุคคลอาคารชุด</span></div>
+          </div>
+          <div class="note reveal-item">
+            <p class="q" data-lang-th="ใช้บริการดูดไขมันร้านอาหารทุกเดือน มีใบรับรองให้ทุกครั้งเอาไว้ยื่นตรวจสุขาภิบาลได้เลย" data-lang-en="We use the grease trap service monthly — the certificate every visit makes health inspections painless.">ใช้บริการดูดไขมันร้านอาหารทุกเดือน มีใบรับรองให้ทุกครั้งเอาไว้ยื่นตรวจสุขาภิบาลได้เลย</p>
+            <div class="who"><b data-lang-th="คุณศิริพร จ." data-lang-en="Ms. Siriporn J.">คุณศิริพร จ.</b><span data-lang-th="เจ้าของร้านอาหาร" data-lang-en="Restaurant Owner">เจ้าของร้านอาหาร</span></div>
+          </div>
+          <div class="note reveal-item">
+            <p class="q" data-lang-th="โรงงานเราใช้สูบบ่อบำบัดทุกไตรมาส งานเนี้ยบ มีเอกสารครบ ตรวจสอบย้อนหลังได้สบายใจ" data-lang-en="Our factory schedules quarterly wastewater pumping — meticulous work, full documentation, easy to audit.">โรงงานเราใช้สูบบ่อบำบัดทุกไตรมาส งานเนี้ยบ มีเอกสารครบ ตรวจสอบย้อนหลังได้สบายใจ</p>
+            <div class="who"><b data-lang-th="คุณวิชัย ป." data-lang-en="Mr. Wichai P.">คุณวิชัย ป.</b><span data-lang-th="ผจก. โรงงาน" data-lang-en="Plant Manager">ผจก. โรงงาน</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMERGENCY CTA ============ -->
+    <section class="emg">
+      <div class="container">
+        <span class="cap" data-lang-th="สายด่วนฉุกเฉิน" data-lang-en="Emergency Hotline">สายด่วนฉุกเฉิน</span>
+        <h2 data-lang-th="ท่อแตก น้ำท่วมขัง โทรได้ทันที ไม่มีวันหยุด" data-lang-en="Burst Pipe or Flooding? Call Now — No Days Off">ท่อแตก น้ำท่วมขัง โทรได้ทันที ไม่มีวันหยุด</h2>
+        <a href="tel:0887623287" class="phone-big">088-7623287</a>
+        <p class="sub" data-lang-th="ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง" data-lang-en="On-call teams ready to dispatch across every coverage zone, 24 hours a day.">ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง</p>
+        <div class="doc-cta">
+          <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรเลย" data-lang-en="Call Now">โทรเลย</span></a>
+          <a href="https://line.me/ti/p/~0887623287" target="_blank" rel="noopener" class="btn btn-outline"><i data-lucide="message-circle"></i><span data-lang-th="แชทผ่านไลน์" data-lang-en="Chat on LINE">แชทผ่านไลน์</span></a>
+          <a href="https://www.facebook.com/profile.php?id=61592076981750" target="_blank" rel="noopener" class="btn btn-outline"><i data-lucide="facebook"></i><span data-lang-th="ทักทาง Facebook" data-lang-en="Message on Facebook">ทักทาง Facebook</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section-pad">
+      <div class="container">
+        <div class="section-head">
+          <span class="idx">07</span>
+          <h2 data-lang-th="ช่องทางติดต่อ" data-lang-en="Contact Channels">ช่องทางติดต่อ</h2>
+          <span class="tag" data-lang-th="CONTACT LOG" data-lang-en="CONTACT LOG">CONTACT LOG</span>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3><i data-lucide="building-2"></i><span data-lang-th="สำนักงานใหญ่" data-lang-en="Head Office">สำนักงานใหญ่</span></h3>
+            <div class="contact-line">
+              <i data-lucide="map-pin"></i>
+              <div class="v"><a href="https://www.google.com/maps/search/?api=1&query=145+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88+5+%E0%B8%95.%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B8%AD+%E0%B8%AD.%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87+%E0%B8%88.%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2" target="_blank" rel="noopener" data-lang-th="145 หมู่ 5 ต.แม่นาเรือ อ.เมือง จ.พะเยา" data-lang-en="145 Moo 5, Mae Na Ruea, Mueang Phayao, Phayao">145 หมู่ 5 ต.แม่นาเรือ อ.เมือง จ.พะเยา</a><small data-lang-th="ดูเส้นทางบนแผนที่" data-lang-en="Open in Google Maps">ดูเส้นทางบนแผนที่</small></div>
+            </div>
+            <div class="contact-line">
+              <i data-lucide="clock"></i>
+              <div class="v" data-lang-th="เปิดทำการทุกวัน (สายด่วนฉุกเฉิน 24 ชม.)" data-lang-en="Open every day (24-hour emergency hotline)&lt;small&gt;Office: 08:00 - 20:00&lt;/small&gt;">เปิดทำการทุกวัน (สายด่วนฉุกเฉิน 24 ชม.)<small data-lang-th="สำนักงาน: 08:00 - 20:00 น." data-lang-en="Office: 08:00 - 20:00">สำนักงาน: 08:00 - 20:00 น.</small></div>
+            </div>
+            <div class="contact-line">
+              <i data-lucide="facebook"></i>
+              <div class="v"><a href="https://www.facebook.com/profile.php?id=61592076981750" target="_blank" rel="noopener" data-lang-th="เพชรนาเรือ บน Facebook" data-lang-en="Phet Na Ruea on Facebook">เพชรนาเรือ บน Facebook</a><small data-lang-th="ทักแชทสอบถามงานได้ทุกวัน" data-lang-en="Message us any day">ทักแชทสอบถามงานได้ทุกวัน</small></div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3><i data-lucide="phone"></i><span data-lang-th="สายด่วนและโซเชียล" data-lang-en="Hotline & Social">สายด่วนและโซเชียล</span></h3>
+            <div class="contact-line">
+              <i data-lucide="phone-call"></i>
+              <div class="v"><a href="tel:0887623287">088-7623287</a><small data-lang-th="สายด่วนฉุกเฉิน และนัดหมายล่วงหน้า ตลอด 24 ชม." data-lang-en="Emergency hotline &amp; scheduling, 24 hours">สายด่วนฉุกเฉิน และนัดหมายล่วงหน้า ตลอด 24 ชม.</small></div>
+            </div>
+            <div class="contact-line">
+              <i data-lucide="message-circle"></i>
+              <div class="v"><a href="https://line.me/ti/p/~0887623287" target="_blank" rel="noopener">LINE: 0887623287</a><small data-lang-th="ตอบแชทเร็ว 08:00-22:00 น." data-lang-en="Fast reply 08:00-22:00">ตอบแชทเร็ว 08:00-22:00 น.</small></div>
+            </div>
+            <div class="contact-line">
+              <i data-lucide="facebook"></i>
+              <div class="v"><a href="https://www.facebook.com/profile.php?id=61592076981750" target="_blank" rel="noopener">Facebook</a><small data-lang-th="ทักแชทขอใบเสนอราคาได้" data-lang-en="Message us for a quote">ทักแชทขอใบเสนอราคาได้</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img class="brand-wordmark" src="assets/logo/logotext_nobg-600.png" alt="เพชรนาเรือ บริการสูบส้วมและสิ่งปฏิกูลครบวงจร" width="600" height="216" loading="lazy" decoding="async"></div>
+        <p class="tagline" data-lang-th="บริการสูบส้วมและดูดสิ่งปฏิกูลครบวงจร มาตรฐานอุตสาหกรรม ตลอด 24 ชั่วโมง" data-lang-en="Full-scope septic pumping and wastewater service, industrial-grade, available 24 hours.">บริการสูบส้วมและดูดสิ่งปฏิกูลครบวงจร มาตรฐานอุตสาหกรรม ตลอด 24 ชั่วโมง</p>
+        <p class="tagline" data-lang-th="145 หมู่ 5 ต.แม่นาเรือ อ.เมือง จ.พะเยา" data-lang-en="145 Moo 5, Mae Na Ruea, Mueang Phayao, Phayao">145 หมู่ 5 ต.แม่นาเรือ อ.เมือง จ.พะเยา</p>
+        <div class="foot-social">
+          <a href="tel:0887623287"><i data-lucide="phone"></i>088-7623287</a>
+          <a href="https://line.me/ti/p/~0887623287" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>LINE</a>
+          <a href="https://www.facebook.com/profile.php?id=61592076981750" target="_blank" rel="noopener"><i data-lucide="facebook"></i>Facebook</a>
+        </div>
+      </div>
+      <ul class="foot-links">
+        <li><a href="#services" data-lang-th="บริการ" data-lang-en="Services">บริการ</a></li>
+        <li><a href="#fleet" data-lang-th="รถ-อุปกรณ์" data-lang-en="Fleet">รถ-อุปกรณ์</a></li>
+        <li><a href="#coverage" data-lang-th="พื้นที่บริการ" data-lang-en="Coverage">พื้นที่บริการ</a></li>
+        <li><a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-bottom">
+      <div>
+        <p style="font-size:.8rem; color:var(--muted);" data-lang-th="© 2569 เพชรนาเรือ สงวนลิขสิทธิ์ทุกประการ" data-lang-en="© 2026 Phet Na Ruea. All rights reserved.">© 2569 เพชรนาเรือ สงวนลิขสิทธิ์ทุกประการ</p>
+        <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>
+      </div>
+      <div class="credits-list">
+        <span data-lang-th="เครดิตภาพ:" data-lang-en="Photo credits:">เครดิตภาพ:</span>
+        <a href="https://www.pexels.com/@pok-rie-33563" target="_blank" rel="noopener nofollow">Pok Rie</a>,
+        <a href="https://www.pexels.com/@alexeydemidov" target="_blank" rel="noopener nofollow">Alexey Demidov</a>,
+        <a href="https://www.pexels.com/@souvik-dutta-2153793012" target="_blank" rel="noopener nofollow">Souvik Dutta</a>,
+        <a href="https://www.pexels.com/@felicia-navarrete-2151848879" target="_blank" rel="noopener nofollow">Felicia Navarrete</a>,
+        <a href="https://www.pexels.com/@annyles-ortiz-2160689070" target="_blank" rel="noopener nofollow">Annyles Ortiz</a>,
+        <a href="https://www.pexels.com/@qhung999" target="_blank" rel="noopener nofollow">Q. Hưng Phạm</a>
+        via <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll shadow
+  var hdr = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 12){ hdr.classList.add('scrolled'); } else { hdr.classList.remove('scrolled'); }
+  });
+
+  // hamburger toggle
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var siteNav = document.getElementById('siteNav');
+  var menuIcon = document.getElementById('menuIcon');
+  hamburgerBtn.addEventListener('click', function(){
+    var isOpen = siteNav.classList.toggle('open');
+    menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+    lucide.createIcons();
+  });
+  siteNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      siteNav.classList.remove('open');
+      menuIcon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+    });
+  });
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal-item');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.15});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  lucide.createIcons();
+</script>
+
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){if(/[<&]/.test(t)){e.innerHTML=t}else{e.textContent=t}}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+
+</body>
+</html>

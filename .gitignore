@@ -1,3 +1,5 @@
 meta.json
 .claude-*.log
 .omc/
+.vercel
+.DS_Store
