@@ -6,6 +6,13 @@
 <link rel="icon" type="image/png" href="assets/logo/logo_nobg-160.png">
 <title>เพชรนาเรือ | บริการสูบส้วม-ดูดสิ่งปฏิกูล ครบวงจร 24 ชั่วโมง</title>
 <meta name="description" content="เพชรนาเรือ บริการสูบส้วม ดูดสิ่งปฏิกูล ล้างท่ออุดตัน ดูดไขมัน และบำบัดน้ำเสีย ครบวงจร ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง รถสูบมาตรฐาน ตลอด 24 ชั่วโมง โทร 088-7623287">
+<meta property="og:type" content="website">
+<meta property="og:title" content="เพชรนาเรือ | สูบส้วม ดูดสิ่งปฏิกูล พะเยา ตลอด 24 ชั่วโมง">
+<meta property="og:description" content="บริการสูบส้วม ดูดสิ่งปฏิกูล ล้างท่ออุดตัน ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ตลอด 24 ชั่วโมง โทร 088-7623287">
+<meta property="og:image" content="https://phet-na-ruea.vercel.app/assets/img/744251573_1570843774675722_8370935286929031912_n.jpg">
+<meta property="og:url" content="https://phet-na-ruea.vercel.app/">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -221,6 +228,49 @@
   }
   .doc-cta{
     margin-top:2rem; display:flex; flex-wrap:wrap; gap:.9rem;
+  }
+  .quote-plate{
+    margin-top:1.6rem; display:inline-flex; align-items:center; gap:.6rem;
+    border:1px solid var(--primary); border-radius:8px;
+    background:linear-gradient(135deg, var(--bg-accent), var(--card));
+    padding:.7rem 1.1rem; max-width:100%; flex-wrap:wrap;
+  }
+  .quote-plate i{width:18px; height:18px; color:var(--primary); flex-shrink:0;}
+  .quote-plate .k{
+    font-size:.72rem; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.1em;
+  }
+  .quote-plate .q{
+    font-family:var(--font-heading); font-weight:600; font-size:1.05rem;
+    color:var(--accent); line-height:1.3;
+  }
+  .quote-note{margin-top:.6rem; font-size:.8rem; color:var(--muted); max-width:46ch;}
+
+  /* hero figure plate */
+  .doc-hero-grid{display:grid; grid-template-columns:1fr; gap:2.25rem; align-items:start;}
+  .hero-plate{display:grid; gap:.7rem;}
+  .hero-plate .shot{
+    position:relative; overflow:hidden; background:var(--card);
+    border:1px solid var(--border); border-radius:10px;
+  }
+  .hero-plate .shot img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hero-plate .main{aspect-ratio:4/3;}
+  .hero-plate .thumbs{display:grid; grid-template-columns:1fr 1fr; gap:.7rem;}
+  .hero-plate .thumbs .shot{aspect-ratio:16/11;}
+  .hero-plate .fig{
+    position:absolute; top:.6rem; left:.6rem; background:rgba(0,16,31,.82);
+    color:var(--accent); font-size:.68rem; padding:.24em .6em; border-radius:5px;
+    border:1px solid var(--primary); font-variant-numeric:tabular-nums;
+  }
+  .hero-plate .plate-cap{
+    font-size:.72rem; color:var(--muted); letter-spacing:.06em;
+    text-transform:uppercase; padding-top:.1rem;
+  }
+  @media (min-width:1024px){
+    .doc-hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:3rem;}
+    /* the hero title shares its row with the figure plate, so it needs a
+       tighter ceiling than the full-width clamp to keep 'ครบวงจร' unbroken */
+    .doc-title{font-size:clamp(2.1rem, 4vw, 3.05rem); max-width:15ch;}
   }
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
@@ -477,10 +527,12 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "url": "https://phet-na-ruea.vercel.app/",
   "name": "เพชรนาเรือ",
   "alternateName": "Phet Na Ruea",
   "description": "บริการสูบส้วม ดูดสิ่งปฏิกูล ล้างท่ออุดตัน ดูดไขมัน และบำบัดน้ำเสีย ตลอด 24 ชั่วโมง",
   "telephone": "+66887623287",
+  "image": "https://phet-na-ruea.vercel.app/assets/img/744251573_1570843774675722_8370935286929031912_n.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "145 หมู่ 5",
@@ -542,17 +594,45 @@
           <div class="row"><span class="k">REV.</span><span class="v">A / 2026</span></div>
           <div class="row"><span class="k" data-lang-th="เรื่อง" data-lang-en="Subject">เรื่อง</span><span class="v" data-lang-th="บริการสูบสิ่งปฏิกูล" data-lang-en="Pumping Service">บริการสูบสิ่งปฏิกูล</span></div>
           <div class="row"><span class="k" data-lang-th="สถานะ" data-lang-en="Status">สถานะ</span><span class="v" data-lang-th="พร้อมปฏิบัติงาน" data-lang-en="Operational">พร้อมปฏิบัติงาน</span></div>
+          <div class="row"><span class="k" data-lang-th="ค่าบริการ" data-lang-en="Pricing">ค่าบริการ</span><span class="v" data-lang-th="สอบถามก่อนเริ่มงาน" data-lang-en="Quoted on request">สอบถามก่อนเริ่มงาน</span></div>
         </div>
 
-        <h1 class="doc-title">
-          <span data-lang-th="สูบส้วม" data-lang-en="Septic">สูบส้วม</span>
-          <em data-lang-th="ดูดสิ่งปฏิกูล ครบวงจร" data-lang-en="Full Pumping Service">ดูดสิ่งปฏิกูล ครบวงจร</em>
-        </h1>
-        <p class="doc-sub" data-lang-th="ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน" data-lang-en="Industrial-grade vacuum trucks and certified technicians for septic pumping, grease trap cleaning, drain jetting and wastewater service across Mueang Phayao and nearby sub-districts — every job logged and certified.">ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน</p>
+        <div class="doc-hero-grid">
+          <div class="doc-hero-copy">
+            <h1 class="doc-title">
+              <span data-lang-th="สูบส้วม" data-lang-en="Septic">สูบส้วม</span>
+              <em data-lang-th="ดูดสิ่งปฏิกูล ครบวงจร" data-lang-en="Full Pumping Service">ดูดสิ่งปฏิกูล ครบวงจร</em>
+            </h1>
+            <p class="doc-sub" data-lang-th="ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน" data-lang-en="Industrial-grade vacuum trucks and certified technicians for septic pumping, grease trap cleaning, drain jetting and wastewater service across Mueang Phayao and nearby sub-districts — every job logged and certified.">ทีมช่างและรถสูบมาตรฐานอุตสาหกรรม ให้บริการสูบส้วม ดูดไขมัน ล้างท่ออุดตัน และบำบัดน้ำเสีย ในเขตตัวเมืองพะเยาและตำบลใกล้เคียง ทำงานตามมาตรฐานทุกขั้นตอน มีใบรับรองหลังปฏิบัติงาน</p>
 
-        <div class="doc-cta">
-          <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone"></i><span data-lang-th="โทรด่วน 088-7623287" data-lang-en="Call 088-7623287">โทรด่วน 088-7623287</span></a>
-          <a href="#services" class="btn btn-outline"><i data-lucide="file-text"></i><span data-lang-th="ดูรายการบริการ" data-lang-en="View Services">ดูรายการบริการ</span></a>
+            <div class="quote-plate">
+              <i data-lucide="calculator"></i>
+              <span class="k" data-lang-th="ค่าบริการ" data-lang-en="Pricing">ค่าบริการ</span>
+              <span class="q" data-lang-th="สอบถามตามลักษณะงาน" data-lang-en="Quoted per job">สอบถามตามลักษณะงาน</span>
+            </div>
+            <p class="quote-note" data-lang-th="แจ้งอาการและลักษณะหน้างานทางโทรศัพท์ ไลน์ หรือ Facebook ทีมงานประเมินราคาให้ก่อน ตกลงราคาแล้วจึงเริ่มงาน" data-lang-en="Tell us the problem and the site by phone, LINE or Facebook — we quote first, and work starts only once you agree the price.">แจ้งอาการและลักษณะหน้างานทางโทรศัพท์ ไลน์ หรือ Facebook ทีมงานประเมินราคาให้ก่อน ตกลงราคาแล้วจึงเริ่มงาน</p>
+
+            <div class="doc-cta">
+              <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone"></i><span data-lang-th="โทรด่วน 088-7623287" data-lang-en="Call 088-7623287">โทรด่วน 088-7623287</span></a>
+              <a href="#services" class="btn btn-outline"><i data-lucide="file-text"></i><span data-lang-th="ดูรายการบริการ" data-lang-en="View Services">ดูรายการบริการ</span></a>
+            </div>
+          </div>
+
+          <div class="hero-plate">
+            <div class="shot main">
+              <span class="fig">FIG. 00</span>
+              <img src="assets/img/line_oa_chat_260910_162924.jpg" alt="รถสูบสิ่งปฏิกูลของเพชรนาเรือ ทะเบียน 70-6839 พ่นเบอร์โทร 088-762 3287 บนถัง" width="1477" height="1108" fetchpriority="high" decoding="async">
+            </div>
+            <div class="thumbs">
+              <div class="shot">
+                <img src="assets/img/line_oa_chat_260910_162847.jpg" alt="ช่างเพชรนาเรือกำลังปฏิบัติงานสูบสิ่งปฏิกูลที่ฝาบ่อข้างอาคาร" width="1477" height="1108" loading="lazy" decoding="async">
+              </div>
+              <div class="shot">
+                <img src="assets/img/line_oa_chat_260910_162927.jpg" alt="รถสูบเพชรนาเรือระหว่างเข้าให้บริการในพื้นที่พะเยา" width="1477" height="1108" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <span class="plate-cap" data-lang-th="ภาพถ่ายจากงานจริงในพื้นที่พะเยา" data-lang-en="Photographed on real jobs around Phayao">ภาพถ่ายจากงานจริงในพื้นที่พะเยา</span>
+          </div>
         </div>
 
         <div class="doc-stats">
@@ -722,62 +802,56 @@
         <div class="section-head">
           <span class="idx">03</span>
           <h2 data-lang-th="รถและอุปกรณ์" data-lang-en="Fleet & Equipment">รถและอุปกรณ์</h2>
-          <span class="tag" data-lang-th="FIG. 01-03" data-lang-en="FIG. 01-03">FIG. 01-03</span>
+          <span class="tag" data-lang-th="FIG. 01-06" data-lang-en="FIG. 01-06">FIG. 01-06</span>
         </div>
 
         <div class="fleet-grid">
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 01</span>
-              <img src="https://images.pexels.com/photos/4741959/pexels-photo-4741959.jpeg?w=700&h=525&fit=crop" alt="มุมสูงระบบบำบัดน้ำเสียแบบวงกลม" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_162845.jpg" alt="รถสูบสิ่งปฏิกูลของเพชรนาเรือ พ่นตราและเบอร์โทรบนถัง" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="ระบบบำบัดกลาง" data-lang-en="Central Treatment Unit">ระบบบำบัดกลาง</b><span data-lang-th="จุดพักน้ำก่อนปล่อยสู่ระบบระบายส่วนกลาง" data-lang-en="Holding stage before discharge into the municipal system.">จุดพักน้ำก่อนปล่อยสู่ระบบระบายส่วนกลาง</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@pok-rie-33563" target="_blank" rel="noopener nofollow">Photo by Pok Rie on Pexels</a>
+            <span class="cap"><b data-lang-th="รถสูบสิ่งปฏิกูล" data-lang-en="Vacuum Truck">รถสูบสิ่งปฏิกูล</b><span data-lang-th="รถสูบประจำการของเพชรนาเรือ พร้อมออกงานทุกวัน" data-lang-en="Our own working truck, dispatched every day.">รถสูบประจำการของเพชรนาเรือ พร้อมออกงานทุกวัน</span></span>
           </div>
 
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 02</span>
-              <img src="https://images.pexels.com/photos/12726229/pexels-photo-12726229.jpeg?w=700&h=525&fit=crop" alt="ถังบำบัดพร้อมท่อสีฟ้า" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_163001.jpg" alt="ช่างขึ้นปฏิบัติงานบนรถสูบระหว่างจัดเก็บสายสูบ" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="ชุดวาล์วควบคุม" data-lang-en="Valve Control Set">ชุดวาล์วควบคุม</b><span data-lang-th="ควบคุมแรงดันการสูบให้คงที่ตลอดกระบวนการ" data-lang-en="Regulates suction pressure consistently through the process.">ควบคุมแรงดันการสูบให้คงที่ตลอดกระบวนการ</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@alexeydemidov" target="_blank" rel="noopener nofollow">Photo by Alexey Demidov on Pexels</a>
+            <span class="cap"><b data-lang-th="ทีมปฏิบัติการหน้างาน" data-lang-en="Field Operations">ทีมปฏิบัติการหน้างาน</b><span data-lang-th="ช่างประจำรถดูแลสายสูบตลอดการทำงาน" data-lang-en="The crew manages the suction line throughout the job.">ช่างประจำรถดูแลสายสูบตลอดการทำงาน</span></span>
           </div>
 
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 03</span>
-              <img src="https://images.pexels.com/photos/35877100/pexels-photo-35877100.jpeg?w=700&h=525&fit=crop" alt="เครื่องจักรอุตสาหกรรมกลางแจ้ง" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_162935.jpg" alt="ช่างสอดสายสูบลงบ่อเกรอะคอนกรีตหน้างาน" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="เครื่องสูบแรงดันสูง" data-lang-en="High-Pressure Pump Unit">เครื่องสูบแรงดันสูง</b><span data-lang-th="ตรวจเช็คสภาพก่อนออกปฏิบัติงานทุกครั้ง" data-lang-en="Inspected before every dispatch.">ตรวจเช็คสภาพก่อนออกปฏิบัติงานทุกครั้ง</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@souvik-dutta-2153793012" target="_blank" rel="noopener nofollow">Photo by Souvik Dutta on Pexels</a>
+            <span class="cap"><b data-lang-th="งานสูบบ่อเกรอะ" data-lang-en="Septic Pumping">งานสูบบ่อเกรอะ</b><span data-lang-th="ต่อสายลงบ่อโดยตรง ไม่ต้องรื้อพื้นที่โดยรอบ" data-lang-en="The hose runs straight into the tank — no digging up the surrounds.">ต่อสายลงบ่อโดยตรง ไม่ต้องรื้อพื้นที่โดยรอบ</span></span>
           </div>
 
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 04</span>
-              <img src="https://images.pexels.com/photos/37299043/pexels-photo-37299043.jpeg?w=700&h=525&fit=crop" alt="ทีมช่างหน้างานพร้อมท่อขนาดใหญ่" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_162942.jpg" alt="ชุดวาล์วท้ายถังสูบพร้อมสายสูบที่ต่อออกไปหน้างาน" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="ทีมปฏิบัติการหน้างาน" data-lang-en="Field Operations Team">ทีมปฏิบัติการหน้างาน</b><span data-lang-th="ช่างผ่านการอบรมความปลอดภัยตามมาตรฐาน" data-lang-en="Safety-trained technicians on every job.">ช่างผ่านการอบรมความปลอดภัยตามมาตรฐาน</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@felicia-navarrete-2151848879" target="_blank" rel="noopener nofollow">Photo by Felicia Navarrete on Pexels</a>
+            <span class="cap"><b data-lang-th="ชุดวาล์วและท่อสูบ" data-lang-en="Valve & Hose Assembly">ชุดวาล์วและท่อสูบ</b><span data-lang-th="ตรวจเช็คระบบวาล์วและข้อต่อก่อนเริ่มงานทุกครั้ง" data-lang-en="Valves and couplings are checked before every job.">ตรวจเช็คระบบวาล์วและข้อต่อก่อนเริ่มงานทุกครั้ง</span></span>
           </div>
 
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 05</span>
-              <img src="https://images.pexels.com/photos/37090943/pexels-photo-37090943.jpeg?w=700&h=525&fit=crop" alt="เจ้าหน้าที่สวมชุดป้องกันในโรงงาน" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_162839.jpg" alt="เดินสายสูบจากถนนเข้าถึงฝาบ่อข้างตัวบ้านริมทุ่งนา" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="มาตรฐานความปลอดภัย" data-lang-en="Safety Standard">มาตรฐานความปลอดภัย</b><span data-lang-th="อุปกรณ์ป้องกันครบชุดทุกภารกิจ" data-lang-en="Full protective gear on every mission.">อุปกรณ์ป้องกันครบชุดทุกภารกิจ</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@annyles-ortiz-2160689070" target="_blank" rel="noopener nofollow">Photo by Annyles Ortiz on Pexels</a>
+            <span class="cap"><b data-lang-th="เข้าถึงหน้างานได้ทุกแบบ" data-lang-en="Access Anywhere">เข้าถึงหน้างานได้ทุกแบบ</b><span data-lang-th="บ้านเดี่ยว พื้นที่นา ทางแคบ เดินสายเข้าถึงได้" data-lang-en="Houses, farmland, tight access — we run the line in.">บ้านเดี่ยว พื้นที่นา ทางแคบ เดินสายเข้าถึงได้</span></span>
           </div>
 
           <div class="fleet-card reveal-item">
             <div class="img-wrap">
               <span class="fig">FIG. 06</span>
-              <img src="https://images.pexels.com/photos/28772266/pexels-photo-28772266.jpeg?w=700&h=525&fit=crop" alt="กองท่อเหล็กเก่ากลางแจ้ง" loading="lazy" decoding="async">
+              <img src="assets/img/line_oa_chat_260910_163020.jpg" alt="รถสูบเพชรนาเรือจอดให้บริการหน้าบ้านลูกค้า" loading="lazy" decoding="async" width="1108" height="831">
             </div>
-            <span class="cap"><b data-lang-th="คลังอะไหล่ท่อ" data-lang-en="Pipe Fitting Stock">คลังอะไหล่ท่อ</b><span data-lang-th="สำรองอะไหล่พร้อมเปลี่ยนหน้างานทันที" data-lang-en="Spare fittings ready for immediate replacement on-site.">สำรองอะไหล่พร้อมเปลี่ยนหน้างานทันที</span></span>
-            <a class="credit-line" href="https://www.pexels.com/@qhung999" target="_blank" rel="noopener nofollow">Photo by Q. Hưng Phạm on Pexels</a>
+            <span class="cap"><b data-lang-th="บริการถึงบ้าน" data-lang-en="Door-to-Door Service">บริการถึงบ้าน</b><span data-lang-th="นัดหมายล่วงหน้าหรือเรียกด่วน ไปถึงตามเวลานัด" data-lang-en="Book ahead or call urgently — we arrive when we say we will.">นัดหมายล่วงหน้าหรือเรียกด่วน ไปถึงตามเวลานัด</span></span>
           </div>
         </div>
       </div>
@@ -878,7 +952,7 @@
         <span class="cap" data-lang-th="สายด่วนฉุกเฉิน" data-lang-en="Emergency Hotline">สายด่วนฉุกเฉิน</span>
         <h2 data-lang-th="ท่อแตก น้ำท่วมขัง โทรได้ทันที ไม่มีวันหยุด" data-lang-en="Burst Pipe or Flooding? Call Now — No Days Off">ท่อแตก น้ำท่วมขัง โทรได้ทันที ไม่มีวันหยุด</h2>
         <a href="tel:0887623287" class="phone-big">088-7623287</a>
-        <p class="sub" data-lang-th="ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง" data-lang-en="On-call teams ready to dispatch across every coverage zone, 24 hours a day.">ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง</p>
+        <p class="sub" data-lang-th="ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง โทรสอบถามค่าบริการได้ทันที" data-lang-en="On-call teams ready to dispatch across every coverage zone, 24 hours a day. Call any time for a quote.">ทีมเวรพร้อมออกงานทุกพื้นที่บริการ ตลอด 24 ชั่วโมง โทรสอบถามค่าบริการได้ทันที</p>
         <div class="doc-cta">
           <a href="tel:0887623287" class="btn btn-primary"><i data-lucide="phone-call"></i><span data-lang-th="โทรเลย" data-lang-en="Call Now">โทรเลย</span></a>
           <a href="https://line.me/ti/p/~0887623287" target="_blank" rel="noopener" class="btn btn-outline"><i data-lucide="message-circle"></i><span data-lang-th="แชทผ่านไลน์" data-lang-en="Chat on LINE">แชทผ่านไลน์</span></a>
@@ -961,16 +1035,7 @@
         <p style="font-size:.8rem; color:var(--muted);" data-lang-th="© 2569 เพชรนาเรือ สงวนลิขสิทธิ์ทุกประการ" data-lang-en="© 2026 Phet Na Ruea. All rights reserved.">© 2569 เพชรนาเรือ สงวนลิขสิทธิ์ทุกประการ</p>
         <a class="deelabs-badge" href="https://deelabs.co/?utm_source=client-site&utm_medium=badge" target="_blank" rel="noopener">Powered by DeeLabs</a>
       </div>
-      <div class="credits-list">
-        <span data-lang-th="เครดิตภาพ:" data-lang-en="Photo credits:">เครดิตภาพ:</span>
-        <a href="https://www.pexels.com/@pok-rie-33563" target="_blank" rel="noopener nofollow">Pok Rie</a>,
-        <a href="https://www.pexels.com/@alexeydemidov" target="_blank" rel="noopener nofollow">Alexey Demidov</a>,
-        <a href="https://www.pexels.com/@souvik-dutta-2153793012" target="_blank" rel="noopener nofollow">Souvik Dutta</a>,
-        <a href="https://www.pexels.com/@felicia-navarrete-2151848879" target="_blank" rel="noopener nofollow">Felicia Navarrete</a>,
-        <a href="https://www.pexels.com/@annyles-ortiz-2160689070" target="_blank" rel="noopener nofollow">Annyles Ortiz</a>,
-        <a href="https://www.pexels.com/@qhung999" target="_blank" rel="noopener nofollow">Q. Hưng Phạm</a>
-        via <a href="https://unsplash.com/?utm_source=deelabs&utm_medium=referral" target="_blank" rel="noopener nofollow">Unsplash</a>
-      </div>
+      <div class="credits-list"><span data-lang-th="ภาพถ่ายจากหน้างานจริงของเพชรนาเรือ" data-lang-en="Photographs from Phet Na Ruea's own job sites.">ภาพถ่ายจากหน้างานจริงของเพชรนาเรือ</span></div>
     </div>
   </div>
 </footer>
