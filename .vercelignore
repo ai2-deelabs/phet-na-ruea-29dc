@@ -4,3 +4,9 @@
 
 # internal generation notes — not for the public site
 .prompts/
+
+# earlier design variants: v3 is byte-identical to the homepage, so
+# leaving them crawlable feeds Google duplicate content
+v1.html
+v2.html
+v3.html
