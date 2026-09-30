@@ -1,0 +1,21 @@
+# Sends this site to the portal, which checks it and — if it passes —
+# updates the preview the customer is looking at. A push is not a release:
+# what makes a site public is the approve button in the admin console.
+#
+# The rules are not here and not in what this calls. They live in the portal.
+name: Site check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  check:
+    uses: ai2-deelabs/site-check/.github/workflows/site-check.yml@v1
+    with:
+      portal_url: https://preview.deelabs.co
